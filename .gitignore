@@ -1,0 +1,56 @@
+# System
+
+error_log
+.DS_Store
+
+# Development
+
+## Docker
+/.docker/*
+
+## NodeJS
+/node_modules/*
+/package-lock.json
+
+# Server
+.env
+.env.*
+!/.env.example
+*.log
+
+# Applications
+
+## Composer
+auth.json
+composer.lock
+/vendor
+
+## Config
+/config/environments/local.php
+
+## WordPress
+/public/app/cache/*
+/public/app/languages/*
+/public/app/upgrade
+/public/app/uploads/*
+/public/app/wflogs/*
+/public/wp/
+/public/.htaccess
+/public/app/advanced-cache.php
+/public/app/db.php
+/public/app/object-cache.php
+
+!/public/app/uploads/.gitkeep
+
+## Plugins
+/public/app/plugins/*
+!/public/app/plugins/index.php
+/public/app/mu-plugins/*
+!/public/app/mu-plugins/index.php
+
+## Themes
+/public/app/themes/*
+!/public/app/themes/index.php
+
+## WPCLI
+wp-cli.local.yml
