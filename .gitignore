@@ -51,6 +51,7 @@ composer.lock
 ## Themes
 /public/app/themes/*
 !/public/app/themes/index.php
+!/public/app/themes/demo/
 
 ## WPCLI
 wp-cli.local.yml
