@@ -1,0 +1,41 @@
+# Vatu Production Deploy
+# Version: 0.1.0
+
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - feature/deploy-production
+  workflow_dispatch:
+
+jobs:
+  # Deploy code to production.
+  #
+  # Performs the following steps:
+  # - Checks out the repository.
+  # - Logs debug information.
+  # - Install Composer dependencies with no dev option.
+  # - Install NPM dependencies.
+  # - Built theme.
+  # - Remove `.gitignore` files.
+  # - Remove deployment ignore files.
+  # - Commit to `main-built`
+
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checks out the repository."
+        uses: "actions/checkout@v2"
+      - name: Sets up PHP with Composer.
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer
+      - name: Logs debug information.
+        run: |
+          php --version
+          composer --version
+      - name: Install Composer dependencies.
+        run: composer install --no-dev --no-interaction --prefer-dist

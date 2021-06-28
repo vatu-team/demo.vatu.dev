@@ -1,0 +1,55 @@
+# System
+
+error_log
+.DS_Store
+
+# Development
+
+## Docker
+/.docker/*
+
+## Tools
+
+/.bin
+/.github
+/.phive
+/shared
+/tools
+/.editorconfig
+/.gitattributes
+phpcs.xml
+phpmd.xml
+readme.md
+readme.txt
+
+## NodeJS
+/node_modules/*
+/package.json
+/package-lock.json
+
+# Server
+.env
+.env.*
+.env.example
+*.log
+
+# Applications
+
+## Composer
+auth.json
+composer.json
+composer.lock
+
+## Config
+/config/environments/local.php
+
+## WordPress
+/public/app/cache/*
+/public/app/languages/*
+/public/app/upgrade
+/public/app/uploads/*
+/public/app/wflogs/*
+
+## WPCLI
+wp-cli.yml
+wp-cli.local.yml
