@@ -12,6 +12,9 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/tools/*</exclude-pattern>
+	<exclude-pattern>/config/*</exclude-pattern>
+	<exclude-pattern>/public/index.php</exclude-pattern>
+	<exclude-pattern>/public/wp-config.php</exclude-pattern>
 
 	<!-- Ignore empty files. -->
 	<rule ref="Internal.NoCodeFound">
