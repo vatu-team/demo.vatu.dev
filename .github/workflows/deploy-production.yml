@@ -53,4 +53,4 @@ jobs:
       - name: "Setup deploy ignore files."
         run: mv .deployignore .gitignore
       - name: "List directory"
-        run: ls ${GITHUB_WORKSPACE}/build/
+        run: ls -a ${GITHUB_WORKSPACE}/build/
