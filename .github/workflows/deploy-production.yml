@@ -47,10 +47,12 @@ jobs:
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
           git remote -v
       - name: "Rsync files to build directory"
-        run: rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='.git/' build/
+        run: rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='${GITHUB_WORKSPACE}/.git/' ${GITHUB_WORKSPACE}/build/
       - name: "Remove `.gitignore` file"
-        run: rm .gitignore
+        run: |
+          rm ${GITHUB_WORKSPACE}/build/.gitignore
+          ls -a ${GITHUB_WORKSPACE}/build/
       - name: "Setup deploy ignore files."
-        run: mv .deployignore .gitignore
+        run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
       - name: "List directory"
         run: ls -a ${GITHUB_WORKSPACE}/build/
