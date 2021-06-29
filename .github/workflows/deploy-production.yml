@@ -50,13 +50,13 @@ jobs:
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
           git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Creating a main--built branch."
-        if: '0 = $(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )'
+        if: '0 == (git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )'
         run: |
           echo -e "\nCreating a main--built branch..."
           git checkout --quiet --orphan main--built
           pwd
       - name: "Using existing main--built branch"
-        if: '1 = $(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )'
+        if: '1 == (git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )'
         run: |
           echo "Using existing main--built branch"
           git fetch origin main--built --depth=1
