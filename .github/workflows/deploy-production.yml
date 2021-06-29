@@ -49,10 +49,18 @@ jobs:
       - name: "Rsync files to build directory"
         run: rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='${GITHUB_WORKSPACE}/.git/' ${GITHUB_WORKSPACE}/build/
       - name: "Remove `.gitignore` file"
-        run: |
-          rm ${GITHUB_WORKSPACE}/build/.gitignore
-          ls -a ${GITHUB_WORKSPACE}/build/
+        run: rm ${GITHUB_WORKSPACE}/build/.gitignore
       - name: "Setup deploy ignore files."
         run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
       - name: "List directory"
         run: ls -a ${GITHUB_WORKSPACE}/build/
+      - name: Push to built to deployment branch
+        run: |
+          cd ${GITHUB_WORKSPACE}/build/
+          git config --global user.name '${{ github.event.pusher.name }}'
+          git config --global user.email '${{ github.event.pusher.email }}'
+          echo ${{ github.event.pusher.name }}
+          echo ${{ github.event.pusher.email }}
+          git status
+          #git commit -am "Deploy"
+          #git push origin main:main-build
