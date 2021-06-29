@@ -48,23 +48,26 @@ jobs:
           pwd
           git branch -m "main-build"
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
-          git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+          #git ls-remote --heads ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Creating a main--built branch."
-        if: '0 == (git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )'
+        env:
+          GIT_LS_REMOTE: 0
+        #if: contains( ${GIT_LS_REMOTE}, 0 )
         run: |
-          echo -e "\nCreating a main--built branch..."
-          git checkout --quiet --orphan main--built
-          pwd
-      - name: "Using existing main--built branch"
-        if: '1 == (git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )'
-        run: |
-          echo "Using existing main--built branch"
-          git fetch origin main--built --depth=1
-          git checkout --quiet main--built
-          pwd
+          echo "Test: $GIT_LS_REMOTE"
+      # echo -e "\nCreating a main--built branch..."
+      # git checkout --quiet --orphan main--built
+      # pwd
+      # - name: "Using existing main--built branch"
+      #   if: contains(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l, 1 )
+      #   run: |
+      #     echo "Using existing main--built branch"
+      #     git fetch origin main--built --depth=1
+      #     git checkout --quiet main--built
+      #     pwd
       - name: "Rsync files to build directory"
         run: |
-          rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
+          rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
           ls -a ${GITHUB_WORKSPACE}/build/
       - name: "Remove `.gitignore` file"
         run: rm ${GITHUB_WORKSPACE}/build/.gitignore
