@@ -48,15 +48,20 @@ jobs:
           pwd
           git branch -m "main-build"
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
-          if [[ 0 = $(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l) ]]; then /
-            echo -e "\nCreating a main--built branch..." /
-            git checkout --quiet --orphan main--built /
-          else /
-            echo "Using existing main--built branch" /
-            git fetch origin main--built --depth=1 /
-            git checkout --quiet main--built /
-          fi
-          git remote -v
+          git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+      - name: "Creating a main--built branch."
+        if: "0 = $(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )"
+        run: |
+          echo -e "\nCreating a main--built branch..."
+          git checkout --quiet --orphan main--built
+          pwd
+      - name: "Using existing main--built branch"
+        if: "1 = $(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built" | wc -l )"
+        run: |
+          echo "Using existing main--built branch"
+          git fetch origin main--built --depth=1
+          git checkout --quiet main--built
+          pwd
       - name: "Rsync files to build directory"
         run: |
           rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
