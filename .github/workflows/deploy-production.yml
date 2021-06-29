@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - 'feature/*'
-      - '!*-built'
+      - '!*--built'
   workflow_dispatch:
 
 jobs:
@@ -46,10 +46,21 @@ jobs:
           git init "${GITHUB_WORKSPACE}/build/"
           cd ${GITHUB_WORKSPACE}/build/
           pwd
+          git branch -m "main-build"
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+          if [[ 0 = $(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l) ]]; then /
+            echo -e "\nCreating a main--built branch..." /
+            git checkout --quiet --orphan main--built /
+          else /
+            echo "Using existing main--built branch" /
+            git fetch origin main--built --depth=1 /
+            git checkout --quiet main--built /
+          fi
           git remote -v
       - name: "Rsync files to build directory"
-        run: rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='${GITHUB_WORKSPACE}/.git/' ${GITHUB_WORKSPACE}/build/
+        run: |
+          rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
+          ls -a ${GITHUB_WORKSPACE}/build/
       - name: "Remove `.gitignore` file"
         run: rm ${GITHUB_WORKSPACE}/build/.gitignore
       - name: "Setup deploy ignore files."
@@ -58,13 +69,9 @@ jobs:
         run: ls -a ${GITHUB_WORKSPACE}/build/
       - name: Push to built to deployment branch
         run: |
-          pwd
           cd ${GITHUB_WORKSPACE}/build/
-          pwd
           git config --global user.name '${{ github.event.pusher.name }}'
           git config --global user.email '${{ github.event.pusher.email }}'
-          echo ${{ github.event.pusher.name }}
-          echo ${{ github.event.pusher.email }}
           git status
           #git commit -am "Deploy"
-          #git push origin main:main-build
+          #git push origin main:main--built
