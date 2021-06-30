@@ -49,7 +49,16 @@ composer.lock
 /public/app/upgrade
 /public/app/uploads/*
 /public/app/wflogs/*
+/public/app/advanced-cache.php
+/public/db.php
+/public/app/object-cache.php
+/public/wp/wp-content/akismet/
+/pubilc/wp/wp-content/hello.php
+/public/wp/wp-content/themes/twentynineteen/
+/public/wp/wp-content/themes/twentytwenty/
+/public/wp/wp-content/themes/twentytwentyone/
+
+## Theme
 
 ## WPCLI
-wp-cli.yml
 wp-cli.local.yml

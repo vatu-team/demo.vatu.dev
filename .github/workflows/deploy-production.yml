@@ -72,8 +72,7 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}/build/
           git status
-      #     git config --global user.name '${{ github.event.pusher.name }}'
-      #     git config --global user.email '${{ github.event.pusher.email }}'
-      #     git status
+          git config --global user.name '${{ github.event.pusher.name }}'
+          git config --global user.email '${{ github.event.pusher.email }}'
       #     #git commit -am "Deploy"
       #     #git push origin main:main--built
