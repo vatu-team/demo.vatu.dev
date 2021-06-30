@@ -42,13 +42,10 @@ jobs:
         run: composer install --no-dev --no-interaction --prefer-dist
       - name: "Making the build directory"
         run: |
-          pwd
           git init "${GITHUB_WORKSPACE}/build/"
           cd ${GITHUB_WORKSPACE}/build/
-          pwd
           git branch -m "main-build"
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
-          #git ls-remote --heads ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Check for built branch."
         run: |
            echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
@@ -61,13 +58,13 @@ jobs:
       - name: "Using existing main--built branch"
         if: ${{ env.ls_remote == 1 }}
         run: |
+          cd ${GITHUB_WORKSPACE}/build/
           git fetch origin main--built --depth=1
           git checkout --quiet main--built
-          git status
-      # - name: "Rsync files to build directory"
-      #   run: |
-      #     rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
-      #     ls -a ${GITHUB_WORKSPACE}/build/
+      - name: "Rsync files to build directory"
+        run: |
+          rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/" --exclude="${GITHUB_WORKSPACE}/.git/" "${GITHUB_WORKSPACE}/build/"
+          ls -a ${GITHUB_WORKSPACE}/build/
       # - name: "Remove `.gitignore` file"
       #   run: rm ${GITHUB_WORKSPACE}/build/.gitignore
       # - name: "Setup deploy ignore files."
