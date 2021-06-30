@@ -78,6 +78,6 @@ jobs:
           git status
           git config --global user.name '${{ github.event.pusher.name }}'
           git config --global user.email '${{ github.event.pusher.email }}'
-          git add -A
+          git add -all
           git push origin main:main--built
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
