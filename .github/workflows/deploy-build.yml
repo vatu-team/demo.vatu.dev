@@ -1,0 +1,83 @@
+# Vatu Deploy
+# Version: 1.0.0
+
+name: Deploy Build
+
+on:
+  push:
+    branches:
+      - 'main'
+      - '!*--built'
+  workflow_dispatch:
+
+jobs:
+  # Deploy code to production.
+  #
+  # Performs the following steps:
+  # - Checks out the repository.
+  # - Sets up PHP with Composer.
+  # - Logs debug information.
+  # - Install Composer dependencies with no dev option.
+  # - @TODO: Install NPM dependencies.
+  # - Make the build directory.
+  # - Check built branch exists.
+  # - Creating a *--built branch. | Using existing *--built branch
+  # - Rsync files to build directory.
+  # - Remove `.gitignore` file.
+  # - Setup deploy ignore files.
+  # - Push build to deployment branch.
+
+  deploy-build:
+    name: Deploy Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checks out the repository."
+        uses: actions/checkout@v2
+      - name: "Sets up PHP with Composer."
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer
+      - name: "Logs debug information."
+        run: |
+          php --version
+          composer --version
+      - name: "Install Composer dependencies with no dev option"
+        run: composer install --no-dev --no-interaction --prefer-dist
+      - name: "Make the build directory."
+        run: |
+          git init "${GITHUB_WORKSPACE}/build/"
+          cd ${GITHUB_WORKSPACE}/build/
+          git branch -m "main-build"
+          git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+      - name: "Check built branch exists."
+        run: |
+           echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
+      - name: "Creating a main--built branch."
+        if: ${{ env.ls_remote == 0 }}
+        run: |
+          cd ${GITHUB_WORKSPACE}/build/
+          git checkout --quiet --orphan main--built
+          git status
+      - name: "Using existing main--built branch."
+        if: ${{ env.ls_remote == 1 }}
+        run: |
+          cd ${GITHUB_WORKSPACE}/build/
+          git fetch origin main--built --depth=1
+          git checkout --quiet main--built
+      - name: "Rsync files to build directory."
+        run: |
+          rsync --delete -a --exclude={'.git','build/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/"
+      - name: "Remove `.gitignore` file."
+        run: rm ${GITHUB_WORKSPACE}/build/.gitignore
+      - name: "Setup deploy ignore files."
+        run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
+      - name: Push build to deployment branch.
+        run: |
+          cd ${GITHUB_WORKSPACE}/build/
+          git status
+          git config --global user.name '${{ github.event.pusher.name }}'
+          git config --global user.email '${{ github.event.pusher.email }}'
+          git add -A
+          git push origin main:main--built
+          git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
