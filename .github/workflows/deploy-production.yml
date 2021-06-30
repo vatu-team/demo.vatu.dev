@@ -52,23 +52,18 @@ jobs:
       - name: "Check for built branch."
         run: |
            echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
-           echo "${{ env.ls_remote }}"
-      - name: "Return Var"
-        run: |
-          echo ${{ env.ls_remote }}
       - name: "Creating a main--built branch."
         if: ${{ env.ls_remote == 0 }}
         run: |
-          echo "Result: 0"
-      # echo -e "\nCreating a main--built branch..."
-      # git checkout --quiet --orphan main--built
-      # pwd
+          cd ${GITHUB_WORKSPACE}/build/
+          git checkout --quiet --orphan main--built
+          git status
       - name: "Using existing main--built branch"
         if: ${{ env.ls_remote == 1 }}
         run: |
-          echo "Result: 1"
-      #     git fetch origin main--built --depth=1
-      #     git checkout --quiet main--built
+          git fetch origin main--built --depth=1
+          git checkout --quiet main--built
+          git status
       # - name: "Rsync files to build directory"
       #   run: |
       #     rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
