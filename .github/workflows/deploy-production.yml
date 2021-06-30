@@ -49,12 +49,12 @@ jobs:
           git branch -m "main-build"
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
           #git ls-remote --heads ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+      - name: "Check for built branch."
+        run: echo 'GIT_LS_REMOTE=$(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l)'
       - name: "Creating a main--built branch."
-        env:
-          GIT_LS_REMOTE: git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l
         #if: contains( ${GIT_LS_REMOTE}, 0 )
         run: |
-          echo "Test: $GIT_LS_REMOTE"
+          echo "Test: ${GIT_LS_REMOTE}"
       # echo -e "\nCreating a main--built branch..."
       # git checkout --quiet --orphan main--built
       # pwd
