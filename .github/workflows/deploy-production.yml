@@ -63,7 +63,7 @@ jobs:
           git checkout --quiet main--built
       - name: "Rsync files to build directory"
         run: |
-          rsync --delete -a --exclude={'.git/','build/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/"
+          rsync --delete -a --exclude={'.git','build/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/"
           ls -a ${GITHUB_WORKSPACE}/build/
       # - name: "Remove `.gitignore` file"
       #   run: rm ${GITHUB_WORKSPACE}/build/.gitignore
