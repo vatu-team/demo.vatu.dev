@@ -8,22 +8,37 @@ error_log
 ## Docker
 /.docker/*
 
+## Tools
+
+/.bin
+/.github
+/.phive
+/shared
+/tools
+/.editorconfig
+/.gitattributes
+phpcs.xml
+phpmd.xml
+readme.md
+readme.txt
+
 ## NodeJS
 /node_modules/*
+/package.json
 /package-lock.json
 
 # Server
 .env
 .env.*
-!/.env.example
+.env.example
 *.log
 
 # Applications
 
 ## Composer
 auth.json
+composer.json
 composer.lock
-/vendor
 
 ## Config
 /config/environments/local.php
@@ -34,24 +49,16 @@ composer.lock
 /public/app/upgrade
 /public/app/uploads/*
 /public/app/wflogs/*
-/public/wp/
-/public/.htaccess
 /public/app/advanced-cache.php
-/public/app/db.php
+/public/db.php
 /public/app/object-cache.php
+/public/wp/wp-content/akismet/
+/pubilc/wp/wp-content/hello.php
+/public/wp/wp-content/themes/twentynineteen/
+/public/wp/wp-content/themes/twentytwenty/
+/public/wp/wp-content/themes/twentytwentyone/
 
-!/public/app/uploads/.gitkeep
-
-## Plugins
-/public/app/plugins/*
-!/public/app/plugins/index.php
-/public/app/mu-plugins/*
-!/public/app/mu-plugins/index.php
-
-## Themes
-/public/app/themes/*
-!/public/app/themes/index.php
-!/public/app/themes/demo/
+## Theme
 
 ## WPCLI
 wp-cli.local.yml

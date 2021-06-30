@@ -1,0 +1,71 @@
+# Vatu QA Sniffs
+# Version: 0.1.0
+
+name: Run QA Sniffs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  # Performs code sniffer checks against our codebase.
+  #
+  # Performs the following steps:
+  # - Checks out the repository.
+  # - Sets up Caching.
+  # - Sets up PHP with PHIVE.
+  # - Logs PHIVE debug information.
+  # - Installs PHIVE packages (use cahce if possible).
+  # - Installs WordPress Coding Standards.
+  # - Installs PHP Compatability Standards.
+  # - Installs PHP Compatability Paragonie Standard.
+  # - Installs PHP Compatability WP Standards.
+  # - Installs WordPress Theme Review Standards.
+  # - Sets PHPCS config `installed_paths`.
+  # - Logs PHPCS debug information.
+  # - Run PHPCS on project specific files.
+  sniffs:
+    name: Run QA sniffs
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checks out the repository."
+        uses: "actions/checkout@v2"
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2.1.2"
+        with:
+          path: "$HOME/.phive"
+          key: "${{ runner.os }}-php-${{ hashFiles('.phive/phars.xml') }}"
+          restore-keys: "${{ runner.os }}-php-"
+      - name: Sets up PHP with PHIVE.
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: phive
+      - name: Logs PHIVE debug information.
+        run: phive --version
+      - name: Installs PHIVE packages (use cache if possible).
+        run: phive install --trust-gpg-keys "0F9684B8B16B7AB0,4AA394086372C20A,31C7E470E2138192,CBB3D576F2A0946F"
+      - name: Installs WordPress Coding Standards.
+        run: git clone -b master https://github.com/WordPress/WordPress-Coding-Standards.git --branch 2.3.0 ./tools/wpcs
+      - name: Installs PHP Compatability Standards.
+        run: git clone -b master https://github.com/PHPCompatibility/PHPCompatibility.git --branch 9.3.5 ./tools/phpcompatibility
+      - name: Installs PHP Compatability Paragonie Standards.
+        run: git clone -b master https://github.com/PHPCompatibility/PHPCompatibilityParagonie.git --branch 1.3.1 ./tools/phpcompatibilityparagonie
+      - name: Installs PHP Compatability WP Standards.
+        run: git clone -b master https://github.com/PHPCompatibility/PHPCompatibilityWP.git --branch 2.1.1 ./tools/phpcompatibilitywp
+      - name: Installs WordPress Theme Review Standards.
+        run: git clone -b master https://github.com/WPTT/WPThemeReview.git --branch 0.2.1 ./tools/wpthemereview
+      - name: Sets PHPCS config `installed_paths`.
+        run: |
+          ls ${GITHUB_WORKSPACE}
+          php ./tools/phpcs --config-set installed_paths ${GITHUB_WORKSPACE}/tools/wpcs,${GITHUB_WORKSPACE}/tools/phpcompatibility,${GITHUB_WORKSPACE}/tools/phpcompatibilityparagonie/PHPCompatibilityParagonieRandomCompat,${GITHUB_WORKSPACE}/tools/phpcompatibilityparagonie/PHPCompatibilityParagonieSodiumCompat,${GITHUB_WORKSPACE}/tools/phpcompatibilitywp,${GITHUB_WORKSPACE}/tools/wpthemereview
+      - name: Logs PHPCS debug information.
+        run: |
+          php ./tools/phpcs --version
+          php ./tools/phpcs -i
+      - name: Run PHPCS on project specific files.
+        run: php ./tools/phpcs -p -s -v --standard=phpcs.xml --runtime-set testVersion 7.3- ./

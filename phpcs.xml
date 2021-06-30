@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<ruleset name="WP">
+
+	<description>WordPress Coding Standards.</description>
+
+	<file>./</file>
+
+	<config name="testVersion" value="7.3-" />
+	<config name="minimum_supported_wp_version" value="5.7" />
+
+	<!-- Exclude source code we do not control. -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/tools/*</exclude-pattern>
+	<exclude-pattern>/config/*</exclude-pattern>
+	<exclude-pattern>/public/index.php</exclude-pattern>
+	<exclude-pattern>/public/wp-config.php</exclude-pattern>
+
+	<!-- Ignore empty files. -->
+	<rule ref="Internal.NoCodeFound">
+			<severity>0</severity>
+	</rule>
+
+	<!-- Set default config. Can be overwritten. -->
+	<config name="colors" value="1" />
+	<config name="show_progress" value="1" />
+	<arg name="parallel" value="8"/>
+
+	<!-- Only test PHP files. -->
+	<arg name="extensions" value="php" />
+
+	<!-- Include the WordPress Theme Review ruleset, with exclusions. -->
+	<rule ref="WPThemeReview">
+		<file>public/app/themes/demo/</file>
+	</rule>
+
+	<rule ref="WordPress">
+
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="wordpress" />
+				<element value="demo" />
+			</property>
+		</properties>
+
+		<!-- Excludes as we only need to support PHP 7.3+ -->
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+
+		<!--<file>public/app/plugin/demo/</file>-->
+		<file>public/app/themes/demo/</file>
+
+	</rule>
+
+	<!-- Include sniffs for PHP cross-version compatibility. -->
+	<rule ref="PHPCompatibilityWP">
+		<config name="testVersion" value="7.3-" />
+		<!--<file>public/app/plugin/demo/</file>-->
+		<file>public/app/themes/demo/</file>
+	</rule>
+
+</ruleset>

@@ -80,6 +80,14 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 $(npm bin)/cypress open --config baseUrl=http://www.demo.test/
 ```
 
+## Deploying
+
+### Git Based Deployment.
+
+Deployable branches should be appended with `-built` (eg. `main-built`). For development environments this could be`develop-built`.
+
+You should never push code to built branches. All code should be pushed to the corrisponding branch. Where the built branch will pull from.
+
 ## Contributing
 
 To contribute to this project:
