@@ -52,7 +52,7 @@ jobs:
       - name: "Check for built branch."
         run: |
           echo 'GIT_LS_REMOTE=$(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l)' >> $GITHUB_ENV
-          echo ${ env.GIT_LS_REMOTE }
+          echo env.GIT_LS_REMOTE
       - name: "Creating a main--built branch."
         if: env.GIT_LS_REMOTE
         run: |
