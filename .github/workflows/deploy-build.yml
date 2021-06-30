@@ -85,4 +85,4 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}/build/
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          git push origin main:main--built
+          git push origin main--built
