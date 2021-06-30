@@ -51,20 +51,20 @@ jobs:
           #git ls-remote --heads ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Check for built branch."
         run: |
-          GIT_LS_REMOTE=$(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l)
-          echo $GIT_LS_REMOTE
+           echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
+           echo "${{ env.ls_remote }}"
       - name: "Return Var"
         run: |
-          echo $GIT_LS_REMOTE
+          echo ${{ env.ls_remote }}
       - name: "Creating a main--built branch."
-        if: ${{ env.GIT_LS_REMOTE == 0 }}
+        if: ${{ env.ls_remote == 0 }}
         run: |
           echo "Result: 0"
       # echo -e "\nCreating a main--built branch..."
       # git checkout --quiet --orphan main--built
       # pwd
       - name: "Using existing main--built branch"
-        if: ${{ env.GIT_LS_REMOTE == 1 }}
+        if: ${{ env.ls_remote == 1 }}
         run: |
           echo "Result: 1"
       #     git fetch origin main--built --depth=1
