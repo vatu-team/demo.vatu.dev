@@ -52,34 +52,33 @@ jobs:
       - name: "Check for built branch."
         run: echo 'GIT_LS_REMOTE=$(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l)'
       - name: "Creating a main--built branch."
-        #if: contains( ${GIT_LS_REMOTE}, 0 )
+        if: contains( ${GIT_LS_REMOTE}, 0 )
         run: |
-          echo "Test: ${GIT_LS_REMOTE}"
+          echo "Result: 0"
       # echo -e "\nCreating a main--built branch..."
       # git checkout --quiet --orphan main--built
       # pwd
-      # - name: "Using existing main--built branch"
-      #   if: contains(git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l, 1 )
-      #   run: |
-      #     echo "Using existing main--built branch"
+      - name: "Using existing main--built branch"
+        if: contains( ${GIT_LS_REMOTE}, 1)
+        run: |
+          echo "Result: 1"
       #     git fetch origin main--built --depth=1
       #     git checkout --quiet main--built
-      #     pwd
-      - name: "Rsync files to build directory"
-        run: |
-          rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
-          ls -a ${GITHUB_WORKSPACE}/build/
-      - name: "Remove `.gitignore` file"
-        run: rm ${GITHUB_WORKSPACE}/build/.gitignore
-      - name: "Setup deploy ignore files."
-        run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
-      - name: "List directory"
-        run: ls -a ${GITHUB_WORKSPACE}/build/
-      - name: Push to built to deployment branch
-        run: |
-          cd ${GITHUB_WORKSPACE}/build/
-          git config --global user.name '${{ github.event.pusher.name }}'
-          git config --global user.email '${{ github.event.pusher.email }}'
-          git status
-          #git commit -am "Deploy"
-          #git push origin main:main--built
+      # - name: "Rsync files to build directory"
+      #   run: |
+      #     rsync --delete -a "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/" --exclude='${GITHUB_WORKSPACE}/.git/' '${GITHUB_WORKSPACE}/build/'
+      #     ls -a ${GITHUB_WORKSPACE}/build/
+      # - name: "Remove `.gitignore` file"
+      #   run: rm ${GITHUB_WORKSPACE}/build/.gitignore
+      # - name: "Setup deploy ignore files."
+      #   run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
+      # - name: "List directory"
+      #   run: ls -a ${GITHUB_WORKSPACE}/build/
+      # - name: Push to built to deployment branch
+      #   run: |
+      #     cd ${GITHUB_WORKSPACE}/build/
+      #     git config --global user.name '${{ github.event.pusher.name }}'
+      #     git config --global user.email '${{ github.event.pusher.email }}'
+      #     git status
+      #     #git commit -am "Deploy"
+      #     #git push origin main:main--built
