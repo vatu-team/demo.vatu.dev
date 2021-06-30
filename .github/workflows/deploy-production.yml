@@ -51,7 +51,7 @@ jobs:
           #git ls-remote --heads ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Creating a main--built branch."
         env:
-          GIT_LS_REMOTE: 0
+          GIT_LS_REMOTE: git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l
         #if: contains( ${GIT_LS_REMOTE}, 0 )
         run: |
           echo "Test: $GIT_LS_REMOTE"
