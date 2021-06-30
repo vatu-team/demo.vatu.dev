@@ -64,13 +64,12 @@ jobs:
       - name: "Rsync files to build directory"
         run: |
           rsync --delete -a --exclude={'.git','build/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/"
-          ls -a ${GITHUB_WORKSPACE}/build/
-      # - name: "Remove `.gitignore` file"
-      #   run: rm ${GITHUB_WORKSPACE}/build/.gitignore
-      # - name: "Setup deploy ignore files."
-      #   run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
-      # - name: "List directory"
-      #   run: ls -a ${GITHUB_WORKSPACE}/build/
+      - name: "Remove `.gitignore` file"
+        run: rm ${GITHUB_WORKSPACE}/build/.gitignore
+      - name: "Setup deploy ignore files."
+        run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
+      - name: "List directory"
+        run: ls -a ${GITHUB_WORKSPACE}/build/
       # - name: Push to built to deployment branch
       #   run: |
       #     cd ${GITHUB_WORKSPACE}/build/
