@@ -71,15 +71,11 @@ jobs:
         run: rm ${GITHUB_WORKSPACE}/build/.gitignore
       - name: "Setup deploy ignore files."
         run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
-      - name: Check status.
-        run: |
-          cd ${GITHUB_WORKSPACE}/build/
-          git add -A
-          git status
       - name: Push build to deployment branch.
         run: |
           cd ${GITHUB_WORKSPACE}/build/
           git config --global user.name '${{ github.event.pusher.name }}'
           git config --global user.email '${{ github.event.pusher.email }}'
-          git commit -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          git push origin main--built
+          git config list
+          git commit -am "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          git push origin main--built:main--built
