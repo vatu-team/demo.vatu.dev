@@ -46,10 +46,7 @@ jobs:
         run: composer install --no-dev --no-interaction --prefer-dist
       - name: "Make the build directory."
         run: |
-          git init "${GITHUB_WORKSPACE}/build/"
-          cd ${GITHUB_WORKSPACE}/build/
-          git branch -m "main--built"
-          git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+          mkdir ${GITHUB_WORKSPACE}/build/
       - name: "Check built branch exists."
         run: |
            echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
@@ -57,12 +54,14 @@ jobs:
         if: ${{ env.ls_remote == 0 }}
         run: |
           cd ${GITHUB_WORKSPACE}/build/
-          git checkout --quiet --orphan main--built
-          git status
+          git init
+          git branch -m "main--built"
+          git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Using existing main--built branch."
         if: ${{ env.ls_remote == 1 }}
         run: |
           cd ${GITHUB_WORKSPACE}/build/
+          git clone ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
           git fetch origin main--built --depth=1
           git checkout --quiet main--built
       - name: "Rsync files to build directory."
