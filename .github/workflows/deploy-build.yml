@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'fix/deploy-build'
   workflow_dispatch:
 
 jobs:
@@ -47,7 +48,7 @@ jobs:
         run: |
           git init "${GITHUB_WORKSPACE}/build/"
           cd ${GITHUB_WORKSPACE}/build/
-          git branch -m "main-build"
+          git branch -m "main--built"
           git remote add origin ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
       - name: "Check built branch exists."
         run: |
@@ -71,18 +72,15 @@ jobs:
         run: rm ${GITHUB_WORKSPACE}/build/.gitignore
       - name: "Setup deploy ignore files."
         run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
-      - name: Push build to deployment branch.
-        run: |
-          cd ${GITHUB_WORKSPACE}/build/
-          git config --global user.name '${{ github.event.pusher.name }}'
-          git config --global user.email '${{ github.event.pusher.email }}'
       - name: Check status.
         run: |
           cd ${GITHUB_WORKSPACE}/build/
           git add -A
           git status
-      - name: Git commit.
+      - name: Push build to deployment branch.
         run: |
           cd ${GITHUB_WORKSPACE}/build/
-          git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          git config --global user.name '${{ github.event.pusher.name }}'
+          git config --global user.email '${{ github.event.pusher.email }}'
+          git commit -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           git push origin main--built
