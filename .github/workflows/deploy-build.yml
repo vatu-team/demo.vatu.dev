@@ -60,12 +60,11 @@ jobs:
 
       - name: "Check built branch exists."
         run: |
-           echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
+           echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" ${{ env.ls_remote }}--built | wc -l )" >> $GITHUB_ENV
 
       - name: "Checkout copy of repository."
         uses: actions/checkout@v2
         with:
-          ref: main
           path: ./built
         if: ${{ env.ls_remote == 0 }}
 
@@ -73,13 +72,13 @@ jobs:
         if: ${{ env.ls_remote == 0 }}
         run: |
           cd ${GITHUB_WORKSPACE}/built/
-          git checkout --orphan "main--built"
+          git checkout --orphan "${{ env.ls_remote }}--built"
           git rm --cached -r .
 
       - name: "Using existing `--built` branch."
         uses: actions/checkout@v2
         with:
-          ref: main--built
+          ref: ${{ env.ls_remote }}--built
           path: ./built
         if: ${{ env.ls_remote == 1 }}
 
