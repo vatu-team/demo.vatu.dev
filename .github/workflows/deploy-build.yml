@@ -66,7 +66,7 @@ jobs:
       - name: "Creating a `--built` branch 2."
         if: ${{ env.ls_remote == 0 }}
         run: |
-          cd ${GITHUB_WORKSPACE}/build/
+          cd ${GITHUB_WORKSPACE}/built/
           git branch -m "main--built"
 
       - name: "Using existing `--built` branch."
@@ -78,17 +78,17 @@ jobs:
 
       - name: "Rsync files to build directory."
         run: |
-          rsync --delete -a --exclude={'.git','build/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/build/"
+          rsync --delete -a --exclude={'.git','built/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
 
       - name: "Remove `.gitignore` file."
-        run: rm ${GITHUB_WORKSPACE}/build/.gitignore
+        run: rm ${GITHUB_WORKSPACE}/built/.gitignore
 
       - name: "Setup deploy ignore files."
-        run: mv ${GITHUB_WORKSPACE}/build/.deployignore ${GITHUB_WORKSPACE}/build/.gitignore
+        run: mv ${GITHUB_WORKSPACE}/built/.deployignore ${GITHUB_WORKSPACE}/built/.gitignore
 
       - name: Push build to deployment branch.
         run: |
-          cd ${GITHUB_WORKSPACE}/build/
+          cd ${GITHUB_WORKSPACE}/built/
           git config --global user.name '${{ github.event.pusher.name }}'
           git config --global user.email '${{ github.event.pusher.email }}'
           git add -A
