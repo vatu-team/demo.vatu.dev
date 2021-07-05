@@ -4,9 +4,6 @@
 name: Run QA Sniffs
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch:
