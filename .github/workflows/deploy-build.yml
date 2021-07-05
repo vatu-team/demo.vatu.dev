@@ -1,13 +1,18 @@
 # Vatu Deploy
 # Version: 1.0.0
+# Author: Michael Bragg <mike@vatu.co.uk>
 
 name: Deploy Build
+
+# All branches push to a `{current_branch_name}--built` branch.
+# This new branch can be connected to a Git deployment process.
+# To add extra deployment branches, add a new starting point to the allow branches.
 
 on:
   push:
     branches:
       - 'main'
-      - 'fix/deploy-build'
+      - 'develop'
   workflow_dispatch:
 
 jobs:
@@ -35,12 +40,6 @@ jobs:
       - name: "Get current branch name."
         run : |
           echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-
-      - name: "test branch name"
-        run: |
-          echo ${{ env.branch_name }}
-          echo "Branch: ${{ env.branch_name }}--built"
-          echo "Branch: $branch_name--built"
 
       - name: "Checks out the repository."
         uses: actions/checkout@v2
