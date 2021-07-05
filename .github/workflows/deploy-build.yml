@@ -79,7 +79,7 @@ jobs:
       - name: "Using existing `--built` branch."
         uses: actions/checkout@v2
         with:
-          ref: ${{ env.ls_remote }}--built
+          ref: ${{ env.branch_name }}--built
           path: ./built
         if: ${{ env.ls_remote == 1 }}
 
