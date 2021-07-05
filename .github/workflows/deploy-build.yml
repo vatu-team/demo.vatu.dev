@@ -34,17 +34,14 @@ jobs:
 
       - name: "Get current branch name."
         run : |
-          echo "$(${GITHUB_REF#refs/heads/})"
-          echo "branch_name=$( ${GITHUB_REF#refs/heads/} )" >> $GITHUB_ENV
+          echo "${GITHUB_REF#refs/heads/}"
+          echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
 
       - name: "test branch name"
         run: |
+          echo ${{ env.branch_name }}
           echo "Branch: ${{ env.branch_name }}--built"
-          echo "Branch: ${ env.branch_name }--built"
           echo "Branch: $branch_name--built"
-
-      - name: "Checks out the repository."
-        uses: actions/checkout@v2
 
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
