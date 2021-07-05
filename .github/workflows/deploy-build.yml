@@ -48,9 +48,6 @@ jobs:
       - name: "Install Composer dependencies with no dev option"
         run: composer install --no-dev --no-interaction --prefer-dist
 
-      # - name: "Make the build directory."
-      #   run: |
-      #     mkdir ${GITHUB_WORKSPACE}/build/
 
       - name: "Check built branch exists."
         run: |
@@ -93,5 +90,6 @@ jobs:
           git config --global user.name '${{ github.event.pusher.name }}'
           git config --global user.email '${{ github.event.pusher.email }}'
           git add -A
-          git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "Build changes from ${GITHUB_SHA}\n\n${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
+          git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
           git push origin main--built:main--built
