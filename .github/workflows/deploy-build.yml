@@ -39,7 +39,9 @@ jobs:
 
       - name: "test branch name"
         run: |
-          echo "Branch: ${{env.branch_name}}--built"
+          echo "Branch: ${{ env.branch_name }}--built"
+          echo "Branch: ${ env.branch_name }--built"
+          echo "Branch: $branch_name--built"
 
       - name: "Checks out the repository."
         uses: actions/checkout@v2
