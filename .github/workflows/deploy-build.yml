@@ -34,7 +34,8 @@ jobs:
 
       - name: "Get current branch name."
         run : |
-          echo "branch_name=$( ${GITHUB_REF#refs/heads/} )" >> $GITHUB_ENV
+          echo "$(echo ${GITHUB_REF#refs/heads/})"
+          echo "branch_name=$( echo ${GITHUB_REF#refs/heads/} )" >> $GITHUB_ENV
 
       - name: "test branch name"
         run: echo ${{ env.ls_remote }}
