@@ -48,7 +48,6 @@ jobs:
       - name: "Install Composer dependencies with no dev option"
         run: composer install --no-dev --no-interaction --prefer-dist
 
-
       - name: "Check built branch exists."
         run: |
            echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
@@ -92,4 +91,4 @@ jobs:
           git add -A
           MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
-          git push origin main--built:main--built
+          git push
