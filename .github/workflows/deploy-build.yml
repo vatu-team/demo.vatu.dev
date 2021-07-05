@@ -31,6 +31,14 @@ jobs:
     name: Deploy Build
     runs-on: ubuntu-latest
     steps:
+
+      - name: "Get current branch name."
+        run : |
+          echo "branch_name=$( ${GITHUB_REF#refs/heads/} )" >> $GITHUB_ENV
+
+      - name: "test branch name"
+        run: echo ${{ env.ls_remote }}
+
       - name: "Checks out the repository."
         uses: actions/checkout@v2
 
