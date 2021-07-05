@@ -21,7 +21,7 @@ jobs:
   # - @TODO: Install NPM dependencies.
   # - Make the build directory.
   # - Check built branch exists.
-  # - Creating a *--built branch. | Using existing *--built branch
+  # - Checkout copy of repository. && Creating a *--built branch. || Using existing *--built branch
   # - Rsync files to build directory.
   # - Remove `.gitignore` file.
   # - Setup deploy ignore files.
@@ -52,12 +52,15 @@ jobs:
         run: |
            echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
 
-      - name: "Creating a `--built` branch."
-        if: ${{ env.ls_remote == 0 }}
+      - name: "Checkout copy of repository."
         uses: actions/checkout@v2
         with:
           ref: main
           path: ./built
+        if: ${{ env.ls_remote == 0 }}
+
+      - name: "Creating a `--built` branch."
+        if: ${{ env.ls_remote == 0 }}
         run: |
           cd ${GITHUB_WORKSPACE}/built/
           git checkout --orphan "main--built"
