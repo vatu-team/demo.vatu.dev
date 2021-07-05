@@ -52,15 +52,12 @@ jobs:
         run: |
            echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" main--built | wc -l )" >> $GITHUB_ENV
 
-      - name: "Checkout copy of repository."
+      - name: "Creating a `--built` branch."
+        if: ${{ env.ls_remote == 0 }}
         uses: actions/checkout@v2
         with:
           ref: main
           path: ./built
-        if: ${{ env.ls_remote == 0 }}
-
-      - name: "Creating a `--built` branch."
-        if: ${{ env.ls_remote == 0 }}
         run: |
           cd ${GITHUB_WORKSPACE}/built/
           git checkout --orphan "main--built"
