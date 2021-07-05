@@ -37,6 +37,10 @@ jobs:
           echo "$(${GITHUB_REF#refs/heads/})"
           echo "branch_name=$( ${GITHUB_REF#refs/heads/} )" >> $GITHUB_ENV
 
+      - name: "test branch name"
+        run: |
+          echo "Branch: ${{env.branch_name}}--built"
+
       - name: "Checks out the repository."
         uses: actions/checkout@v2
 
