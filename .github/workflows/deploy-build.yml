@@ -38,7 +38,8 @@ jobs:
           echo "branch_name=$( echo ${GITHUB_REF#refs/heads/} )" >> $GITHUB_ENV
 
       - name: "test branch name"
-        run: echo ${{ env.ls_remote }}
+        run: |
+          echo "Branch: ${{ env.ls_remote }}"
 
       - name: "Checks out the repository."
         uses: actions/checkout@v2
