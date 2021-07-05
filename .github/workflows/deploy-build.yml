@@ -54,6 +54,7 @@ jobs:
         run: |
           php --version
           composer --version
+          echo Current Branch: ${{ env.branch_name }}
 
       - name: "Install Composer dependencies with no dev option"
         run: composer install --no-dev --no-interaction --prefer-dist
