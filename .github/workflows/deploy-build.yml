@@ -67,7 +67,7 @@ jobs:
         if: ${{ env.ls_remote == 0 }}
         run: |
           cd ${GITHUB_WORKSPACE}/built/
-          git branch -m "main--built"
+          git checkout --orphan "main--built"
 
       - name: "Using existing `--built` branch."
         uses: actions/checkout@v2
