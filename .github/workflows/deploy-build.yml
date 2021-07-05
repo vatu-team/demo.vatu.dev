@@ -37,7 +37,7 @@ jobs:
       - name: Checkout built branch
         uses: actions/checkout@v2
         with:
-          ref: main--built
+          ref: main
           path: ./built
 
       - name: "Debug repos"
