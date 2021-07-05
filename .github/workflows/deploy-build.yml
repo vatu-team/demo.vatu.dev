@@ -62,9 +62,6 @@ jobs:
           ref: main
           path: ./built
         if: ${{ env.ls_remote == 0 }}
-        run: |
-          cd ${GITHUB_WORKSPACE}/build/
-          git branch -m "main--built"
 
       - name: "Creating a `--built` branch 2."
         if: ${{ env.ls_remote == 0 }}
@@ -78,8 +75,6 @@ jobs:
           ref: main--built
           path: ./built
         if: ${{ env.ls_remote == 1 }}
-        run: |
-          ls -a
 
       - name: "Rsync files to build directory."
         run: |
