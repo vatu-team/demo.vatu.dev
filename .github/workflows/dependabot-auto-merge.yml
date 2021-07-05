@@ -1,0 +1,23 @@
+# Vatu: Dependabot Auto Merge
+# Version: 0.1.0
+# Author: Michael Bragg <mike@vatu.co.uk>
+
+name: Dependabot Auto Merge
+
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+    branches:
+      - 'dependabot/**'
+
+jobs:
+
+# Dependabot Auto Merge.
+#
+# Performs the following steps:
+# - Show when worflow is run.
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Show when worflow is run."
+        run: echo "Run on `pull_request`."
