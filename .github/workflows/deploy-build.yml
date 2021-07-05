@@ -39,10 +39,12 @@ jobs:
         with:
           php-version: '7.4'
           tools: composer
+
       - name: "Logs debug information."
         run: |
           php --version
           composer --version
+
       - name: "Install Composer dependencies with no dev option"
         run: composer install --no-dev --no-interaction --prefer-dist
 
@@ -64,10 +66,16 @@ jobs:
           cd ${GITHUB_WORKSPACE}/build/
           git branch -m "main--built"
 
+      - name: "Creating a `--built` branch 2."
+        if: ${{ env.ls_remote == 0 }}
+        run: |
+          cd ${GITHUB_WORKSPACE}/build/
+          git branch -m "main--built"
+
       - name: "Using existing `--built` branch."
         uses: actions/checkout@v2
         with:
-          ref: main
+          ref: main--built
           path: ./built
         if: ${{ env.ls_remote == 1 }}
         run: |
