@@ -6,7 +6,13 @@
 name: Dependabot Auto Merge
 
 on:
-  pull_request
+  pull_request_target:
+    types: [assigned, opened, synchronize, reopened]
+  workflow_run:
+    workflows:
+     - "Run QA Sniffs"
+    types:
+      - completed
 
 jobs:
 
@@ -14,13 +20,17 @@ jobs:
 #
 # Performs the following steps:
 # - Show when worflow is run.
-  auto-merge:
+  on-success:
     runs-on: ubuntu-latest
 
+    # Only run if the creator is Dependabot.
     if: github.actor == 'dependabot[bot]'
 
+    # Only run if the previous workflow was successful.
+    #if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
-      - uses: actions/github-script@v3
+      - uses: actions/github-script@v4
         with:
           script: |
             github.pulls.createReview({
@@ -33,5 +43,5 @@ jobs:
               owner: context.payload.repository.owner.login,
               repo: context.payload.repository.name,
               pull_number: context.payload.pull_request.number,
-              merge_method: 'squash'
+              merge_method: 'rebase'
             })
