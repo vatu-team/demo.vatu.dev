@@ -6,7 +6,6 @@
 name: "Dependabot"
 
 on:
-
   workflow_run:
     workflows:
      - "Run QA Sniffs"
