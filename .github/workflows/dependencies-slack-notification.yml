@@ -8,10 +8,9 @@ name: "Slack Notifications"
 on:
   workflow_run:
     workflows:
-      - "Dependabot Auto Merge"
+      - "Dependabot"
     types:
       - completed
-  workflow_dispatch:
 
 jobs:
   slackNotification:
