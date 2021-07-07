@@ -1,7 +1,7 @@
 # Vatu QA Sniffs
 # Version: 0.1.0
 
-name: "Run QA Sniffs"
+name: "Run Code QA"
 
 on:
   pull_request:
@@ -24,8 +24,8 @@ jobs:
   # - Sets PHPCS config `installed_paths`.
   # - Logs PHPCS debug information.
   # - Run PHPCS on project specific files.
-  sniffs:
-    name: "Run QA sniffs"
+  phpcs:
+    name: "Run PHP Code Sniffer"
     runs-on: ubuntu-latest
     steps:
       - name: "Checks out the repository."
