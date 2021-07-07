@@ -1,0 +1,37 @@
+# Vatu: Dependabot Auto Merge
+# Version: 0.1.0
+# Author: Artem Sapegin
+# Link: https://blog.sapegin.me/til/misc/automatically-merging-dependabot-security-pull-requests-using-github-actions/
+
+name: Dependabot Auto Merge
+
+on:
+  pull_request
+
+jobs:
+
+# Dependabot Auto Merge.
+#
+# Performs the following steps:
+# - Show when worflow is run.
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    if: github.actor == 'dependabot[bot]'
+
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          script: |
+            github.pulls.createReview({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: context.payload.pull_request.number,
+              event: 'APPROVE'
+            })
+            github.pulls.merge({
+              owner: context.payload.repository.owner.login,
+              repo: context.payload.repository.name,
+              pull_number: context.payload.pull_request.number,
+              merge_method: 'squash'
+            })
