@@ -15,6 +15,7 @@ error_log
 # Server
 .env
 .env.*
+*.env
 !/.env.example
 *.log
 
