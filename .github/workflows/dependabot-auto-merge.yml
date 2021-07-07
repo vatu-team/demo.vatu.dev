@@ -9,6 +9,12 @@ on:
     types: [ opened, synchronize ]
     branches:
       - 'dependabot/**'
+      - 'dependabot/**/**'
+  pull_request:
+    types: [ opened, synchronize ]
+    branches:
+      - 'dependabot/**'
+      - 'dependabot/**/**'
 
 jobs:
 
