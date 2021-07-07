@@ -1,7 +1,7 @@
 # Vatu QA Sniffs
 # Version: 0.1.0
 
-name: Run QA Sniffs
+name: "Run QA Sniffs"
 
 on:
   pull_request:
@@ -26,7 +26,7 @@ jobs:
   # - Logs PHPCS debug information.
   # - Run PHPCS on project specific files.
   sniffs:
-    name: Run QA sniffs
+    name: "Run QA sniffs"
     runs-on: ubuntu-latest
     steps:
       - name: "Checks out the repository."
