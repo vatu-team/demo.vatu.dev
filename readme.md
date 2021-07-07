@@ -43,7 +43,7 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 │   │   └── languages
 │   └── wp
 ├── vendor
-├── .env.example
+├── example.env
 ├── package.json
 └── composer.json
 
@@ -53,7 +53,7 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 - `/public/app/` contains WordPress dependencies.
 - `/vendor` is where the Composer managed dependencies are installed to.
 - `composer.json` loads the PHP dependencies for this project.
-- `.env.example` sampled file with our environment variables are set.
+- `example.env` sampled file with our environment variables are set.
 
 ## Setup
 

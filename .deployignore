@@ -30,7 +30,7 @@ readme.txt
 # Server
 .env
 .env.*
-.env.example
+example.env
 *.log
 
 # Applications
