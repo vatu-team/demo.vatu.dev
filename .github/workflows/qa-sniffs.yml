@@ -1,5 +1,6 @@
 # Vatu QA Sniffs
 # Version: 0.1.0
+# Author: Michael Bragg <mike@vatu.co.uk>
 
 name: "Run Code QA"
 
