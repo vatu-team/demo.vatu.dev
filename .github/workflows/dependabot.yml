@@ -6,10 +6,10 @@
 name: "Dependabot"
 
 on:
-  pull_request_target:
+  #pull_request_target:
   workflow_run:
     workflows:
-     - "Run QA Sniffs"
+     - "Run Code QA"
     types:
       - completed
       - requested
