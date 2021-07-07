@@ -6,13 +6,13 @@
 name: "Dependabot"
 
 on:
-  #pull_request_target:
   workflow_run:
     workflows:
      - "Run Code QA"
     types:
       - completed
       - requested
+  pull_request_target:
 
 jobs:
 
