@@ -10,7 +10,7 @@ on:
     types: [assigned, opened, synchronize, reopened]
   workflow_run:
     workflows:
-     - "Run QA Sniffs"
+     - "Dependabot Auto Merge - Slack Notification"
     types:
       - completed
 

@@ -6,7 +6,11 @@ name: "Run QA Sniffs"
 on:
   pull_request:
     types: [opened, synchronize]
-  workflow_dispatch:
+  workflow_run:
+    workflows:
+     - "Dependabot Auto Merge"
+    types:
+      - completed
 
 jobs:
   # Performs code sniffer checks against our codebase.

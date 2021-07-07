@@ -8,11 +8,6 @@ name: "Dependabot Auto Merge - Slack Notification"
 on:
   pull_request_target:
     types: [assigned, opened, synchronize, reopened]
-  workflow_run:
-    workflows:
-     - "Dependabot Auto Merge"
-    types:
-      - completed
 
 jobs:
   slackNotification:
