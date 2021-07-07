@@ -26,7 +26,7 @@ jobs:
         env:
           SLACK_COLOR: ${{ job.status }} # or a specific color like 'green' or '#ff00ff'
           SLACK_ICON: https://avatars.githubusercontent.com/in/29110?s=88&v=4
-          SLACK_MESSAGE: "${GITHUB_REF#refs/heads/} has been updated on ${ GITHUB_REPOSITORY }"
+          SLACK_MESSAGE: ${GITHUB_REF#refs/heads/}
           SLACK_TITLE: "Dependabot Auto Merge"
           SLACK_USERNAME: "Dependabot"
           MSG_MINIMAL: true
