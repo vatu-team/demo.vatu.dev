@@ -11,6 +11,8 @@ on:
      - "Run QA Sniffs"
     types:
       - completed
+      - requested
+    branches: [ '*' ]
     # pull_request_target:
     #   types:
     #     - opened

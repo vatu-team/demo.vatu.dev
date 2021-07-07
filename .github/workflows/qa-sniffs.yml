@@ -6,6 +6,7 @@ name: "Run Code QA"
 on:
   pull_request:
     types: [opened, synchronize]
+  workflow_dispatch:
 
 jobs:
   # Performs code sniffer checks against our codebase.
