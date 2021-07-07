@@ -8,11 +8,9 @@ name: "Dependabot"
 on:
   workflow_run:
     workflows:
-     - "Run Code QA"
+      - "Run Code QA"
     types:
       - completed
-      - requested
-  pull_request_target:
 
 jobs:
 
@@ -25,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Only run if the creator is Dependabot.
-    #if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'dependabot[bot]'
 
     steps:
       - name: "Auto Merge Pull Request."
