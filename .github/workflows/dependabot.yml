@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Only run if the creator is Dependabot.
-    if: github.actor == 'dependabot[bot]'
+    #if: github.actor == 'dependabot[bot]'
 
     # Only run if the previous workflow was successful.
     #if: ${{ github.event.workflow_run.conclusion == 'success' }}
