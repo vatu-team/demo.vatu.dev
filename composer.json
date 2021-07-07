@@ -65,7 +65,7 @@
   },
   "scripts": {
     "post-root-package-install": [
-        "php -r \"copy('.env.example', '.env');\""
+        "php -r \"copy('example.env', '.env');\""
     ],
     "test-phpcbf": "./toolsphpcbf -p --standard=phpcs.xml ./",
     "test-phpcs": "./tools/phpcs -p -s --standard=phpcs.xml --runtime-set testVersion 7.4- ./",

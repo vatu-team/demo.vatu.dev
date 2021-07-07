@@ -8,6 +8,7 @@
 /node_modules	linguist-vendored
 /vendor	linguist-vendored
 
+/example.env linguist-vendored
 /composer.json	linguist-vendored
 /cypress.json	linguist-vendored
 /package.json	linguist-vendored
