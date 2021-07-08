@@ -3,14 +3,17 @@
 # Author: Artem Sapegin
 # Link: https://blog.sapegin.me/til/misc/automatically-merging-dependabot-security-pull-requests-using-github-actions/
 
-name: "Dependabot"
+name: dependabot
 
 on:
   workflow_run:
-    workflows:
-      - "Run Code QA"
-    types:
+    workflows: ["Run Code QA"]
+    types: 
       - completed
+
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
 
@@ -18,29 +21,44 @@ jobs:
 #
 # Performs the following steps:
 # - Show when worflow is run.
-  on-success:
-    name: "Auto Merge"
+  dependabot:
     runs-on: ubuntu-latest
 
     # Only run if the creator is Dependabot.
-    if: github.actor == 'dependabot[bot]'
+    #if: ${{ github.actor == 'dependabot[bot]' }}
 
     steps:
-      - name: "Auto Merge Pull Request."
-        uses: actions/github-script@v4
+    
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.0
+
+      - name: Approve a PR
+        run: gh pr review --approve "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+
+#      - name: "Auto Merge Pull Request."
+#        uses: actions/github-script@v4
         # Only run if the previous workflow was successful.
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
-        with:
-          script: |
-            github.pulls.createReview({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number,
-              event: 'APPROVE'
-            })
-            github.pulls.merge({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pull_request.number,
-              merge_method: 'rebase'
-            })
+#        if: ${{ github.event.workflow_run.conclusion == 'success' }}
+#        with:
+#          script: |
+#            github.pulls.createReview({
+#              owner: context.payload.repository.owner.login,
+#              repo: context.payload.repository.name,
+#              pull_number: context.payload.pull_request.number,
+#              event: 'APPROVE'
+#            })
+#            github.pulls.merge({
+#              owner: context.payload.repository.owner.login,
+#              repo: context.payload.repository.name,
+#              pull_number: context.payload.pull_request.number,
+#              merge_method: 'rebase'
+#            })
