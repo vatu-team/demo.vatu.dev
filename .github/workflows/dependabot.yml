@@ -1,5 +1,5 @@
 # Vatu: Dependabot: Auto Merge
-# Version: 0.1.0
+# Version: 1.0.0
 
 name: dependabot
 
@@ -18,15 +18,14 @@ jobs:
 # Dependabot Auto Merge.
 #
 # Performs the following steps:
-# - Gets Dependabot metadata.
 # - Auto Merges Pull Request.
   dependabot:
     runs-on: ubuntu-latest
 
-    # Only run if the previous workflow was successful.
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # Only run if the creator is Dependabot or previous workflow was successful.
+    if: ${{ github.actor == 'dependabot[bot]' }} && ${{ github.event.workflow_run.conclusion == 'success' }}
 
-    # Only run if the creator is Dependabot.
+    # Only run if
     #if: ${{ github.actor == 'dependabot[bot]' }}
 
     steps:
