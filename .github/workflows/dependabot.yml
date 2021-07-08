@@ -51,10 +51,11 @@ jobs:
       - name: "Auto Merges Pull Request."
         uses: actions/github-script@v4
         with:
-          script: |
-            github.pulls.merge({
-              owner: context.payload.repository.owner.login,
-              repo: context.payload.repository.name,
-              pull_number: context.payload.pulls.pull_number,
-              merge_method: 'rebase'
-            })
+          script: console.log(context)
+          # script: |
+          #   github.pulls.merge({
+          #     owner: context.payload.repository.owner.login,
+          #     repo: context.payload.repository.name,
+          #     pull_number: context.payload.pull_request.number,
+          #     merge_method: 'rebase'
+          #   })
