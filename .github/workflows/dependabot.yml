@@ -49,7 +49,7 @@ jobs:
 #          PR_URL: ${{github.event.pull_request.html_url}}
 
       - name: "Auto Merges Pull Request."
-        uses: actions/github-script@v4
+        uses: actions/github-script@v3
         with:
           script: |
             github.pulls.createReview({
