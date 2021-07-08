@@ -64,3 +64,6 @@ jobs:
         #       pull_number: context.payload.pull_request.number,
         #       merge_method: 'rebase'
         #     })
+
+      - name: "Worked."
+        run: echo "Worked"
