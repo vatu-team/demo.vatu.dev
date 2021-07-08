@@ -50,6 +50,9 @@ jobs:
 
       - name: "Auto Merges Pull Request."
         uses: actions/github-script@v4
+        with:
+          script: return "hello"
+          result-encoding: string
         # with:
         #   script: |
         #     github.pulls.createReview({
