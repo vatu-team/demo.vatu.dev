@@ -1,7 +1,7 @@
 # Vatu QA Sniffs
 # Version: 0.1.0
 
-name: "Run Code QA"
+name: qa-php-tests
 
 on:
   pull_request:
