@@ -6,7 +6,7 @@ name: dependabot
 on:
   workflow_run:
     workflows: ["qa-php-tests"]
-    types: 
+    types:
       - completed
 
 permissions:
@@ -25,12 +25,12 @@ jobs:
 
     # Only run if the previous workflow was successful.
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    
+
     # Only run if the creator is Dependabot.
     #if: ${{ github.actor == 'dependabot[bot]' }}
 
     steps:
-    
+
 #      - name: "Gets Dependabot metadata."
 #        id: metadata
 #        uses: dependabot/fetch-metadata@v1.1.0
@@ -49,7 +49,7 @@ jobs:
 #          PR_URL: ${{github.event.pull_request.html_url}}
 
       - name: "Auto Merges Pull Request."
-        uses: actions/github-script@v3
+        uses: actions/github-script@v4
         with:
           script: |
             github.pulls.createReview({
