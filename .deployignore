@@ -21,6 +21,7 @@ phpcs.xml
 phpmd.xml
 readme.md
 readme.txt
+!/readme.txt
 
 ## NodeJS
 /node_modules/*
