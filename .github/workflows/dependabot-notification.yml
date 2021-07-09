@@ -19,13 +19,18 @@ jobs:
       if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
       steps:
+
+      - name: "Build Notificaiton Message."
+        run: |
+          echo "slack_message=$( printf 'Updated %s dependency on %s project.' "${GITHUB_REF#refs/heads/}" "${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_COLOR: ${{ job.status }} # or a specific color like 'green' or '#ff00ff'
+          SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://avatars.githubusercontent.com/in/29110?s=88&v=4
-          SLACK_MESSAGE: ${GITHUB_REF#refs/heads/}
-          SLACK_TITLE: "Dependabot Auto Merge ${GITHUB_REF#refs/heads/}"
+          SLACK_MESSAGE: ${{ env.slack_message }}
+          SLACK_TITLE: "Dependabot Auto Merge"
           SLACK_USERNAME: "Dependabot"
-          MSG_MINIMAL: ref
+          MSG_MINIMAL: true
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
