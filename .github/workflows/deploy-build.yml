@@ -113,6 +113,6 @@ jobs:
           git push origin ${{ env.branch_name }}--built
 
       - name: "Run Smoke tests after deploy."
-        run: npx percy --base-url=https://demo.vatu.dev exec -- cypress run --config baseURL=https://demo.vatu.dev --base-url=https://demo.vatu.dev
+        run: npx percy exec -- cypress run --config baseURL=https://demo.vatu.dev
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
