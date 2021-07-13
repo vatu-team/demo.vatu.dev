@@ -7,7 +7,7 @@ describe( 'Smoke tests', function () {
 			.its('status')
 			.should('be.equal', 200);
 
-			//cy.percySnapshot();
+		cy.percySnapshot( 'Front Page', { widths: [320, 1024] } );
 
 	});
 
