@@ -22,7 +22,7 @@ jobs:
 
       - name: "Build Notificaiton Message."
         run: |
-          echo "slack_message=$( printf 'Updated %s dependency on %s project.' "${GITHUB_REF#refs/heads/}" "${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+          echo "slack_message=$( printf 'Updated %s dependency on %s project.' "${GITHUB_REF#refs/heads/}" "${GITHUB_REPOSITORY}") >> $GITHUB_ENV
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
