@@ -22,6 +22,7 @@ jobs:
   # - Checks out the repository.
   # - Sets up PHP with Composer.
   # - Logs debug information.
+  # - Setup NodeJS.
   # - Install Composer dependencies with no dev option.
   # - @TODO: Install NPM dependencies.
   # - Make the build directory.
@@ -31,7 +32,7 @@ jobs:
   # - Remove `.gitignore` file.
   # - Setup deploy ignore files.
   # - Push build to deployment branch.
-  # - Setup NodeJS.
+
   # - Run Smoke tests after deploy.
 
   deploy-build:
@@ -57,6 +58,12 @@ jobs:
           php --version
           composer --version
           echo Current Branch: ${{ env.branch_name }}
+
+      - name: "Setup NodeJS."
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
 
       - name: "Install Composer dependencies with no dev option"
         run: composer install --no-dev --no-interaction --prefer-dist
@@ -87,7 +94,8 @@ jobs:
 
       - name: "Rsync files to build directory."
         run: |
-          rsync --delete -a --exclude={'.git','built/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
+          rsync -a --exclude={'.git','built/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
+          ls -la ${GITHUB_WORKSPACE}/
 
       - name: "Remove `.gitignore` file."
         run: rm ${GITHUB_WORKSPACE}/built/.gitignore
@@ -104,13 +112,6 @@ jobs:
           MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
           git push origin ${{ env.branch_name }}--built
-
-      - name: "Setup NodeJS."
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'npm'
-      - run: npm install
 
       - name: "Run Smoke tests after deploy."
         run: npx percy exec -- cypress run --config baseURL=https://demo.vatu.dev
