@@ -32,7 +32,6 @@ jobs:
   # - Remove `.gitignore` file.
   # - Setup deploy ignore files.
   # - Push build to deployment branch.
-
   # - Run Smoke tests after deploy.
 
   deploy-build:
@@ -114,6 +113,6 @@ jobs:
           git push origin ${{ env.branch_name }}--built
 
       - name: "Run Smoke tests after deploy."
-        run: npx percy exec -- cypress run --config baseURL=https://demo.vatu.dev
+        run: npx percy exec -- cypress run --config baseUrl=https://demo.vatu.dev
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
