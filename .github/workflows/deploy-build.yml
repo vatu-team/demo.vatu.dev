@@ -31,6 +31,7 @@ jobs:
   # - Remove `.gitignore` file.
   # - Setup deploy ignore files.
   # - Push build to deployment branch.
+  # - Setup NodeJS.
   # - Run Smoke tests after deploy.
 
   deploy-build:
@@ -104,13 +105,14 @@ jobs:
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
           git push origin ${{ env.branch_name }}--built
 
-      - name: "Run Smoke tests after deploy."
+      - name: "Setup NodeJS."
         uses: actions/setup-node@v2
         with:
           node-version: '14'
           cache: 'npm'
-        run: |
-          npm install
-          npx percy exec -- cypress run --config baseURL=https://demo.vatu.dev
+      - run: npm install
+
+      - name: "Run Smoke tests after deploy."
+        run: npx percy exec -- cypress run --config baseURL=https://demo.vatu.dev
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
