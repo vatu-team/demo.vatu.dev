@@ -64,6 +64,9 @@
       "preferred-install": "dist"
   },
   "scripts": {
+    "post-update-cmd": [
+        "@composer install --working-dir=tools/phpcs"
+    ],
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
     ],

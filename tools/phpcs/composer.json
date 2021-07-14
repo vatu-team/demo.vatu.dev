@@ -1,0 +1,23 @@
+{
+  "name": "thoughtsideas/phpcs",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require-dev": {
+    "automattic/vipwpcs": "2.3.2",
+    "automattic/phpcs-neutron-standard": "1.7.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "0.7.1",
+    "phpcompatibility/phpcompatibility-wp": "2.1.1",
+    "squizlabs/php_codesniffer": "3.6.0",
+    "wp-coding-standards/wpcs": "2.3.0",
+    "wptrt/wpthemereview": "0.2.1"
+  },
+  "scripts": {
+    "install-codestandards": [
+      "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    ]
+  }
+}
