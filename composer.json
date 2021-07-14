@@ -67,7 +67,8 @@
     "post-update-cmd": [
         "@composer install --working-dir=tools/phpcs",
         "@composer install --working-dir=tools/phpcpd",
-        "@composer install --working-dir=tools/phpmd"
+        "@composer install --working-dir=tools/phpmd",
+        "@composer install --working-dir=tools/phpmnd"
     ],
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
@@ -77,11 +78,15 @@
       "./tools/phpmd/vendor/bin/phpmd ./public/app/themes/demo/ text ./phpmd.xml"
     ],
     "test-phpcpd": [
-      "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/graph-x/ --exclude=./vendor/*,./node_modules/*"
+      "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/demo/ --exclude=./vendor/*,./node_modules/*"
+    ],
+    "test-phpmnd": [
+      "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/demo --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test": [
       "composer run test-phpcs",
       "composer run test-phpmd",
+      "composer run test-phpmnd",
       "composer run test-phpcpd"
     ]
 },
