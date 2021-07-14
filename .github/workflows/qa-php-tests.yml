@@ -99,7 +99,7 @@ jobs:
         run: |
           php --version
           composer --version
-          php ./tools/phpcpd/vendor/bin/phpcpd -Vn
+          php ./tools/phpcpd/vendor/bin/phpcpd --version
 
       - name: "Run PHPCPD on project specific files."
         run: |
