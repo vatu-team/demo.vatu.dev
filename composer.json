@@ -65,15 +65,17 @@
   },
   "scripts": {
     "post-update-cmd": [
-        "@composer install --working-dir=tools/phpcs"
+        "@composer install --working-dir=tools/phpcs",
+        "@composer install --working-dir=tools/phpcpd"
     ],
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
     ],
-    "test-phpcbf": "./toolsphpcbf -p --standard=phpcs.xml ./",
     "test-phpcs": "./tools/phpcs -p -s --standard=phpcs.xml --runtime-set testVersion 7.4- ./",
     "test-phpmd": "./tools/phpmd ./ text ./phpmd.xml",
-    "test-phpcpd": "./tools/phpcpd ./ --exclude vendor --exclude node_modules",
+    "test-phpcpd": [
+      "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/graph-x/ --exclude=./vendor/*,./node_modules/*"
+    ],
     "test": [
       "composer run test-phpcs",
       "composer run test-phpmd",

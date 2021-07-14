@@ -32,7 +32,8 @@ jobs:
         with:
           path: |
             "$HOME/vendor"
-            "$HOME/tools/phpcsvendor"
+            "$HOME/tools/phpcs/vendor"
+            "$HOME/tools/phpcpd/vendor"
           key: "${{ runner.os }}-php-${{ hashFiles('**/composer.json') }}"
           restore-keys: "${{ runner.os }}-php-"
 
@@ -55,3 +56,51 @@ jobs:
 
       - name: "Run PHPCS on project specific files."
         run: php ./tools/phpcs/vendor/bin/phpcs -p -s -v --standard=./phpcs.xml --runtime-set testVersion 7.3
+
+  # Performs Copy Paste Detector against our codebase.
+  #
+  # Performs the following steps:
+  # - Checks out the repository.
+  # - Sets up Caching.
+  # - Sets up PHP with Composer.
+  # - Install Composer dependencies for tool.
+  # - Logs debug information.
+  # - Run PHPCPD on project specific files.
+  phpcpd:
+    name: "Run PHP Copy Paste Detector"
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: "Checks out the repository."
+        uses: "actions/checkout@v2"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2.1.6"
+        with:
+          path: |
+            "$HOME/vendor"
+            "$HOME/tools/phpcs/vendor"
+            "$HOME/tools/phpcpd/vendor"
+          key: "${{ runner.os }}-php-${{ hashFiles('**/composer.json') }}"
+          restore-keys: "${{ runner.os }}-php-"
+
+      - name: "Sets up PHP with Composer."
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          tools: composer
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Install Composer dependencies for tool."
+        run: composer install
+
+      - name: "Logs debug information."
+        run: |
+          php --version
+          composer --version
+          php ./tools/phpcpd/vendor/bin/phpcpd --version
+
+      - name: "Run PHPCPD on project specific files."
+        run: |
+          php ./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/demo/ --exclude=./vendor/*,./node_modules/*
