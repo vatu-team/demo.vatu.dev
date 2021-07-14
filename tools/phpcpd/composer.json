@@ -1,0 +1,12 @@
+{
+  "name": "thoughtsideas/phpcpd",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require-dev": {
+    "sebastian/phpcpd": "6.0.3"
+  }
+}
