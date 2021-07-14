@@ -60,6 +60,7 @@ error_log
 auth.json
 composer.lock
 /vendor
+/tools/*/vendor
 
 ## Config
 /config/environments/local.php

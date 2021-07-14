@@ -74,6 +74,14 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 
 ## Testing
 
+### Static Analysis
+
+Installing our static analaysis tools is done via the inital composer install and updates.
+
+Running the tests locally:
+
+PHP CodeSniffer: `./tools/phpcs/vendor/bin/phpcs -p -s --standard=./phpcs.xml --runtime-set testVersion 7.3-`
+
 ### Acceptance Testing
 
 ```
