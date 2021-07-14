@@ -1,0 +1,12 @@
+{
+  "name": "thoughtsideas/phpmnd",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require-dev": {
+    "povils/phpmnd": "2.4.0"
+  }
+}
