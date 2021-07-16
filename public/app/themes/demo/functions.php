@@ -27,3 +27,16 @@ add_action(
 	'wp_enqueue_scripts',
 	'demo_enqueue_styles'
 );
+
+/**
+ * [Test] Fail PHPMD Else Expression tests.
+ */
+class Foo {
+	public function bar($flag) {
+			if ( $flag ) {
+				// One branch.
+			} else {
+				// Another branch.
+			}
+	}
+}
