@@ -1,0 +1,13 @@
+{
+  "name": "thoughtsideas/phpstan",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require-dev": {
+    "szepeviktor/phpstan-wordpress": "0.7.7",
+    "phpstan/extension-installer": "1.1.0"
+  }
+}
