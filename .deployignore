@@ -20,6 +20,7 @@ error_log
 /.gitattributes
 phpcs.xml
 phpmd.xml
+phpstan.neon
 readme.md
 readme.txt
 !/readme.txt
