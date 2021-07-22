@@ -74,7 +74,8 @@
         "@composer install --working-dir=tools/phpcs",
         "@composer install --working-dir=tools/phpcpd",
         "@composer install --working-dir=tools/phpmd",
-        "@composer install --working-dir=tools/phpmnd"
+        "@composer install --working-dir=tools/phpmnd",
+        "@composer install --working-dir=tools/phpstan"
     ],
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
@@ -91,11 +92,15 @@
     "test-phpmnd": [
       "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/demo --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
+    "test-phpstan": [
+      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon"
+    ],
     "test": [
       "composer run test-phpcs",
       "composer run test-phpmd",
       "composer run test-phpmnd",
-      "composer run test-phpcpd"
+      "composer run test-phpcpd",
+      "composer run test-phpstand"
     ]
 },
   "extra": {
