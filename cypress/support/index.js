@@ -17,3 +17,5 @@
 import '@bahmutov/cy-api/support';
 import 'cypress-iframe';
 import '@percy/cypress';
+
+import './commands'
