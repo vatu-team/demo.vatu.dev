@@ -73,7 +73,9 @@
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
     ],
-    "test-phpcs": "./tools/phpphpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml --runtime-set testVersion 7.4-",
+    "test-phpcs": [
+      "./tools/phpphpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml --runtime-set testVersion 7.4-"
+    ],
     "test-phpmd": [
       "./tools/phpmd/vendor/bin/phpmd ./public/app/themes/demo/ text ./phpmd.xml"
     ],
