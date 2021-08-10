@@ -1,0 +1,34 @@
+@import "./01-settings/file-header";
+
+/* Settings: Global variables, config switches.
+   ========================================================================== */
+@import "./01-settings/structure";
+@import "./01-settings/typography";
+@import "./01-settings/colors";
+@import "./01-settings/animations";
+
+/* Settings: Tools.
+   ========================================================================== */
+//@import "./02-tools/*";
+
+/* Generic: Ground-zero styles (eg, Normalize.css, resets, box-sizing).
+   ========================================================================== */
+//@import "./03-generic/*";
+
+/* Elements: Unclassed HTML elements (type selectors).
+   ========================================================================== */
+//@import "./04-elements/*";
+
+/* Objects: Cosmetic-free design patterns.
+   ========================================================================== */
+//@import "./05-objects/*";
+
+/* Components: Design components, chunks of UI.
+ * Only include global components that are loaded as part of blocks.
+   ========================================================================== */
+// @import "./06-components/*";
+
+/* Utilities: Helpers and overrides.
+   ========================================================================== */
+@import "./07-utilities/display";
+@import "./07-utilities/alignment";

@@ -1,0 +1,26 @@
+# WordPress Theme
+
+# Ignore generated & task runner files
+
+## Server
+
+.env
+access.log
+error.log
+error_log
+
+## PHP
+
+vendor/*
+composer.lock
+
+# Node
+.sass-cache
+node_modules/*
+package-lock.json
+
+# Ignore compiled files
+/*.map
+/style.css
+/style.min.css
+/assets/css/
