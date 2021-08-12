@@ -19,13 +19,14 @@ jobs:
   # Deploy code to production.
   #
   # Performs the following steps:
+  # - Get current branch name.
   # - Checks out the repository.
   # - Sets up PHP with Composer.
   # - Logs debug information.
-  # - Setup NodeJS.
   # - Install Composer dependencies with no dev option.
-  # - @TODO: Install NPM dependencies.
-  # - Make the build directory.
+  # - Setup NodeJS.
+  # - Logs debug information.
+  # - Compile Theme CSS.
   # - Check built branch exists.
   # - Checkout copy of repository. && Creating a *--built branch. || Using existing *--built branch
   # - Rsync files to build directory.
@@ -58,14 +59,24 @@ jobs:
           composer --version
           echo Current Branch: ${{ env.branch_name }}
 
+      - name: "Install Composer dependencies with no dev option"
+        run: composer install --no-dev --no-interaction --prefer-dist
+
       - name: "Setup NodeJS."
         uses: actions/setup-node@v2
         with:
           node-version: '14'
       - run: npm install
 
-      - name: "Install Composer dependencies with no dev option"
-        run: composer install --no-dev --no-interaction --prefer-dist
+      - name: "Logs debug information."
+        run: |
+          node --version
+          npm --version
+
+      - name: "Compile Theme CSS."
+        run: |
+          npm run sass:global
+          npm run sass:components
 
       - name: "Check built branch exists."
         run: |
