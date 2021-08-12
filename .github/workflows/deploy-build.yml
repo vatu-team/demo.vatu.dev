@@ -75,8 +75,8 @@ jobs:
 
       - name: "Compile Theme CSS."
         run: |
-          npm run sass:global
-          npm run sass:components
+          npm run styles:global
+          npm run styles:components
 
       - name: "Check built branch exists."
         run: |
