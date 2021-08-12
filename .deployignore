@@ -24,11 +24,11 @@ readme.txt
 !/readme.txt
 
 ## NodeJS
-/node_modules/*
-/cypress/*
-/package.json
-/package-lock.json
-/cypress.json
+node_modules/*
+cypress/*
+package.json
+package-lock.json
+cypress.json
 
 # Server
 .env
