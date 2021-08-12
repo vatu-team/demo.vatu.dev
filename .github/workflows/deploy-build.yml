@@ -108,7 +108,9 @@ jobs:
           ls -la ${GITHUB_WORKSPACE}/
 
       - name: "Remove `.gitignore` file."
-        run: rm ${GITHUB_WORKSPACE}/built/.gitignore
+        run: |
+          rm ${GITHUB_WORKSPACE}/built/.gitignore
+          rm ${GITHUB_WORKSPACE}/built/public/app/themes/*/.gitignore
 
       - name: "Setup deploy ignore files."
         run: mv ${GITHUB_WORKSPACE}/built/.deployignore ${GITHUB_WORKSPACE}/built/.gitignore
