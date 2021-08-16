@@ -78,6 +78,7 @@ jobs:
           npm run styles:global
           npm run styles:components
           npm run styles:autoprefixer
+          npm run styles:minify
 
       - name: "Check built branch exists."
         run: |
