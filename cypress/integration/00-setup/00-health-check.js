@@ -1,4 +1,4 @@
-describe( 'Smoke tests', function () {
+describe( 'Heatlh Checks', function () {
 
 	// Check for 200 response from home page.
 	it('Should return a 200 status.', function () {
