@@ -1,7 +1,9 @@
 # Vatu: Dependabot Auto Merge Slack Notification
-# Version: 0.1.0
+# Version: 0.1.1
 
 name: "Slack Notifications"
+
+# Only run this workflow after the `dependabot` workflow is run.
 
 on:
   workflow_run:
@@ -11,6 +13,14 @@ on:
       - completed
 
 jobs:
+
+  # Slack Notification on Dependabot Merge
+  #
+  # Performs the following steps:
+  # - Check if `Dependabot` workflow was successful.
+  # - Build notification message body.
+  # - Post Slack notification message
+
   slackNotification:
       name: Dependabot Auto Merge
       runs-on: ubuntu-latest
@@ -20,10 +30,10 @@ jobs:
 
       steps:
 
-      - name: "Build Notificaiton Message."
-        run: echo "slack_message=$( printf 'Updated %s dependency on %s project.' "${GITHUB_REF#refs/heads/}" "${GITHUB_REPOSITORY}" )" >> $GITHUB_ENV
+      - name: "Build notificaiton nessage body."
+        run: echo "slack_message=$( printf '%s on %s repository.' "${{ github.event.pull_request.title }}" "${GITHUB_REPOSITORY}" )" >> $GITHUB_ENV
 
-      - name: Slack Notification
+      - name: "Post Slack notification message"
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_COLOR: ${{ job.status }}
