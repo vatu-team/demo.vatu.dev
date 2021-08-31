@@ -41,7 +41,7 @@ jobs:
           node-version: '14'
 
       - name: "Install NodeJS dependencies."
-      - run: npm install
+        run: npm install
 
       - name: "Run Health Check tests."
         run: npx percy exec -- cypress run --config baseUrl=https://demo.vatu.dev --spec cypress/integration/00-setup/00-health-check.js
