@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:cypress": "",
-    "cypress:open": "cypress open",
+    "cypress:open": "cypress open --config-file tests/cypress.json",
     "styles:global": "sass public/app/themes/demo/assets/sass/style.scss:public/app/themes/demo/style.css --style=expanded --source-map --source-map-urls=relative",
     "styles:components": "sass public/app/themes/demo/assets/sass/06-components/:public/app/themes/demo/assets/css/ --style=expanded --source-map --source-map-urls=relative",
     "styles:autoprefixer": "postcss public/app/themes/demo/*.css public/app/themes/demo/assets/css/*.css --use autoprefixer --replace",

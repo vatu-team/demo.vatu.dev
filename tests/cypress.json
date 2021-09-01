@@ -1,0 +1,10 @@
+{
+  "fixturesFolder": "tests/cypress/fixtures",
+  "integrationFolder": "tests/cypress/integration",
+  "pluginsFile": "tests/cypress/plugins/index.js",
+  "screenshotsFolder": "tests/cypress/screenshots",
+  "supportFile": "tests/cypress/support/index.js",
+  "defaultCommandTimeout": 10000,
+  "pageLoadTimeout": 30000,
+  "video": false
+}
