@@ -9,6 +9,9 @@ updates:
       time: "06:30"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    commit-message:
+      prefix: "[Updated]"
+      prefix-development: "[Updated]"
 
   # Project Tools.
   -   package-ecosystem: composer
@@ -19,7 +22,9 @@ updates:
           time: "06:30"
       open-pull-requests-limit: 10
       commit-message:
-          prefix: "[Tools]"
+        prefix: "[Updated]"
+        prefix-development: "[Updated]"
+
   -   package-ecosystem: composer
       directory: "/tools/phpcpd"
       registries: "*"
@@ -28,7 +33,9 @@ updates:
           time: "06:30"
       open-pull-requests-limit: 10
       commit-message:
-          prefix: "[Tools]"
+        prefix: "[Updated]"
+        prefix-development: "[Updated]"
+
   -   package-ecosystem: composer
       directory: "/tools/phpmd"
       registries: "*"
@@ -37,8 +44,10 @@ updates:
           time: "06:30"
       open-pull-requests-limit: 10
       commit-message:
-          prefix: "[Tools]"
-   -   package-ecosystem: composer
+        prefix: "[Updated]"
+        prefix-development: "[Updated]"
+
+  -   package-ecosystem: composer
       directory: "/tools/phpmnd"
       registries: "*"
       schedule:
@@ -46,4 +55,5 @@ updates:
           time: "06:30"
       open-pull-requests-limit: 10
       commit-message:
-          prefix: "[Tools]"
+        prefix: "[Updated]"
+        prefix-development: "[Updated]"
