@@ -31,7 +31,12 @@ jobs:
       steps:
 
       - name: "Build notificaiton nessage body."
-        run: echo "slack_message=$( printf '%s on %s repository.' "${{ github.event.pull_request.title }}" "${GITHUB_REPOSITORY}" )" >> $GITHUB_ENV
+        run: echo "slack_message=$( printf '%s on %s repository.' "${ github.event.pull_request.title }" "${GITHUB_REPOSITORY}" )" >> $GITHUB_ENV
+
+      - name: "Temp"
+        run: |
+          echo ${{ github.event.pull_request.title }}
+          echo ${{ github.event }}
 
       - name: "Post Slack notification message"
         uses: rtCamp/action-slack-notify@v2
