@@ -44,6 +44,6 @@ jobs:
         run: npm install
 
       - name: "Run Health Check tests."
-        run: npx percy exec -- cypress run --config baseUrl=https://demo.vatu.dev --spec cypress/integration/00-setup/00-health-check.js
+        run: npx percy exec -- cypress run --config-file tests/cypress.json --config baseUrl=https://demo.vatu.dev --spec tests/cypress/integration/00-setup/00-health-check.js
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
