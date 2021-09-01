@@ -42,6 +42,7 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 │   │   ├── themes
 │   │   └── languages
 │   └── wp
+├── tests
 ├── vendor
 ├── example.env
 ├── package.json
@@ -51,6 +52,7 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 
 - `/public` files that need to be accessed by the public.
 - `/public/app/` contains WordPress dependencies.
+- `/tests/` All configs related to testing the project.
 - `/vendor` is where the Composer managed dependencies are installed to.
 - `composer.json` loads the PHP dependencies for this project.
 - `example.env` sampled file with our environment variables are set.
@@ -85,7 +87,7 @@ PHP CodeSniffer: `./tools/phpcs/vendor/bin/phpcs -p -s --standard=./phpcs.xml --
 ### Acceptance Testing
 
 ```
-$(npm bin)/cypress open --config baseUrl=http://www.demo.test/
+$(npm bin)/cypress open --config-file tests/cypress.json --config baseUrl=http://www.demo.test/
 ```
 
 ## Deploying
