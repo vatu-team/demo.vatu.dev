@@ -36,6 +36,7 @@ jobs:
             "$HOME/tools/phpcpd/vendor"
             "$HOME/tools/phpmd/vendor"
             "$HOME/tools/phpmnd/vendor"
+            "$HOME/tools/phpstan/vendor"
           key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "${{ runner.os }}-php-composer-"
 
@@ -85,6 +86,7 @@ jobs:
             "$HOME/tools/phpcpd/vendor"
             "$HOME/tools/phpmd/vendor"
             "$HOME/tools/phpmnd/vendor"
+            "$HOME/tools/phpstan/vendor"
           key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "${{ runner.os }}-php-composer-"
 
@@ -135,6 +137,7 @@ jobs:
             "$HOME/tools/phpcpd/vendor"
             "$HOME/tools/phpmd/vendor"
             "$HOME/tools/phpmnd/vendor"
+            "$HOME/tools/phpstan/vendor"
           key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "${{ runner.os }}-php-composer-"
 
@@ -185,6 +188,7 @@ jobs:
             "$HOME/tools/phpcpd/vendor"
             "$HOME/tools/phpmd/vendor"
             "$HOME/tools/phpmnd/vendor"
+            "$HOME/tools/phpstan/vendor"
           key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
           restore-keys: "${{ runner.os }}-php-composer-"
 
@@ -218,43 +222,44 @@ jobs:
   # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPStan on project specific files.
-  phpstan:
-    name: "Run Stan"
-    runs-on: ubuntu-latest
-    steps:
+  # phpstan:
+  #   name: "Run Stan"
+  #   runs-on: ubuntu-latest
+  #   steps:
 
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v2"
+  #     - name: "Checks out the repository."
+  #       uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-            "$HOME/tools/phpcs/vendor"
-            "$HOME/tools/phpcpd/vendor"
-            "$HOME/tools/phpmd/vendor"
-            "$HOME/tools/phpmnd/vendor"
-          key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-"
+  #     - name: "Sets up Caching."
+  #       uses: "actions/cache@v2.1.6"
+  #       with:
+  #         path: |
+  #           "$HOME/vendor"
+  #           "$HOME/tools/phpcs/vendor"
+  #           "$HOME/tools/phpcpd/vendor"
+  #           "$HOME/tools/phpmd/vendor"
+  #           "$HOME/tools/phpmnd/vendor"
+  #           "$HOME/tools/phpstan/vendor"
+  #         key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
+  #         restore-keys: "${{ runner.os }}-php-composer-"
 
-      - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.4'
-          tools: composer
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #     - name: "Sets up PHP with Composer."
+  #       uses: shivammathur/setup-php@v2
+  #       with:
+  #         php-version: '7.4'
+  #         tools: composer
+  #       env:
+  #         COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+  #     - name: "Install Composer dependencies for tool."
+  #       run: composer install
 
-      - name: "Logs debug information."
-        run: |
-          php --version
-          composer --version
-          php ./tools/phpstan/vendor/bin/phpstan --version
+  #     - name: "Logs debug information."
+  #       run: |
+  #         php --version
+  #         composer --version
+  #         php ./tools/phpstan/vendor/bin/phpstan --version
 
-      - name: "Run PHPStan on project specific files."
-        run: |
-          php ./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon
+      # - name: "Run PHPStan on project specific files."
+      #   run: |
+      #     php ./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon
