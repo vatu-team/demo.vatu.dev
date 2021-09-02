@@ -100,7 +100,7 @@
       "composer run test-phpmd",
       "composer run test-phpmnd",
       "composer run test-phpcpd",
-      "composer run test-phpstand"
+      "composer run test-phpstan"
     ]
 },
   "extra": {
