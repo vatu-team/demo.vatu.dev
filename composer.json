@@ -71,11 +71,11 @@
   },
   "scripts": {
     "post-update-cmd": [
-        "@composer install --working-dir=tools/phpcs",
-        "@composer install --working-dir=tools/phpcpd",
-        "@composer install --working-dir=tools/phpmd",
-        "@composer install --working-dir=tools/phpmnd",
-        "@composer install --working-dir=tools/phpstan"
+        "@composer update --working-dir=tools/phpcs",
+        "@composer update --working-dir=tools/phpcpd",
+        "@composer update --working-dir=tools/phpmd",
+        "@composer update --working-dir=tools/phpmnd",
+        "@composer update --working-dir=tools/phpstan"
     ],
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
