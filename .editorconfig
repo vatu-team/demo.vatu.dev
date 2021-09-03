@@ -18,9 +18,12 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
-[*.yml]
+[{*.yml,*.neon}]
 indent_style = space
 indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
 
 [*.txt,wp-config.php]
 end_of_line = crlf
