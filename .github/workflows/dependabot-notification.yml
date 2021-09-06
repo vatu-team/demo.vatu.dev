@@ -31,9 +31,11 @@ jobs:
       steps:
 
       - name: "Debug"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          printf '%s\n' "${${{github.event}}[@]}"
-          printf '%s\n' "${${{github.event.pull_request}}[@]}"
+          echo "$GITHUB_CONTEXT"
+          echo "${{ toJson(github.event.pull_request) }}"
 
       - name: "Build notificaiton nessage body."
         run: echo "slack_message=$( printf '%s on %s repository.' "${{ github.event.pull_request.title }}" "${GITHUB_REPOSITORY}" )" >> $GITHUB_ENV
