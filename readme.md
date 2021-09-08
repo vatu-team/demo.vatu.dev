@@ -74,6 +74,20 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
   - Generate with [wp-cli-dotenv-command] (https://github.com/aaemnnosttv/wp-cli-dotenv-command)
   - Generate with [our WordPress salts generator](https://roots.io/salts.html)
 
+## Theme
+
+Watch theme files for changes and compile:
+
+```
+npm run build:watch
+```
+
+Build files for deployment:
+
+```
+npm run build
+```
+
 ## Testing
 
 ### Static Analysis

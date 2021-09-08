@@ -23,12 +23,12 @@ jobs:
   # - Checks out the repository.
   # - Sets up PHP with Composer.
   # - Logs debug information.
-  # - Install Composer dependencies with no dev option.
+  # - Install Composer dependencies with development dependencies. || Install Composer dependencies with no dev option.
   # - Setup NodeJS.
   # - Logs debug information.
-  # - Compile Theme CSS.
+  # - Compile Theme.
   # - Check built branch exists.
-  # - Checkout copy of repository. && Creating a *--built branch. || Using existing *--built branch
+  # - Checkout copy of repository. && Creating a *--built branch. || Using existing *--built branch.
   # - Rsync files to build directory.
   # - Remove `.gitignore` file.
   # - Setup deploy ignore files.
@@ -58,7 +58,14 @@ jobs:
           composer --version
           echo Current Branch: ${{ env.branch_name }}
 
-      - name: "Install Composer dependencies with no dev option"
+      - name: "Install Composer dependencies with development dependencies."
+        if: ${{ env.branch_name == 'develop' }}
+        run: |
+          composer install --no-interaction --prefer-dist --no-suggest --no-scripts
+          composer dump-autoload --optimize
+
+      - name: "Install Composer dependencies with no dev option."
+        if: ${{ env.branch_name != 'develop' }}
         run: |
           composer install --no-dev --no-interaction --prefer-dist --no-suggest --no-scripts
           composer dump-autoload --optimize --no-dev
@@ -74,12 +81,9 @@ jobs:
           node --version
           npm --version
 
-      - name: "Compile Theme CSS."
+      - name: "Compile Theme."
         run: |
-          npm run styles:global
-          npm run styles:components
-          npm run styles:autoprefixer
-          npm run styles:minify
+          npm run build
 
       - name: "Check built branch exists."
         run: |
