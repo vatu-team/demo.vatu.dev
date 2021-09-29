@@ -40,7 +40,7 @@
     "wpackagist-plugin/zero-spam": "5.0.13"
   },
   "require-dev": {
-      "rarst/laps": "3.3.4",
+      "rarst/laps": "3.3.5",
       "wpackagist-plugin/debug-bar-post-types": "2.0.0",
       "wpackagist-plugin/duplicate-post": "4.1.2",
       "wpackagist-plugin/log-deprecated-notices": "0.4.1",
