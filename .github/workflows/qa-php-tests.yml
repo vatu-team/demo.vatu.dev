@@ -219,10 +219,10 @@ jobs:
   # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPStan on project specific files.
-  # phpstan:
-  #   name: "Run Stan"
-  #   runs-on: ubuntu-latest
-  #   steps:
+  phpstan:
+    name: "Run Stan"
+    runs-on: ubuntu-latest
+    steps:
 
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
