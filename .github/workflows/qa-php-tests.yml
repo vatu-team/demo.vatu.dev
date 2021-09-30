@@ -1,5 +1,5 @@
 # Vatu QA Sniffs
-# Version: 0.1.0
+# Version: 0.2.0
 
 name: qa-php-tests
 
@@ -58,7 +58,7 @@ jobs:
           php ./tools/phpcs/vendor/bin/phpcs -i
 
       - name: "Run PHPCS on project specific files."
-        run: php ./tools/phpcs/vendor/bin/phpcs -p -s -v --standard=./phpcs.xml --runtime-set testVersion 7.3
+        run: composer run test-phpcs
 
   # Performs Copy Paste Detector against our codebase.
   #
@@ -108,8 +108,7 @@ jobs:
           php ./tools/phpcpd/vendor/bin/phpcpd --version
 
       - name: "Run PHPCPD on project specific files."
-        run: |
-          php ./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/demo/ --exclude=./vendor/*,./node_modules/*
+        run: composer run test-phpcpd
 
   # Performs PHP Mess Detector against our codebase.
   #
@@ -159,8 +158,7 @@ jobs:
           php ./tools/phpmd/vendor/bin/phpmd --version
 
       - name: "Run PHPMD on project specific files."
-        run: |
-          php ./tools/phpmd/vendor/bin/phpmd ./public/app/themes/demo/ text ./phpmd.xml
+        run: composer run test-phpmd
 
   # Performs PHP Magic Number Detector against our codebase.
   #
@@ -210,8 +208,7 @@ jobs:
           php ./tools/phpmnd/vendor/bin/phpmnd --version
 
       - name: "Run PHPMND on project specific files."
-        run: |
-          php ./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/demo --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress
+        run: composer run test-phpmnd
 
   # Performs Stan against our codebase.
   #
@@ -261,5 +258,4 @@ jobs:
   #         php ./tools/phpstan/vendor/bin/phpstan --version
 
       # - name: "Run PHPStan on project specific files."
-      #   run: |
-      #     php ./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon
+      #   run: composer run test-phpstan
