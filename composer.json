@@ -97,7 +97,7 @@
       "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/demo --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon"
+      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon --memory-limit 256M"
     ],
     "test": [
       "composer run test-phpcs",
