@@ -1,5 +1,5 @@
 {
-  "name": "thoughtsideas/phpcs",
+  "name": "vatu/phpcs",
   "repositories": [
     {
       "type": "composer",
