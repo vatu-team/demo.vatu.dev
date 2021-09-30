@@ -81,6 +81,9 @@
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
     ],
+    "test-phpcbf": [
+      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml --runtime-set testVersion 7.4-"
+    ],
     "test-phpcs": [
       "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml --runtime-set testVersion 7.4-"
     ],
