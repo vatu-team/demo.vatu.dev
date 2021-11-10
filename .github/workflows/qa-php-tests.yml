@@ -245,10 +245,10 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
 
       - name: "Install PHP Stan."
-        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-suggest --no-dev
+        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-suggest
 
       - name: "Logs debug information."
         run: |
