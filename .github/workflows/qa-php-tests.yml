@@ -14,8 +14,9 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
   # - Build site.
   # - Install PHP Code Sniffer.
   # - Logs PHPCS debug information.
@@ -28,14 +29,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-          key: "${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-build"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -43,6 +36,19 @@ jobs:
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
         run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
@@ -63,8 +69,9 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
   # - Build site.
   # - Install PHPCPD.
   # - Logs debug information.
@@ -77,14 +84,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-          key: "${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-build-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -93,8 +92,18 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
         run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
@@ -115,8 +124,9 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
   # - Build site.
   # - Install PHPMD.
   # - Logs debug information.
@@ -129,14 +139,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-          key: "${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-build-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -144,6 +146,19 @@ jobs:
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
         run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
@@ -156,6 +171,7 @@ jobs:
           php --version
           composer --version
           php ./tools/phpmd/vendor/bin/phpmd --version
+          steps.cache-primes.outputs.cache-hit
 
       - name: "Run PHPMD on project specific files."
         run: composer run test-phpmd
@@ -164,8 +180,9 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
   # - Build Site.
   # - Install PHPMND.
   # - Logs debug information.
@@ -178,14 +195,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-          key: "${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-build-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -193,6 +202,19 @@ jobs:
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
         run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
@@ -213,8 +235,9 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
   # - Build Site.
   # - Install PHP Stan.
   # - Install Composer dependencies for tool.
@@ -228,14 +251,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-          key: "${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-build-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -243,6 +258,19 @@ jobs:
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
         run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
