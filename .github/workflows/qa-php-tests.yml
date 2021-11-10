@@ -1,5 +1,5 @@
 # Vatu QA Sniffs
-# Version: 0.2.0
+# Version: 0.3.0
 
 name: qa-php-tests
 
@@ -14,9 +14,11 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
+  # - Build site.
+  # - Install PHP Code Sniffer.
   # - Logs PHPCS debug information.
   # - Run PHPCS on project specific files.
   phpcs:
@@ -27,19 +29,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-            "$HOME/tools/phpcs/vendor"
-            "$HOME/tools/phpcpd/vendor"
-            "$HOME/tools/phpmd/vendor"
-            "$HOME/tools/phpmnd/vendor"
-            "$HOME/tools/phpstan/vendor"
-          key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -48,8 +37,24 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: "Build site."
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+
+      - name: "Install PHP Code Sniffer."
+        run: composer update --working-dir=tools/phpcs --no-interaction --prefer-dist --no-suggest
 
       - name: "Logs debug information."
         run: |
@@ -64,9 +69,11 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
+  # - Build site.
+  # - Install PHPCPD.
   # - Logs debug information.
   # - Run PHPCPD on project specific files.
   phpcpd:
@@ -77,19 +84,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-            "$HOME/tools/phpcs/vendor"
-            "$HOME/tools/phpcpd/vendor"
-            "$HOME/tools/phpmd/vendor"
-            "$HOME/tools/phpmnd/vendor"
-            "$HOME/tools/phpstan/vendor"
-          key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -98,8 +92,24 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: "Build site."
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+
+      - name: "Install PHPCPD."
+        run: composer update --working-dir=tools/phpcpd --no-interaction --prefer-dist --no-suggest
 
       - name: "Logs debug information."
         run: |
@@ -114,9 +124,11 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
+  # - Build site.
+  # - Install PHPMD.
   # - Logs debug information.
   # - Run PHPMD on project specific files.
   phpmd:
@@ -127,19 +139,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-            "$HOME/tools/phpcs/vendor"
-            "$HOME/tools/phpcpd/vendor"
-            "$HOME/tools/phpmd/vendor"
-            "$HOME/tools/phpmnd/vendor"
-            "$HOME/tools/phpstan/vendor"
-          key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -148,8 +147,24 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: "Build site."
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+
+      - name: "Install PHP MD."
+        run: composer update --working-dir=tools/phpmd --no-interaction --prefer-dist --no-suggest
 
       - name: "Logs debug information."
         run: |
@@ -164,9 +179,11 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
+  # - Build Site.
+  # - Install PHPMND.
   # - Logs debug information.
   # - Run PHPMND on project specific files.
   phpmnd:
@@ -177,19 +194,6 @@ jobs:
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-            "$HOME/tools/phpcs/vendor"
-            "$HOME/tools/phpcpd/vendor"
-            "$HOME/tools/phpmd/vendor"
-            "$HOME/tools/phpmnd/vendor"
-            "$HOME/tools/phpstan/vendor"
-          key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-"
-
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
@@ -198,8 +202,24 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: "Build site."
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+
+      - name: "Install PHP MND."
+        run: composer update --working-dir=tools/phpmnd --no-interaction --prefer-dist --no-suggest
 
       - name: "Logs debug information."
         run: |
@@ -214,31 +234,21 @@ jobs:
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up Caching.
   # - Sets up PHP with Composer.
+  # - Get Composer Cache Directory.
+  # - Sets up Caching.
+  # - Build Site.
+  # - Install PHP Stan.
   # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPStan on project specific files.
   phpstan:
-    name: "Run Stan"
+    name: "Run PHPStan"
     runs-on: ubuntu-latest
     steps:
 
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
-
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2.1.6"
-        with:
-          path: |
-            "$HOME/vendor"
-            "$HOME/tools/phpcs/vendor"
-            "$HOME/tools/phpcpd/vendor"
-            "$HOME/tools/phpmd/vendor"
-            "$HOME/tools/phpmnd/vendor"
-            "$HOME/tools/phpstan/vendor"
-          key: "${{ runner.os }}-php-composer-${{ hashFiles('**/composer.json') }}"
-          restore-keys: "${{ runner.os }}-php-composer-"
 
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
@@ -248,8 +258,24 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Install Composer dependencies for tool."
-        run: composer install
+      - name: "Get Composer Cache Directory."
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v2"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: "Build site."
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+
+      - name: "Install PHP Stan."
+        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-suggest
 
       - name: "Logs debug information."
         run: |
