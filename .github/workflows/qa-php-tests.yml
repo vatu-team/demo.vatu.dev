@@ -45,7 +45,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
 
       - name: "Install PHP Code Sniffer."
         run: composer update --working-dir=tools/phpcs --no-interaction --prefer-dist --no-suggest
@@ -97,7 +97,7 @@ jobs:
         run: composer install
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
 
       - name: "Install PHPCPD."
         run: composer update --working-dir=tools/phpcpd --no-interaction --prefer-dist --no-suggest
@@ -146,7 +146,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
 
       - name: "Install PHP MD."
         run: composer update --working-dir=tools/phpmd --no-interaction --prefer-dist --no-suggest
@@ -195,7 +195,7 @@ jobs:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts
+        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
 
       - name: "Install PHP MND."
         run: composer update --working-dir=tools/phpmnd --no-interaction --prefer-dist --no-suggest
@@ -248,7 +248,7 @@ jobs:
         run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts
 
       - name: "Install PHP Stan."
-        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-suggest
+        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-suggest --no-dev
 
       - name: "Logs debug information."
         run: |
