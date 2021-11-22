@@ -25,7 +25,7 @@
   "license": "ISC",
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
-    "@bahmutov/cy-api": "1.6.1",
+    "@bahmutov/cy-api": "1.6.2",
     "@percy/cli": "1.0.0-beta.70",
     "@percy/cypress": "3.1.1",
     "autoprefixer": "10.4.0",
