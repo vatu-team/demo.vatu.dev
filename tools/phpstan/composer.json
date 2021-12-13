@@ -1,11 +1,5 @@
 {
   "name": "vatu/phpstan",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
   "require-dev": {
     "szepeviktor/phpstan-wordpress": "1.0.2",
     "phpstan/extension-installer": "1.1.0",
