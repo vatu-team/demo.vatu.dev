@@ -1,7 +1,7 @@
-# Vatu QA Sniffs
-# Version: 0.3.0
+# Vatu: Static Analysis
+# Version: 0.4.0
 
-name: qa-php-tests
+name: Static Analysis
 
 on:
   pull_request:
@@ -10,19 +10,17 @@ on:
 
 jobs:
 
-  # Performs code sniffer checks against our codebase.
+  # Performs PHP CodeSnigger checks against our codebase.
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up PHP with Composer.
-  # - Get Composer Cache Directory.
   # - Sets up Caching.
-  # - Build site.
-  # - Install PHP Code Sniffer.
+  # - Sets up PHP with Composer.
+  # - Install Composer dependencies for tool.
   # - Logs PHPCS debug information.
   # - Run PHPCS on project specific files.
   phpcs:
-    name: "Run PHP Code Sniffer"
+    name: "Run PHP CodeSniffer"
     runs-on: ubuntu-latest
     steps:
 
@@ -32,7 +30,9 @@ jobs:
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
+          coverage: "none"
+          ini-values: "memory_limit=256M"
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,15 +46,15 @@ jobs:
         uses: "actions/cache@v2"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+        run: composer update --no-interaction --prefer-dist --no-scripts
 
       - name: "Install PHP Code Sniffer."
-        run: composer update --working-dir=tools/phpcs --no-interaction --prefer-dist --no-suggest
+        run: composer update --working-dir=tools/phpcs --no-interaction --prefer-dist
 
       - name: "Logs debug information."
         run: |
@@ -63,17 +63,16 @@ jobs:
           php ./tools/phpcs/vendor/bin/phpcs -i
 
       - name: "Run PHPCS on project specific files."
-        run: composer run test-phpcs
+        run: |
+          composer run test-phpcs
 
   # Performs Copy Paste Detector against our codebase.
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up PHP with Composer.
-  # - Get Composer Cache Directory.
   # - Sets up Caching.
-  # - Build site.
-  # - Install PHPCPD.
+  # - Sets up PHP with Composer.
+  # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPCPD on project specific files.
   phpcpd:
@@ -87,7 +86,9 @@ jobs:
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
+          coverage: "none"
+          ini-values: "memory_limit=256M"
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -101,15 +102,15 @@ jobs:
         uses: "actions/cache@v2"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+        run: composer update --no-interaction --prefer-dist --no-scripts
 
-      - name: "Install PHPCPD."
-        run: composer update --working-dir=tools/phpcpd --no-interaction --prefer-dist --no-suggest
+      - name: "Install PHP Copy Paste Detector."
+        run: composer update --working-dir=tools/phpcpd --no-interaction --prefer-dist
 
       - name: "Logs debug information."
         run: |
@@ -118,23 +119,22 @@ jobs:
           php ./tools/phpcpd/vendor/bin/phpcpd --version
 
       - name: "Run PHPCPD on project specific files."
-        run: composer run test-phpcpd
+        run: |
+          composer run test-phpcpd
 
   # Performs PHP Mess Detector against our codebase.
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up PHP with Composer.
-  # - Get Composer Cache Directory.
   # - Sets up Caching.
-  # - Build site.
-  # - Install PHPMD.
+  # - Sets up PHP with Composer.
+  # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPMD on project specific files.
-  phpmd:
-    name: "Run PHP Mess Detector"
-    runs-on: ubuntu-latest
-    steps:
+  # phpmd:
+  #   name: "Run PHP Mess Detector"
+  #   runs-on: ubuntu-latest
+  #   steps:
 
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
@@ -142,7 +142,9 @@ jobs:
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
+          coverage: "none"
+          ini-values: "memory_limit=256M"
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -156,15 +158,15 @@ jobs:
         uses: "actions/cache@v2"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+        run: composer update --no-interaction --prefer-dist --no-scripts
 
-      - name: "Install PHP MD."
-        run: composer update --working-dir=tools/phpmd --no-interaction --prefer-dist --no-suggest
+      - name: "Install PHP Mess Detector."
+        run: composer update --working-dir=tools/phpmd --no-interaction --prefer-dist
 
       - name: "Logs debug information."
         run: |
@@ -173,17 +175,16 @@ jobs:
           php ./tools/phpmd/vendor/bin/phpmd --version
 
       - name: "Run PHPMD on project specific files."
-        run: composer run test-phpmd
+        run: |
+          composer run test-phpmd
 
   # Performs PHP Magic Number Detector against our codebase.
   #
   # Performs the following steps:
   # - Checks out the repository.
-  # - Sets up PHP with Composer.
-  # - Get Composer Cache Directory.
   # - Sets up Caching.
-  # - Build Site.
-  # - Install PHPMND.
+  # - Sets up PHP with Composer.
+  # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPMND on project specific files.
   phpmnd:
@@ -197,7 +198,9 @@ jobs:
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
+          coverage: "none"
+          ini-values: "memory_limit=256M"
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -211,15 +214,15 @@ jobs:
         uses: "actions/cache@v2"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+        run: composer update --no-interaction --prefer-dist --no-scripts
 
-      - name: "Install PHP MND."
-        run: composer update --working-dir=tools/phpmnd --no-interaction --prefer-dist --no-suggest
+      - name: "Install PHP Stan."
+        run: composer update --working-dir=tools/phpmnd --no-interaction --prefer-dist
 
       - name: "Logs debug information."
         run: |
@@ -228,9 +231,10 @@ jobs:
           php ./tools/phpmnd/vendor/bin/phpmnd --version
 
       - name: "Run PHPMND on project specific files."
-        run: composer run test-phpmnd
+        run: |
+          composer run test-phpmnd
 
-  # Performs Stan against our codebase.
+  # Performs PHPStan against our codebase.
   #
   # Performs the following steps:
   # - Checks out the repository.
@@ -253,7 +257,9 @@ jobs:
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: "7.4"
+          coverage: "none"
+          ini-values: "memory_limit=256M"
           tools: composer
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -267,15 +273,15 @@ jobs:
         uses: "actions/cache@v2"
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-suggest --no-scripts --no-dev
+        run: composer update --no-interaction --prefer-dist --no-scripts
 
       - name: "Install PHP Stan."
-        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-suggest
+        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist
 
       - name: "Logs debug information."
         run: |
