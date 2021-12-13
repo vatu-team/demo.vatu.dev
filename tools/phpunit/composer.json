@@ -1,0 +1,19 @@
+{
+  "name": "vatu/phpunit",
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "brain/monkey": "2.6.1",
+    "phpunit/phpunit": "9.5.10",
+    "yoast/phpunit-polyfills": "1.0.3"
+  },
+  "autoload": {
+    "psr-4": {
+    }
+  }
+}

@@ -102,6 +102,9 @@
     "test-phpstan": [
       "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/demo -c ./phpstan.neon --memory-limit 256M"
     ],
+    "test-phpunit": [
+      "./tools/phpunit/vendor/bin/phpunit -c ./phpunit.xml"
+    ],
     "test": [
       "composer run test-phpcs",
       "composer run test-phpmd",

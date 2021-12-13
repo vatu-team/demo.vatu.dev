@@ -59,6 +59,17 @@ updates:
           prefix: "[Updated]"
           prefix-development: "[Updated]"
 
+  - package-ecosystem: composer
+    directory: "/tools/phpunit"
+    registries: "*"
+    schedule:
+        interval: daily
+        time: "06:30"
+    open-pull-requests-limit: 10
+    commit-message:
+        prefix: "[Updated]"
+        prefix-development: "[Updated]"
+
   # NPM.
   - package-ecosystem: "npm"
     directory: "/"
