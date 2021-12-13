@@ -14,16 +14,17 @@ updates:
         prefix-development: "[Updated]"
 
   # Project Tools.
-  -   package-ecosystem: composer
-      directory: "/tools/phpcs"
-      registries: "*"
-      schedule:
-          interval: daily
-          time: "06:30"
-      open-pull-requests-limit: 10
-      commit-message:
-          prefix: "[Updated]"
-          prefix-development: "[Updated]"
+
+  - package-ecosystem: composer
+    directory: "/tools/parallel-lint"
+    registries: "*"
+    schedule:
+        interval: daily
+        time: "06:30"
+    open-pull-requests-limit: 10
+    commit-message:
+        prefix: "[Updated]"
+        prefix-development: "[Updated]"
 
   -   package-ecosystem: composer
       directory: "/tools/phpcpd"

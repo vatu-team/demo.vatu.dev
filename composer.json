@@ -81,6 +81,9 @@
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
     ],
+    "test-parallel-lint": [
+      "./tools/parallel-lint/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./web"
+    ],
     "test-phpcbf": [
       "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml --runtime-set testVersion 7.4-"
     ],
