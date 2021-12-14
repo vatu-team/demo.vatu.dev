@@ -1,10 +1,7 @@
 <?php
 
-function enqueue_styles() {
-
-	wp_enqueue_style( 'vatu-gp-child-theme', get_stylesheet_uri(), ['generate'], wp_get_theme()->get( 'Version' )
-	);
-
-}
-
-add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
+require_once 'acf.php';
+require_once 'generatepress.php';
+require_once 'enqueue.php';
+require_once 'i18n.php';
+require_once 'performance.php';
