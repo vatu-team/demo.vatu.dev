@@ -12,10 +12,13 @@
  *
  * @since  1.0.0
  * @return void
+ *
+ * <code>
+ * function project_admin_enqueue() {
+ * 	wp_enqueue_style( 'project-admin-styles', get_stylesheet_directory_uri() . '/admin.css', '', '1.0' );
+ * </code>
+ * }
  */
-function project_admin_enqueue() {
-	// wp_enqueue_style( 'project-admin-styles', get_stylesheet_directory_uri() . '/admin.css', '', '1.0' );
-}
 
 /**
  * Action: project_admin_enqueue
@@ -29,10 +32,13 @@ add_action( 'admin_enqueue_scripts', 'project_admin_enqueue' );
  *
  * @since  1.0.0
  * @return void
+ *
+ * <code>
+ * function project_enqueue() {
+ * 	wp_enqueue_script( 'project-scripts', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery' ), '1.0', true );
+ * }
+ * </code>
  */
-function project_enqueue() {
-	// wp_enqueue_script( 'project-scripts', get_stylesheet_directory_uri() . '/scripts.js', array( 'jquery' ), '1.0', true );
-}
 
 /**
  * Action: project_enqueue
@@ -46,10 +52,13 @@ add_action( 'wp_enqueue_scripts', 'project_enqueue' );
  *
  * @since  1.0.0
  * @return void
+ *
+ * <code>
+ * function project_login_enqueue() {
+ * 	wp_enqueue_style( 'project-login-styles', get_stylesheet_directory_uri() . '/login.css', '', '1.0' );
+ * }
+ * </code>
  */
-function project_login_enqueue() {
-	// wp_enqueue_style( 'project-login-styles', get_stylesheet_directory_uri() . '/login.css', '', '1.0' );
-}
 
 /**
  * Action: project_login_enqueue

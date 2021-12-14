@@ -50,27 +50,36 @@ function disable_emojis_tinymce( $plugins ) {
  *
  * @since  1.0.0
  * @return void
+ *
+ * <code>
+ * remove_post_type_support( 'post', 'comments' );
+ * remove_post_type_support( 'page', 'comments' );
+ * </code>
  */
-// remove_post_type_support( 'post', 'comments' );
-// remove_post_type_support( 'page', 'comments' );
 
 /**
  * Remove recent comments style on the site.
  *
  * @since  1.0.0
  * @return void
+ *
+ * <code>
+ * function remove_recent_comments_style() {
+ * global $wp_widget_factory;
+ * remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+ * }
+ * </code>
  */
-// function remove_recent_comments_style() {
-// 	global $wp_widget_factory;
-// 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
-// }
 
 /**
  * Action: remove_recent_comments_style
  *
  * @since  1.0.0
+ *
+ * <code>
+ * add_action( 'widgets_init', 'remove_recent_comments_style' );
+ * </code>
  */
-// add_action( 'widgets_init', 'remove_recent_comments_style' );
 
 /**
  * Remove head elements

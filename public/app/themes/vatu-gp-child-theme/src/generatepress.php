@@ -13,6 +13,8 @@ function tu_remove_gp_premium_notices() {
 /**
  * Action: Remove GeneratePress Premium notice
  *
+ * @since   1.0.0
+ * @return  void
  * @hooked after_setup_theme - 10
  */
 add_action( 'after_setup_theme', 'tu_remove_gp_premium_notices' );
