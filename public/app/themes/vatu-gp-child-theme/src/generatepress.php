@@ -1,4 +1,11 @@
 <?php
+/**
+ * GeneratePress helper functions.
+ *
+ * @package  Vatu\Project
+ * @author   Vatu <hello@vatu.dev>
+ * @since    1.0.0
+ */
 
 /**
  * Remove GeneratePress Premium notice
