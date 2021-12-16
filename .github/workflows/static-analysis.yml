@@ -25,7 +25,7 @@ jobs:
   # - Run PHPCS on project specific files.
   phpcs:
     name: "Run PHP CodeSniffer"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: "Checks out the repository."
@@ -78,7 +78,7 @@ jobs:
   # - Run PHPCPD on project specific files.
   phpcpd:
     name: "Run PHP Copy Paste Detector"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: "Checks out the repository."
@@ -131,7 +131,7 @@ jobs:
   # - Run PHPMD on project specific files.
   phpmd:
     name: "Run PHP Mess Detector"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: "Checks out the repository."
@@ -184,7 +184,7 @@ jobs:
   # - Run PHPMND on project specific files.
   phpmnd:
     name: "Run PHP Magic Numbers Detector"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: "Checks out the repository."
@@ -240,7 +240,7 @@ jobs:
   # - Run PHPStan on project specific files.
   phpstan:
     name: "Run PHPStan"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
 
       - name: "Checks out the repository."
