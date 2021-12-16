@@ -50,9 +50,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
-      - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-scripts
-
       - name: "Install PHP Code Sniffer."
         run: composer update --working-dir=tools/phpcs --no-interaction --prefer-dist
 
@@ -105,9 +102,6 @@ jobs:
           key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
-
-      - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-scripts
 
       - name: "Install PHP Copy Paste Detector."
         run: composer update --working-dir=tools/phpcpd --no-interaction --prefer-dist
@@ -162,9 +156,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
-      - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-scripts
-
       - name: "Install PHP Mess Detector."
         run: composer update --working-dir=tools/phpmd --no-interaction --prefer-dist
 
@@ -218,10 +209,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
-      - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-scripts
-
-      - name: "Install PHP Stan."
+      - name: "Install PHP Magic Number Detector."
         run: composer update --working-dir=tools/phpmnd --no-interaction --prefer-dist
 
       - name: "Logs debug information."
