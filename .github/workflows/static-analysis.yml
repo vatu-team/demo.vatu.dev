@@ -131,10 +131,10 @@ jobs:
   # - Install Composer dependencies for tool.
   # - Logs debug information.
   # - Run PHPMD on project specific files.
-  # phpmd:
-  #   name: "Run PHP Mess Detector"
-  #   runs-on: ubuntu-latest
-  #   steps:
+  phpmd:
+    name: "Run PHP Mess Detector"
+    runs-on: ubuntu-latest
+    steps:
 
       - name: "Checks out the repository."
         uses: "actions/checkout@v2"
