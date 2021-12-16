@@ -22,7 +22,7 @@ jobs:
 # - Build notification message body.
 # - Post Slack notification message.
   dependabot:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     # Only run if the creator is Dependabot or previous workflow was successful.
     if: ${{ github.actor == 'dependabot[bot]' && github.event.workflow_run.conclusion == 'success' }}
