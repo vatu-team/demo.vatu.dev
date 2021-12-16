@@ -21,7 +21,7 @@ jobs:
 
   e2e:
     name: "Health Check"
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     # Only run if previous workflow was successful.
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
