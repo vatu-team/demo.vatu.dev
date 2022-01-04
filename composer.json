@@ -67,6 +67,9 @@
     }
   ],
   "config": {
+      "allow-plugins": {
+        "composer/installers": true
+      },
       "optimize-autoloader": true,
       "sort-packages": true,
       "preferred-install": "dist"
