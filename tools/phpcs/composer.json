@@ -1,11 +1,13 @@
 {
   "name": "vatu/phpcs",
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://wpackagist.org"
-    }
-  ],
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
   "require-dev": {
     "automattic/vipwpcs": "2.3.3",
     "automattic/phpcs-neutron-standard": "1.7.0",
