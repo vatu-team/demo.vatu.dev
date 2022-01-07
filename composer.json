@@ -110,6 +110,7 @@
       "./tools/phpunit/vendor/bin/phpunit -c ./phpunit.xml"
     ],
     "test": [
+      "composer run test-phpcbf",
       "composer run test-phpcs",
       "composer run test-phpmd",
       "composer run test-phpmnd",
