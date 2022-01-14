@@ -26,7 +26,7 @@
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
     "@bahmutov/cy-api": "1.6.2",
-    "@percy/cli": "1.0.0-beta.72",
+    "@percy/cli": "1.0.0-beta.73",
     "@percy/cypress": "3.1.1",
     "autoprefixer": "10.4.2",
     "chokidar-cli": "3.0.0",
