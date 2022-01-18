@@ -21,6 +21,8 @@ package-lock.json
 
 # Ignore compiled files
 /*.map
+/editor.css
+/editor.min.css
 /style.css
 /style.min.css
 /assets/css/
