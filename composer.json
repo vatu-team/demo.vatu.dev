@@ -43,7 +43,7 @@
   "require-dev": {
       "rarst/laps": "3.3.5",
       "wpackagist-plugin/debug-bar-post-types": "2.0.0",
-      "wpackagist-plugin/duplicate-post": "4.3",
+      "wpackagist-plugin/duplicate-post": "4.4",
       "wpackagist-plugin/log-deprecated-notices": "0.4.1",
       "wpackagist-plugin/query-monitor": "3.8.2",
       "wpackagist-plugin/redis-cache": "2.0.22",
