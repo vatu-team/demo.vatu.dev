@@ -14,5 +14,10 @@
       "sed -i.tmp 's/* @param mixed  $value The value to filter./* @param mixed  $value,... The value to filter./' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php",
       "sed -i.tmp 's/function apply_filters($hook_name, $value)/function apply_filters($hook_name, ...$value)/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"
     ]
+  },
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
   }
 }
