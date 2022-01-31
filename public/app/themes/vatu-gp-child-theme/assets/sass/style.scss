@@ -1,34 +1,39 @@
-@import "./01-settings/file-header";
+@use "./01-settings/file-header" as *;
 
 /* Settings: Global variables, config switches.
    ========================================================================== */
-@import "./01-settings/structure";
-@import "./01-settings/typography";
-@import "./01-settings/colors";
-@import "./01-settings/animations";
+@use "./01-settings/structure" as *;
+@use "./01-settings/typography" as *;
+@use "./01-settings/colors" as *;
+@use "./01-settings/animations" as *;
 
-/* Settings: Tools.
+/* Tools: Site-wide mixins and functions.
    ========================================================================== */
-//@import "./02-tools/*";
+@use "./02-tools/functions";
+@use "./02-tools/mixins";
 
 /* Generic: Ground-zero styles (eg, Normalize.css, resets, box-sizing).
    ========================================================================== */
-//@import "./03-generic/*";
+@use "./03-generic/box-sizing";
+@use "./03-generic/reset";
 
 /* Elements: Unclassed HTML elements (type selectors).
    ========================================================================== */
-//@import "./04-elements/*";
+@use "./04-elements/typography";
+@use "./04-elements/media";
 
 /* Objects: Cosmetic-free design patterns.
    ========================================================================== */
-//@import "./05-objects/*";
+@use "./05-objects/media" as object-media;
+@use "./05-objects/overlay" as object-overlay;
+@use "./05-objects/icon" as object-icon;
 
 /* Components: Design components, chunks of UI.
  * Only include global components that are loaded as part of blocks.
    ========================================================================== */
-// @import "./06-components/*";
+@use "./06-components/components.demo";
 
 /* Utilities: Helpers and overrides.
    ========================================================================== */
-@import "./07-utilities/display";
-@import "./07-utilities/alignment";
+@use "./07-utilities/display";
+@use "./07-utilities/alignment";

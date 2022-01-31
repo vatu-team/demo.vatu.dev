@@ -1,9 +1,11 @@
 /* ==========================================================================
-   /Components #Demo
+   /Elements #Typography
    ========================================================================== */
 
-/* Demo: External component, to be compiled into its own CSS file.
+/* Make images easier to work with.
    ========================================================================== */
-.demo {
-	color: grey;
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
 }

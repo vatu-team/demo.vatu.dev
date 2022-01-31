@@ -1,0 +1,28 @@
+/* ==========================================================================
+   /Elements #Typography
+   ========================================================================== */
+
+html {
+	font-feature-settings: "dlig";
+	font-variant-ligatures: discretionary-ligatures;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+}
+
+/* Clear margin for line breaks.
+   ========================================================================== */
+br {
+	margin-bottom: 0;
+}
+
+dfn,
+cite,
+em {
+	font-style: italic;
+}
+
+i {
+	font-style: normal;
+}
