@@ -50,7 +50,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-          tools: composer
+          tools: none
+          ini-file: none
 
       - name: "Logs debug information."
         run: |
