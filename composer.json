@@ -5,14 +5,14 @@
   "keywords": [
     "wordpress"
   ],
-  "homepage": "https://www.vatu.co.uk/",
+  "homepage": "https://projecturl.com",
   "readme": "https://github.com/vatu-team/demo.vatu.dev/blob/main/readme.md",
   "license": "proprietary",
   "authors": [
       {
         "name": "Vatu",
-        "email": "hello@vatu.co.uk",
-        "homepage": "https://www.vatu.co.uk/",
+        "email": "hello@vatu.dev",
+        "homepage": "https://vatu.dev",
         "role": "Agency"
       }
   ],
