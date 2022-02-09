@@ -37,6 +37,7 @@ jobs:
           php-version: "7.4"
           coverage: "none"
           ini-values: "memory_limit=256M"
+          tools: none
           ini-file: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
