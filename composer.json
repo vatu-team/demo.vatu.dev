@@ -38,7 +38,7 @@
     "wpackagist-plugin/mailgun": "1.7.9",
     "wpackagist-plugin/redirection": "5.2.3",
     "wpackagist-plugin/wordpress-seo": "18.1",
-    "wpackagist-plugin/zero-spam": "5.2.11"
+    "wpackagist-plugin/zero-spam": "5.2.12"
   },
   "require-dev": {
       "rarst/laps": "3.3.6",
