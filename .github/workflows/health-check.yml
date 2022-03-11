@@ -5,7 +5,7 @@ name: Health check
 
 on:
   workflow_run:
-    workflows: ["Deploy Build"]
+    workflows: ["Build"]
     types:
       - completed
 
