@@ -2,7 +2,7 @@
 # Version: 1.0.1
 # Author: Michael Bragg <mike@vatu.co.uk>
 
-name: Deploy Build
+name: Build
 
 # All branches push to a `{current_branch_name}--built` branch.
 # This new branch can be connected to a Git deployment process.
@@ -33,8 +33,8 @@ jobs:
   # - Setup deploy ignore files.
   # - Push build to deployment branch.
 
-  deploy-build:
-    name: Deploy Build
+  build:
+    name: "Build"
     runs-on: self-hosted
     steps:
 
