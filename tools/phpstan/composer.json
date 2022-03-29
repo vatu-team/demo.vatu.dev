@@ -3,7 +3,7 @@
   "require-dev": {
     "szepeviktor/phpstan-wordpress": "1.0.3",
     "phpstan/extension-installer": "1.1.0",
-    "phpstan/phpstan": "1.5.0"
+    "phpstan/phpstan": "1.5.1"
   },
   "scripts": {
     "post-update-cmd": [
