@@ -14,7 +14,7 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import '@bahmutov/cy-api/support';
+import '@bahmutov/cy-api';
 import 'cypress-iframe';
 import '@percy/cypress';
 
