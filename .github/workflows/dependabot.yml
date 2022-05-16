@@ -1,5 +1,5 @@
 # Vatu: Dependabot: Auto Merge
-# Version: 1.1.0
+# Version: 1.2.0
 
 name: dependabot
 
@@ -43,13 +43,11 @@ jobs:
       - name: "Build notificaiton message body."
         run: echo "slack_message=$( printf '%s on %s repository.' "${{ github.event.workflow_run.head_branch }}" "${GITHUB_REPOSITORY}" )" >> $GITHUB_ENV
 
-      - name: "Post Slack notification message"
-        uses: rtCamp/action-slack-notify@v2
+      - name: "Post Slack notification message."
+        id: slack
+        uses: slackapi/slack-github-action@v1.19
+        with:
+          channel-id: 'updates'
+          slack-message: ${{ env.slack_message }}
         env:
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_ICON: https://avatars.githubusercontent.com/in/29110?s=88&v=4
-          SLACK_MESSAGE: ${{ env.slack_message }}
-          SLACK_TITLE: "Dependabot Auto Merge"
-          SLACK_USERNAME: "Dependabot"
-          MSG_MINIMAL: true
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_DEPENDABOT_TOKEN }}
