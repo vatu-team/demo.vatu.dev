@@ -39,6 +39,7 @@ namespace {
 		 *                                and functions with the same priority are executed in the order
 		 *                                in which they were added to the filter.
 		 * @param int      $accepted_args The number of arguments the function accepts.
+		 * @return true Always returns true.
 		 */
 		public function add_filter($hook_name, $callback, $priority = 10, $accepted_args = 1)
 		{
