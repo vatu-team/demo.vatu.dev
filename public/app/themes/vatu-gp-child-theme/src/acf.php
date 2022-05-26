@@ -24,7 +24,7 @@ function acf_json_save_point() {
  * @since  1.0.0
  * @hooked acf/settings/save_json - 10
  */
-add_filter( 'acf/settings/save_json', 'acf_json_save_point' );
+add_filter( 'acf/settings/save_json', 'acf_json_save_point', 10, 0 );
 
 /**
  * Set ACF JSON load point.
@@ -46,4 +46,4 @@ function acf_json_load_point( $paths ) {
  * @since  1.0.0
  * @hooked acf/settings/load_json - 10
  */
-add_filter( 'acf/settings/load_json', 'acf_json_load_point' );
+add_filter( 'acf/settings/load_json', 'acf_json_load_point', 10, 1 );

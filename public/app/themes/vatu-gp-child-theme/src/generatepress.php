@@ -24,4 +24,4 @@ function tu_remove_gp_premium_notices() {
  * @return  void
  * @hooked after_setup_theme - 10
  */
-add_action( 'after_setup_theme', 'tu_remove_gp_premium_notices' );
+add_action( 'after_setup_theme', 'tu_remove_gp_premium_notices', 10, 0 );

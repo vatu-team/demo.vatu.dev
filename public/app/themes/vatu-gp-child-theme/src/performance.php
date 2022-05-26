@@ -21,7 +21,7 @@ function disable_emojis() {
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce', 10, 1 );
 }
 
 /**
@@ -29,7 +29,7 @@ function disable_emojis() {
  *
  * @since  1.0.0
  */
-add_action( 'init', 'disable_emojis' );
+add_action( 'init', 'disable_emojis', 10, 0 );
 
 /**
  * Disable the emojis tinymce on the site.
@@ -77,7 +77,7 @@ function disable_emojis_tinymce( $plugins ) {
  * @since  1.0.0
  *
  * <code>
- * add_action( 'widgets_init', 'remove_recent_comments_style' );
+ * add_action( 'widgets_init', 'remove_recent_comments_style', 10, 0 );
  * </code>
  */
 
@@ -119,4 +119,4 @@ function remove_dashboard_meta() {
  *
  * @since  1.0.0
  */
-add_action( 'admin_init', 'remove_dashboard_meta' );
+add_action( 'admin_init', 'remove_dashboard_meta', 10, 0 );

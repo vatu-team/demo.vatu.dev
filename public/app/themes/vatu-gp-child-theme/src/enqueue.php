@@ -25,7 +25,7 @@
  *
  * @since  1.0.0
  */
-add_action( 'admin_enqueue_scripts', 'project_admin_enqueue' );
+add_action( 'admin_enqueue_scripts', 'project_admin_enqueue', 10, 0 );
 
 /**
  * Enqueue scripts into theme.
@@ -45,7 +45,7 @@ add_action( 'admin_enqueue_scripts', 'project_admin_enqueue' );
  *
  * @since  1.0.0
  */
-add_action( 'wp_enqueue_scripts', 'project_enqueue' );
+add_action( 'wp_enqueue_scripts', 'project_enqueue', 10, 0 );
 
 /**
  * Enqueue stylesheets into login page.
@@ -65,4 +65,4 @@ add_action( 'wp_enqueue_scripts', 'project_enqueue' );
  *
  * @since  1.0.0
  */
-add_action( 'wp_enqueue_scripts', 'project_login_enqueue' );
+add_action( 'wp_enqueue_scripts', 'project_login_enqueue', 10, 0 );
