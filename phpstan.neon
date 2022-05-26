@@ -1,8 +1,26 @@
 parameters:
-  level: 1
+
+  level: 2
+
   inferPrivatePropertyTypeFromConstructor: true
+
   parallel:
-    maximumNumberOfProcesses: 4
+    maximumNumberOfProcesses: 8
+
+  excludePaths:
+    analyse:
+    - */vendor/*
+    - */tests/*
+
+  bootstrapFiles:
+    - tests/phpstan/constants.php
 
   scanDirectories:
+    - vendor
     - public/wp
+    - public/app/plugins
+    - public/app/mu-plugins
+    - public/app/themes
+
+  stubFiles:
+    - tests/phpstan/WP_Hook.stub
