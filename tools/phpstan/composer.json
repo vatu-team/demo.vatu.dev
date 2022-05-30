@@ -1,7 +1,7 @@
 {
   "name": "vatu/phpstan",
   "require-dev": {
-    "szepeviktor/phpstan-wordpress": "1.1.1",
+    "php-stubs/wordpress-stubs": "6.0.0",
     "phpstan/extension-installer": "1.1.0",
     "phpstan/phpstan": "1.7.3"
   },
