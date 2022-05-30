@@ -244,7 +244,7 @@ jobs:
   # - Run PHPStan on project specific files.
   phpstan:
     name: "Run PHPStan"
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
 
       - name: "Checks out the repository."
