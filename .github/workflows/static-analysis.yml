@@ -261,18 +261,18 @@ jobs:
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: "Get Composer Cache Directory."
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
+#       - name: "Get Composer Cache Directory."
+#         id: composer-cache
+#         run: |
+#           echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2"
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
+#       - name: "Sets up Caching."
+#         uses: "actions/cache@v2"
+#         with:
+#           path: ${{ steps.composer-cache.outputs.dir }}
+#           key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-php-composer-build-
 
       - name: "Build site."
         run: composer update --no-interaction --prefer-dist --no-scripts
