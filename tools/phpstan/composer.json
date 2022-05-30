@@ -10,9 +10,7 @@
       "sed -i.tmp 's/function wp_hash_password/#function wp_hash_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php",
       "sed -i.tmp 's/function wp_set_password/#function wp_set_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php",
       "sed -i.tmp 's/function wp_generate_password/#function wp_generate_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php",
-      "sed -i.tmp 's/function wp_check_password/#function wp_check_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php",
-      "sed -i.tmp 's/* @param mixed $value The value to filter./* @param mixed $value,... The value to filter./' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php",
-      "sed -i.tmp 's/function apply_filters($value, $args)/function apply_filters($value, ...$args)/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"
+      "sed -i.tmp 's/function wp_check_password/#function wp_check_password/' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php"
     ]
   },
   "config": {
