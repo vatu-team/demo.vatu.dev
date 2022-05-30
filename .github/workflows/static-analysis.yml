@@ -278,7 +278,7 @@ jobs:
         run: composer update --no-interaction --prefer-dist --no-scripts
 
       - name: "Install PHP Stan."
-        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist
+        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist --no-cache
 
       - name: "Logs debug information."
         run: |
