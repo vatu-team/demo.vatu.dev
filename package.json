@@ -30,7 +30,7 @@
     "@percy/cypress": "3.1.1",
     "autoprefixer": "10.4.7",
     "chokidar-cli": "3.0.0",
-    "cssnano": "5.1.10",
+    "cssnano": "5.1.11",
     "cypress": "10.0.2",
     "cypress-iframe": "1.0.1",
     "npm-run-all": "4.1.5",
