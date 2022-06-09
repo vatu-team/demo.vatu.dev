@@ -86,7 +86,9 @@ jobs:
           npm --version
 
       - name: "Install Node Modules."
-        run: npm install
+        run: |
+          git config --global url."https://${{ secrets.VATU_GITHUB_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
+          npm install
 
       - name: "Compile Theme."
         run: |
