@@ -78,7 +78,7 @@ jobs:
           node-version: '14'
       - run: npm install
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.VATU_GITHUB_TOKEN }}
 
       - name: "Logs debug information."
         run: |
