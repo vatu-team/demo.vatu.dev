@@ -25,6 +25,7 @@ jobs:
   # - Install Composer dependencies with development dependencies. || Install Composer dependencies with no dev option.
   # - Setup NodeJS.
   # - Logs debug information.
+  # - Install Node dependencies.
   # - Compile Theme.
   # - Check built branch exists.
   # - Checkout copy of repository. && Creating a *--built branch. || Using existing *--built branch.
@@ -76,14 +77,16 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VATU_GITHUB_TOKEN }}
-
+          
       - name: "Logs debug information."
         run: |
           node --version
           npm --version
+
+      - name: "Install Node Modules."
+        run: npm install
 
       - name: "Compile Theme."
         run: |
