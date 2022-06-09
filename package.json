@@ -31,10 +31,5 @@
     "@vatu/theme-build": "github:vatu-team/theme-build#0.0.1",
     "cypress": "10.0.3",
     "cypress-iframe": "1.0.1"
-  },
-  "browserslist": [
-    "> 2%",
-    "last 2 versions",
-    "not ie <= 11"
-  ]
+  }
 }
