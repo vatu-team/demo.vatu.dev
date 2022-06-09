@@ -45,6 +45,8 @@ jobs:
 
       - name: "Checks out the repository."
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
