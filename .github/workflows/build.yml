@@ -51,6 +51,8 @@ jobs:
           php-version: '7.4'
           tools: none
           ini-file: none
+        env:
+          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Logs debug information."
         run: |
@@ -75,6 +77,8 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Logs debug information."
         run: |
