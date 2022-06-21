@@ -122,60 +122,6 @@ jobs:
         run: |
           composer run test-phpcpd
 
-  # Performs PHP Mess Detector against our codebase.
-  #
-  # Performs the following steps:
-  # - Checks out the repository.
-  # - Sets up Caching.
-  # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
-  # - Logs debug information.
-  # - Run PHPMD on project specific files.
-  phpmd:
-    name: "Run PHP Mess Detector"
-    runs-on: self-hosted
-    steps:
-
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v2"
-
-      - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "7.4"
-          coverage: "none"
-          ini-values: "memory_limit=256M"
-          tools: none
-          ini-file: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Get Composer Cache Directory."
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2"
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
-
-      - name: "Install PHP Mess Detector."
-        run: composer update --working-dir=tools/phpmd --no-interaction --prefer-dist
-
-      - name: "Logs debug information."
-        run: |
-          php --version
-          composer --version
-          php ./tools/phpmd/vendor/bin/phpmd --version
-
-      - name: "Run PHPMD on project specific files."
-        run: |
-          composer run test-phpmd
-
   # Performs PHP Magic Number Detector against our codebase.
   #
   # Performs the following steps:
