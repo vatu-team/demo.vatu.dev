@@ -3,8 +3,7 @@
 
 	<description>WordPress Coding Standards.</description>
 
-	<config name="testVersion" value="7.3" />
-	<config name="minimum_supported_wp_version" value="5.7" />
+	<config name="minimum_supported_wp_version" value="5.9" />
 
 	<!-- Exclude source code we do not control. -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
@@ -27,8 +26,8 @@
 
 	<!-- Include the WordPress Theme Review ruleset, with options. -->
 	<rule ref="WPThemeReview">
-		<exclude-pattern>/web/app/mu-plugins/</exclude-pattern>
-		<exclude-pattern>/web/app/plugins/</exclude-pattern>
+		<exclude-pattern>/public/app/mu-plugins/</exclude-pattern>
+		<exclude-pattern>/public/app/plugins/</exclude-pattern>
 		<exclude name="WPThemeReview.Templates.ReservedFileNamePrefix.ReservedTemplatePrefixFound" />
 	</rule>
 
@@ -37,22 +36,31 @@
 		<properties>
 			<property name="text_domain" type="array">
 				<element value="wordpress" />
+				<element value="braintumourcharity" />
 			</property>
 		</properties>
 
 		<!-- Excludes as we only need to support PHP 7.3+ -->
 		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
-
+		<exclude name="WordPress.NamingConventions.ValidHookName.UseUnderscores" />
+		<exclude name="WordPress.NamingConventions.ValidHookName.NotLowercase" />
 	</rule>
 
-	<!-- Exclude rule for test files -->
+	<!-- Exclude rule for modern development. -->
 	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>*/src/*</exclude-pattern>
+		<exclude-pattern>*/tests/*</exclude-pattern>
+	</rule>
+
+	<!-- Exclude rule for modern development. -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>*/src/*</exclude-pattern>
 		<exclude-pattern>*/tests/*</exclude-pattern>
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<rule ref="PHPCompatibilityWP">
-		<config name="testVersion" value="7.3" />
+		<config name="testVersion" value="7.4-" />
 	</rule>
 
 </ruleset>
