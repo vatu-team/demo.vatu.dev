@@ -80,7 +80,6 @@
         "@composer update --working-dir=tools/parallel-lint",
         "@composer update --working-dir=tools/phpcs",
         "@composer update --working-dir=tools/phpcpd",
-        "@composer update --working-dir=tools/phpmd",
         "@composer update --working-dir=tools/phpmnd",
         "@composer update --working-dir=tools/phpstan"
     ],
@@ -95,9 +94,6 @@
     ],
     "test-phpcs": [
       "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 7.3- ./public/app/themes/vatu-gp-child-theme"
-    ],
-    "test-phpmd": [
-      "./tools/phpmd/vendor/bin/phpmd ./public/app/themes/vatu-gp-child-theme/ text ./phpmd.xml"
     ],
     "test-phpcpd": [
       "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
