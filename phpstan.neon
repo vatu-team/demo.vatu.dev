@@ -1,8 +1,0 @@
-parameters:
-  level: 1
-  inferPrivatePropertyTypeFromConstructor: true
-  parallel:
-    maximumNumberOfProcesses: 4
-
-  scanDirectories:
-    - public/wp

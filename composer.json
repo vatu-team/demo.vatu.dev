@@ -106,7 +106,7 @@
       "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/vatu-gp-child-theme --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon --memory-limit 256M"
+      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 256M"
     ],
     "test-phpunit": [
       "./tools/phpunit/vendor/bin/phpunit -c ./phpunit.xml"
