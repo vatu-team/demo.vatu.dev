@@ -13,6 +13,13 @@ on:
     branches:
       - 'main'
       - 'develop'
+    paths:
+      - 'config'
+      - 'public'
+      - '.browserlistrc'
+      - '.deployignore'
+      - 'composer.json'
+      - 'package.json'
 
 jobs:
   # Deploy code to production.
