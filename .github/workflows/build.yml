@@ -69,7 +69,6 @@ jobs:
           php --version
           composer --version
           echo Current Branch: ${{ env.branch_name }}
-          echo ${{ toJson(github) }}
 
       - name: "Install Composer dependencies with development dependencies."
         if: ${{ env.branch_name == 'develop' }}
