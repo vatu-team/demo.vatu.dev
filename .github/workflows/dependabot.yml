@@ -1,5 +1,5 @@
 # Vatu: Dependabot: Auto Merge
-# Version: 1.4.0
+# Version: 1.4.1
 
 name: "Dependabot"
 
@@ -33,6 +33,7 @@ jobs:
       - name: "Auto Approve Pull Request"
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.pulls.createReview({
               owner: context.payload.repository.owner.login,
@@ -44,6 +45,7 @@ jobs:
       - name: "Auto Merges Pull Request."
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.pulls.merge({
               owner: context.payload.repository.owner.login,
