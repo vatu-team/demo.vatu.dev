@@ -11,16 +11,24 @@ error_log
 ## Tools
 
 /.bin
-/.github
-/.phive
+.browserlistrc
+.github
+.phive
 /shared
 /tests
 /tools
-/.editorconfig
-/.gitattributes
+.editorconfig
+.gitattributes
+LocalValetDriver.php
 phpcs.xml
+phpcs.xml.dist
+phpcs.dist.xml
 phpmd.xml
+phpmd.xml.dist
+phpmd.dist.xml
 phpstan.neon
+phpstan.neon.dist
+phpstan.dist.neon
 readme.md
 readme.txt
 !/readme.txt
