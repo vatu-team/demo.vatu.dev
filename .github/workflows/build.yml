@@ -88,7 +88,7 @@ jobs:
           node-version: '14'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VATU_GITHUB_TOKEN }}
-          
+
       - name: "Logs debug information."
         run: |
           node --version
@@ -130,8 +130,7 @@ jobs:
 
       - name: "Rsync files to build directory."
         run: |
-          rsync -a --exclude={'.git','built/'} "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
-          ls -la ${GITHUB_WORKSPACE}/
+          rsync -azrm --inplace --delete --exclude={'.git','built/'} --exclude-from=.deployignore "${GITHUB_WORKSPACE}/" "${GITHUB_WORKSPACE}/built/"
 
       - name: "Remove `.gitignore` file."
         run: |
@@ -145,8 +144,7 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}/built/
           git config --global user.name '${{ github.event.pusher.name || github.actor }}'
-          git config --global user.email '${{ github.event.pusher.email || 
-          'team@vatu.dev' }}'
+          git config --global user.email '${{ github.event.pusher.email || 'team@vatu.dev' }}'
           git add -A
           MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
