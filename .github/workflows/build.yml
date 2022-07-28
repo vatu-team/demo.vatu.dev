@@ -51,7 +51,7 @@ jobs:
           echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
 
       - name: "Checks out the repository."
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.0.2
         with:
           persist-credentials: false
 
@@ -122,7 +122,7 @@ jobs:
           git rm --cached -r .
 
       - name: "Using existing `--built` branch."
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.0.2
         with:
           ref: ${{ env.branch_name }}--built
           path: ./built
@@ -144,7 +144,7 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}/built/
           git config --global user.name '${{ github.event.pusher.name || github.actor }}'
-          git config --global user.email '${{ github.event.pusher.email || 'team@vatu.dev' }}'
+          git config --global user.email '${{ github.event.pusher.email ||'team@vatu.dev' }}'
           git add -A
           MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
