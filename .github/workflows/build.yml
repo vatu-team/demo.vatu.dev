@@ -106,7 +106,9 @@ jobs:
 
       - name: "Check built branch exists."
         run: |
-           echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" ${{ env.branch_name }}--built | wc -l )" >> $GITHUB_ENV
+          git config --global user.name '${{ github.event.pusher.name || github.actor }}'
+          git config --global user.email '${{ github.event.pusher.email || 'team@vatu.dev' }}'
+          echo "ls_remote=$( git ls-remote --heads "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" ${{ env.branch_name }}--built | wc -l )" >> $GITHUB_ENV
 
       - name: "Checkout copy of repository."
         uses: actions/checkout@v2
