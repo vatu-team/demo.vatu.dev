@@ -1,5 +1,5 @@
 # Vatu: Static Analysis
-# Version: 0.4.0
+# Version: 0.5.0
 
 name: Static Analysis
 
@@ -20,9 +20,7 @@ jobs:
   # - Checks out the repository.
   # - Sets up Caching.
   # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
-  # - Logs PHPCS debug information.
-  # - Run PHPCS on project specific files.
+  # - Run PHP CodeSniffer Test.
   phpcs:
     name: "Run PHP CodeSniffer"
     runs-on: self-hosted
@@ -55,18 +53,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-composer-build-
 
-      - name: "Install PHP Code Sniffer."
-        run: composer update --working-dir=tools/phpcs --no-interaction --prefer-dist
-
-      - name: "Logs debug information."
-        run: |
-          php --version
-          composer --version
-          php ./tools/phpcs/vendor/bin/phpcs -i
-
-      - name: "Run PHPCS on project specific files."
-        run: |
-          composer run test-phpcs
+      - name: "Run PHP CodeSniffer Test."
+        uses: vatu-team/workflows/actions/php-codesniffer@ca92f3679c554ca3098e2c57e55e4cbcf97d353a
 
   # Performs Copy Paste Detector against our codebase.
   #
