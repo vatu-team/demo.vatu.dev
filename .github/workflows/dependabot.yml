@@ -1,7 +1,8 @@
-# Vatu: Dependabot: Auto Merge
-# Version: 1.4.1
+# Vatu: Dependabot Auto Merge
+# Version: 2.0.0
+# Author: Michael Bragg <mike@vatu.co.uk>
 
-name: "Dependabot"
+name: "Dependabot Auto Merge"
 
 on:
   workflow_run:
@@ -18,11 +19,13 @@ jobs:
   # Dependabot Auto Merge.
   #
   # Performs the following steps:
+  # - Set Vatu Bot token.
   # - Auto Approve Pull Request
   # - Auto Merges Pull Request.
   # - Build notification message body.
   # - Post Slack notification message.
   dependabot:
+
     runs-on: self-hosted
 
     # Only run if the creator is Dependabot or previous workflow was successful.
@@ -30,10 +33,17 @@ jobs:
 
     steps:
 
-      - name: "Auto Approve Pull Request"
-        uses: actions/github-script@v6
+      - name: "Set Vatu Bot token."
+        uses: tibdex/github-app-token@v1.6
+        id: generate-token
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          app_id: ${{ secrets.VATU_BOT_ID }}
+          private_key: ${{ secrets.VATU_BOT_KEY }}
+
+      - name: "Auto Approve Pull Request."
+        uses: actions/github-script@v6.1
+        with:
+          github-token: ${{ steps.generate-token.outputs.token }}}
           script: |
             github.rest.pulls.createReview({
               owner: context.payload.repository.owner.login,
@@ -43,9 +53,9 @@ jobs:
             })
 
       - name: "Auto Merges Pull Request."
-        uses: actions/github-script@v6
+        uses: actions/github-script@v6.1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ steps.generate-token.outputs.token }}}
           script: |
             github.rest.pulls.merge({
               owner: context.payload.repository.owner.login,
@@ -59,7 +69,7 @@ jobs:
 
       - name: "Post Slack notification message."
         id: slack
-        uses: slackapi/slack-github-action@v1.19
+        uses: slackapi/slack-github-action@v1.21
         with:
           channel-id: 'updates'
           slack-message: ${{ env.slack_message }}
