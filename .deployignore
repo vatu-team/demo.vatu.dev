@@ -29,6 +29,9 @@ phpmd.dist.xml
 phpstan.neon
 phpstan.neon.dist
 phpstan.dist.neon
+phpunit.xml
+phpunit.xml.dist
+phpunit.dist.xml
 readme.md
 readme.txt
 !/readme.txt
