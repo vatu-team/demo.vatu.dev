@@ -1,5 +1,5 @@
 # Vatu: Dependabot Auto Merge
-# Version: 2.0.0
+# Version: 2.0.1
 # Author: Michael Bragg <mike@vatu.co.uk>
 
 name: "Dependabot Auto Merge"
@@ -41,7 +41,7 @@ jobs:
           private_key: ${{ secrets.VATU_BOT_KEY }}
 
       - name: "Auto Approve Pull Request."
-        uses: actions/github-script@v6.1
+        uses: actions/github-script@v6.1.0
         with:
           github-token: ${{ steps.generate-token.outputs.token }}}
           script: |
@@ -53,7 +53,7 @@ jobs:
             })
 
       - name: "Auto Merges Pull Request."
-        uses: actions/github-script@v6.1
+        uses: actions/github-script@v6.1.0
         with:
           github-token: ${{ steps.generate-token.outputs.token }}}
           script: |
