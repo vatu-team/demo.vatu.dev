@@ -1,5 +1,5 @@
 # Vatu: Dependabot Auto Merge
-# Version: 2.0.1
+# Version: 2.0.2
 # Author: Michael Bragg <mike@vatu.co.uk>
 
 name: "Dependabot Auto Merge"
@@ -19,7 +19,7 @@ jobs:
   # Dependabot Auto Merge.
   #
   # Performs the following steps:
-  # - Set Vatu Bot token.
+  # - Generate Vatu Bot token.
   # - Auto Approve Pull Request
   # - Auto Merges Pull Request.
   # - Build notification message body.
@@ -33,7 +33,7 @@ jobs:
 
     steps:
 
-      - name: "Set Vatu Bot token."
+      - name: "Generate Vatu Bot token."
         uses: tibdex/github-app-token@v1.6
         id: generate-token
         with:
@@ -43,7 +43,7 @@ jobs:
       - name: "Auto Approve Pull Request."
         uses: actions/github-script@v6.1.0
         with:
-          github-token: ${{ steps.generate-token.outputs.token }}}
+          github-token: ${{ steps.generate-token.outputs.token }}
           script: |
             github.rest.pulls.createReview({
               owner: context.payload.repository.owner.login,
@@ -55,7 +55,7 @@ jobs:
       - name: "Auto Merges Pull Request."
         uses: actions/github-script@v6.1.0
         with:
-          github-token: ${{ steps.generate-token.outputs.token }}}
+          github-token: ${{ steps.generate_token.outputs.token }}
           script: |
             github.rest.pulls.merge({
               owner: context.payload.repository.owner.login,
