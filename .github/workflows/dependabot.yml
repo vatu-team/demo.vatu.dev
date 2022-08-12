@@ -35,7 +35,7 @@ jobs:
 
       - name: "Generate Vatu Bot token."
         uses: tibdex/github-app-token@v1.6
-        id: generate-token
+        id: generate_token
         with:
           app_id: ${{ secrets.VATU_BOT_ID }}
           private_key: ${{ secrets.VATU_BOT_KEY }}
@@ -43,7 +43,7 @@ jobs:
       - name: "Auto Approve Pull Request."
         uses: actions/github-script@v6.1.0
         with:
-          github-token: ${{ steps.generate-token.outputs.token }}
+          github-token: ${{ steps.generate_token.outputs.token }}
           script: |
             github.rest.pulls.createReview({
               owner: context.payload.repository.owner.login,
