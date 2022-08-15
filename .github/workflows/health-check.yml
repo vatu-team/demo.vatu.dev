@@ -16,7 +16,8 @@ jobs:
   # - Get current branch name.
   # - Checks out the repository.
   # - Setup NodeJS.
-  # - Install NodeJS dependencies.
+  # - Logs debug information.
+  # - Install Node Modules.
   # - Run Health Check tests.
 
   e2e:
@@ -42,6 +43,11 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VATU_GITHUB_TOKEN }}
 
+      - name: "Logs debug information."
+        run: |
+          node --version
+          npm --version
+          
       - name: "Install Node Modules."
         run: |
           git config --global url.https://${{ secrets.VATU_GITHUB_TOKEN }}:x-oauth-basic@github.com/.insteadOf ssh://git@github.com/
