@@ -110,7 +110,6 @@
     "test": [
       "composer run test-phpcbf",
       "composer run test-phpcs",
-      "composer run test-phpmd",
       "composer run test-phpmnd",
       "composer run test-phpcpd",
       "composer run test-phpstan"
