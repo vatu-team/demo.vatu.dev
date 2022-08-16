@@ -26,7 +26,7 @@
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
     "@bahmutov/cy-api": "2.1.3",
-    "@percy/cli": "1.9.0",
+    "@percy/cli": "1.9.1",
     "@percy/cypress": "3.1.2",
     "@vatu/theme-build": "github:vatu-team/theme-build#0.0.1",
     "cypress": "10.4.0",
