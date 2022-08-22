@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit849ce71c8480b411dcc4ead24734c861
+class ComposerStaticInit4a256a46ea7cbcc5e30e694ae98c798c
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -145,6 +145,7 @@ class ComposerStaticInit849ce71c8480b411dcc4ead24734c861
         'Composer\\Installers\\MajimaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MajimaInstaller.php',
         'Composer\\Installers\\MakoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MakoInstaller.php',
         'Composer\\Installers\\MantisBTInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MantisBTInstaller.php',
+        'Composer\\Installers\\MatomoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MatomoInstaller.php',
         'Composer\\Installers\\MauticInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MauticInstaller.php',
         'Composer\\Installers\\MayaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MayaInstaller.php',
         'Composer\\Installers\\MediaWikiInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/MediaWikiInstaller.php',
@@ -262,9 +263,9 @@ class ComposerStaticInit849ce71c8480b411dcc4ead24734c861
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit849ce71c8480b411dcc4ead24734c861::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit849ce71c8480b411dcc4ead24734c861::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit849ce71c8480b411dcc4ead24734c861::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4a256a46ea7cbcc5e30e694ae98c798c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4a256a46ea7cbcc5e30e694ae98c798c::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit4a256a46ea7cbcc5e30e694ae98c798c::$classMap;
 
         }, null, ClassLoader::class);
     }

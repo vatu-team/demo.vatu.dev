@@ -3,7 +3,7 @@
         'name' => 'vatu/demo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '189968c703f6f2005c634445037b0ea1d0b702e3',
+        'reference' => 'e3a1411401a731697fee87ef65cdab8bc5bff1da',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'composer/installers' => array(
-            'pretty_version' => 'v2.1.1',
-            'version' => '2.1.1.0',
-            'reference' => 'af93ba6e52236418f07a278033eba6959ee5b983',
+            'pretty_version' => 'v2.2.0',
+            'version' => '2.2.0.0',
+            'reference' => 'c29dc4b93137acb82734f672c37e029dfbd95b35',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/./installers',
             'aliases' => array(),
@@ -136,7 +136,7 @@
         'vatu/demo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '189968c703f6f2005c634445037b0ea1d0b702e3',
+            'reference' => 'e3a1411401a731697fee87ef65cdab8bc5bff1da',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
