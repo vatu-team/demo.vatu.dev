@@ -37,7 +37,7 @@
     "wpackagist-plugin/limit-login-attempts-reloaded": "2.25.4",
     "wpackagist-plugin/mailgun": "1.8.1",
     "wpackagist-plugin/redirection": "5.3.2",
-    "wpackagist-plugin/wordpress-seo": "19.5.1",
+    "wpackagist-plugin/wordpress-seo": "19.6",
     "wpackagist-plugin/zero-spam": "5.3.9"
   },
   "require-dev": {
