@@ -1,224 +1,51 @@
 # Vatu: Static Analysis
-# Version: 0.5.0
-
+# Author: Michael Bragg <mike@vatu.co.uk>
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Static Analysis
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types:
+      - opened
+      - synchronize
+    branches-ignore:
+      - 'dependabot/**' # Ignore Dependabot branches. Don't analise 3rd Party Code.
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.head_ref }}
+  group: ${{ github.workflow }}--${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
 
-  # Performs PHP CodeSnigger checks against our codebase.
-  #
-  # Performs the following steps:
-  # - Checks out the repository.
-  # - Sets up Caching.
-  # - Sets up PHP with Composer.
-  # - Run PHP CodeSniffer Test.
   phpcs:
-    name: "Run PHP CodeSniffer"
-    runs-on: self-hosted
-    steps:
 
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v2"
+    name: "PHP CodeSniffer"
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta
+    with:
+      runs-on: 'self-hosted'
+    secrets: inherit
 
-      - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "7.4"
-          coverage: "none"
-          ini-values: "memory_limit=256M"
-          tools: none
-          ini-file: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Get Composer Cache Directory."
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2"
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
-
-      - name: "Run PHP CodeSniffer Test."
-        uses: vatu-team/workflows/actions/php-codesniffer@ca92f3679c554ca3098e2c57e55e4cbcf97d353a
-
-  # Performs Copy Paste Detector against our codebase.
-  #
-  # Performs the following steps:
-  # - Checks out the repository.
-  # - Sets up Caching.
-  # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
-  # - Logs debug information.
-  # - Run PHPCPD on project specific files.
   phpcpd:
-    name: "Run PHP Copy Paste Detector"
-    runs-on: self-hosted
-    steps:
 
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v2"
+    name: "PHP Copy/Paste Detector"
+    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta
+    with:
+      runs-on: 'self-hosted'
+    secrets: inherit
 
-      - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "7.4"
-          coverage: "none"
-          ini-values: "memory_limit=256M"
-          tools: none
-          ini-file: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Get Composer Cache Directory."
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2"
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
-
-      - name: "Install PHP Copy Paste Detector."
-        run: composer update --working-dir=tools/phpcpd --no-interaction --prefer-dist
-
-      - name: "Logs debug information."
-        run: |
-          php --version
-          composer --version
-          php ./tools/phpcpd/vendor/bin/phpcpd --version
-
-      - name: "Run PHPCPD on project specific files."
-        run: |
-          composer run test-phpcpd
-
-  # Performs PHP Magic Number Detector against our codebase.
-  #
-  # Performs the following steps:
-  # - Checks out the repository.
-  # - Sets up Caching.
-  # - Sets up PHP with Composer.
-  # - Install Composer dependencies for tool.
-  # - Logs debug information.
-  # - Run PHPMND on project specific files.
   phpmnd:
-    name: "Run PHP Magic Numbers Detector"
-    runs-on: self-hosted
-    steps:
 
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v2"
+    name: "PHP Magic Number Detector"
+    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta
+    with:
+      runs-on: 'self-hosted'
+    secrets: inherit
 
-      - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "7.4"
-          coverage: "none"
-          ini-values: "memory_limit=256M"
-          tools: none
-          ini-file: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Get Composer Cache Directory."
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2"
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
-
-      - name: "Install PHP Magic Number Detector."
-        run: composer update --working-dir=tools/phpmnd --no-interaction --prefer-dist
-
-      - name: "Logs debug information."
-        run: |
-          php --version
-          composer --version
-          php ./tools/phpmnd/vendor/bin/phpmnd --version
-
-      - name: "Run PHPMND on project specific files."
-        run: |
-          composer run test-phpmnd
-
-  # Performs PHPStan against our codebase.
-  #
-  # Performs the following steps:
-  # - Checks out the repository.
-  # - Sets up PHP with Composer.
-  # - Get Composer Cache Directory.
-  # - Sets up Caching.
-  # - Build Site.
-  # - Install PHP Stan.
-  # - Install Composer dependencies for tool.
-  # - Logs debug information.
-  # - Run PHPStan on project specific files.
   phpstan:
-    name: "Run PHPStan"
-    runs-on: self-hosted
-    steps:
 
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v2"
-
-      - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: "7.4"
-          coverage: "none"
-          ini-values: "memory_limit=256M"
-          tools: none
-          ini-file: none
-        env:
-          COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: "Get Composer Cache Directory."
-        id: composer-cache
-        run: |
-          echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Sets up Caching."
-        uses: "actions/cache@v2"
-        with:
-          path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.json') }}
-          restore-keys: |
-            ${{ runner.os }}-php-composer-build-
-
-      - name: "Build site."
-        run: composer update --no-interaction --prefer-dist --no-scripts
-
-      - name: "Install PHP Stan."
-        run: composer update --working-dir=tools/phpstan --no-interaction --prefer-dist
-
-      - name: "Logs debug information."
-        run: |
-          php --version
-          composer --version
-          php ./tools/phpstan/vendor/bin/phpstan --version
-
-      - name: "Run PHPStan on project specific files."
-        run: composer run test-phpstan
+    name: "PHP Stan"
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta
+    with:
+      runs-on: 'self-hosted'
+    secrets: inherit
