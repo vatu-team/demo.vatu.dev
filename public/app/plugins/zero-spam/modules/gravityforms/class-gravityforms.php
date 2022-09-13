@@ -38,17 +38,46 @@ class GravityForms {
 			'enabled' === \ZeroSpam\Core\Settings::get_settings( 'verify_gravityforms' ) &&
 			\ZeroSpam\Core\Access::process()
 		) {
-      // Adds Zero Spam's honeypot field.
+			// Adds Zero Spam's honeypot field.
 			add_filter( 'gform_form_tag', array( $this, 'add_honeypot' ), 60, 2 );
 
-      // Processes the form.
+			// Processes the form.
 			add_action( 'gform_abort_submission_with_confirmation', array( $this, 'process_form' ), 10, 2 );
 			add_filter( 'gform_confirmation', array( $this, 'confirmation_message' ), 10, 4 );
-      /*
+			/*
 			// Load scripts.
 			add_action( 'wp_print_scripts', array( $this, 'add_scripts' ), 999 );
-      */
+			*/
 		}
+	}
+
+	/**
+	 * Add to the types array
+	 *
+	 * @param array $types Array of available detection types.
+	 */
+	public function types( $types ) {
+		$types['gravityforms'] = array(
+			'label' => __( 'Gravity Forms', 'zero-spam' ),
+			'color' => '#f15a29',
+		);
+
+		return $types;
+	}
+
+	/**
+	 * Admin section
+	 *
+	 * @param array $sections Array of available setting sections.
+	 */
+	public function sections( $sections ) {
+		$sections['gravityforms'] = array(
+			'title'    => __( 'Gravity Forms', 'zero-spam' ),
+			'icon'     => 'modules/gravityforms/icon-gravity-forms.svg',
+			'supports' => array( 'honeypot', 'email' ),
+		);
+
+		return $sections;
 	}
 
 	/**
@@ -64,16 +93,16 @@ class GravityForms {
 
 	/**
 	 * Adds Zero Spam's honeypot field.
-   *
-   * @see https://docs.gravityforms.com/gform_form_tag/#h-add-hidden-input
-   *
+	 *
+	 * @see https://docs.gravityforms.com/gform_form_tag/#h-add-hidden-input
+	 *
 	 * @param string $form_tag The string containing the <form> tag
-   * @param array $form The current form object to be filtered.
+	 * @param array $form The current form object to be filtered.
 	 */
 	public function add_honeypot( $form_tag,  $form ) {
-    $form_tag .= \ZeroSpam\Core\Utilities::honeypot_field();
+		$form_tag .= \ZeroSpam\Core\Utilities::honeypot_field();
 
-    return $form_tag;
+		return $form_tag;
 	}
 
 	public function confirmation_message( $confirmation, $form, $entry, $ajax ) {
@@ -119,6 +148,7 @@ class GravityForms {
 		}
 
 		if ( ! empty( $validation_errors ) ) {
+			do_action( 'zero_spam_detection', $details, $validation_errors );
 			$do_abort = true;
 
 			// Failed validations, log & send details if enabled.
@@ -138,32 +168,6 @@ class GravityForms {
 		}
 
 		return $do_abort;
-	}
-
-	/**
-	 * Add to the types array
-	 *
-	 * @param array $types Array of available detection types.
-	 */
-	public function types( $types ) {
-		$types['gravityforms'] = __( 'Gravity Forms', 'zero-spam' );
-
-		return $types;
-	}
-
-	/**
-	 * Admin section
-	 *
-	 * @param array $sections Array of available setting sections.
-	 */
-	public function sections( $sections ) {
-		$sections['gravityforms'] = array(
-			'title'    => __( 'Gravity Forms', 'zero-spam' ),
-			'icon'     => 'modules/gravityforms/icon-gravity-forms.svg',
-			'supports' => array( 'honeypot', 'email' ),
-		);
-
-		return $sections;
 	}
 
 	/**
