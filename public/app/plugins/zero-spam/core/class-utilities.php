@@ -849,6 +849,8 @@ class Utilities {
 				}
 			}
 		}
+		// 2. Query ipbase
+		$location_details = apply_filters( 'zero_spam_ip_address_details', $ip, $location_details );
 
 		// 3. Query the IPinfo API.
 		$ipinfo_location = ZeroSpam\Modules\IPinfoModule::get_geolocation( $ip );
