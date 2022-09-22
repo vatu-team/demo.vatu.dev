@@ -1263,16 +1263,16 @@
         },
         {
             "name": "wpackagist-plugin/zero-spam",
-            "version": "5.4.2",
-            "version_normalized": "5.4.2.0",
+            "version": "5.4.3",
+            "version_normalized": "5.4.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/zero-spam/",
-                "reference": "tags/5.4.2"
+                "reference": "tags/5.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/zero-spam.5.4.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/zero-spam.5.4.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
