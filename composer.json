@@ -52,7 +52,7 @@
       "wpackagist-plugin/transients-manager": "2.0.3",
       "wpackagist-plugin/user-switching": "1.7.0",
       "wpackagist-plugin/wordpress-beta-tester": "3.2.2",
-      "wpackagist-plugin/wordpress-importer": "0.7.0",
+      "wpackagist-plugin/wordpress-importer": "0.8",
       "wpackagist-plugin/wp-crontrol": "1.14.0"
   },
   "autoload": {
