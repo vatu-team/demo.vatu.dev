@@ -1,0 +1,23 @@
+# Vatu: PHP Compatibility
+# Version: 0.0.1
+# Author: Michael Bragg <mike@vatu.co.uk>
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: "PHP Compatibility"
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}--${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  php-compatibility:
+
+    name: "PHP Compatibility"
+    uses: vatu-team/workflows/.github/workflows/php-compatibility.yml@main
+    with:
+      runs-on: 'self-hosted'
+    secrets: inherit
