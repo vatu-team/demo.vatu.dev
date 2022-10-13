@@ -83,9 +83,9 @@ jobs:
           composer dump-autoload --optimize --no-dev
 
       - name: "Setup NodeJS."
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: 16
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VATU_GITHUB_TOKEN }}
 
