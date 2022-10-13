@@ -1,5 +1,5 @@
 # Vatu Health Check
-# Version: 0.1.0
+# Version: 0.2.0
 
 name: Health check
 
@@ -34,7 +34,7 @@ jobs:
           echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
 
       - name: "Checks out the repository."
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.0.2
 
       - name: "Setup NodeJS."
         uses: actions/setup-node@v2
