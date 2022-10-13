@@ -1145,7 +1145,8 @@ class Limit_Login_Attempts {
 Last user attempted: <b>%5$s</b><br>
 IP was blocked for %6$s</p>
 <p>This notification was sent automatically via Limit Login Attempts Reloaded Plugin. 
-<b>This is installed on your %7$s WordPress site. <a href="%8$s" target="_blank">Login to your WordPress dashboard</a> to review more details and take action if necessary.</b></p>', 'limit-login-attempts-reloaded' );
+<b>This is installed on your %7$s WordPress site. <a href="%8$s" target="_blank">Login to your WordPress dashboard</a> ' .
+                'to review more details and take action if necessary.</b></p>', 'limit-login-attempts-reloaded' );
 
         $message = sprintf(
             $message,
@@ -1158,6 +1159,27 @@ IP was blocked for %6$s</p>
 			$site_domain,
 			admin_url( 'options-general.php?page=' . $this->_options_page_slug )
         );
+
+        $message .= '<h3>Frequently Asked Questions</h3>
+<p><b>What is a Failed Login Attempt?</b><br>
+A failed login attempt is when an IP address uses incorrect credentials to login to your website.
+The IP address could be a human operator, or a program designed to guess your password.</p>
+
+<p><b>Why Am I Getting This Email?</b><br>
+You are receiving this email because there was a failed login attempt on your website %1$s. 
+If you\'d like to opt out of these notifications, please click the “Unsubscribe” link below.</p>
+
+<p><b>How Dangerous Is This Failed Login Attempt?</b><br>
+Unfortunately, we cannot determine how dangerous this failed login attempt is. 
+You will receive protection from the free version of the plugin, but depending on how frequent the attacks are, 
+you may experience performance issues. In the plugin dashboard, you can investigate the severity of the failed login 
+attempts and take additional steps to protect your website. You can visit the Limit Login Attempts Reloaded website 
+for more information on our premium services.</p>';
+
+		$message = sprintf(
+			$message,
+			$site_domain
+		);
 
 		if( LLA_Helpers::is_mu() ) {
 
@@ -2375,14 +2397,17 @@ into a must-use (MU) folder.</i></p>', 'limit-login-attempts-reloaded' );
 		    ob_start();
 
 			$date_format = get_option('date_format') . ' ' . get_option('time_format');
+			$countries_list = LLA_Helpers::get_countries_list();
 			?>
 
 			<?php if( $log['items'] ) : ?>
 
-				<?php foreach ( $log['items'] as $item ) : ?>
+				<?php foreach ( $log['items'] as $item ) :
+                    $country_name = !empty( $countries_list[$item['country_code']] ) ? $countries_list[$item['country_code']] : '';
+                    ?>
                     <tr>
                         <td class="llar-col-nowrap"><?php echo get_date_from_gmt( date( 'Y-m-d H:i:s', $item['created_at'] ), $date_format ); ?></td>
-                        <td><?php echo esc_html( $item['ip'] ); ?></td>
+                        <td><div class="llar-log-country-flag"><img title="<?php echo esc_attr( $country_name ); ?>" src="<?php echo LLA_PLUGIN_URL . 'assets/img/flags/' . esc_attr( $item['country_code'] ) .'.png'?>">&nbsp;<?php echo esc_html( $item['ip'] ); ?></div></td>
                         <td><?php echo esc_html( $item['gateway'] ); ?></td>
                         <td><?php echo (is_null($item['login'])) ? '-' : esc_html( $item['login'] ); ?></td>
                         <td><?php echo (is_null($item['result'])) ? '-' : esc_html( $item['result'] ); ?></td>
