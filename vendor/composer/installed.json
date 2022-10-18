@@ -428,8 +428,8 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.0.2",
-            "version_normalized": "6.0.2.0",
+            "version": "6.0.3",
+            "version_normalized": "6.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -461,7 +461,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.0.2"
+                "source": "https://github.com/roots/wordpress/tree/6.0.3"
             },
             "funding": [
                 {
@@ -551,23 +551,23 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.0.2",
-            "version_normalized": "6.0.2.0",
+            "version": "6.0.3",
+            "version_normalized": "6.0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.0.2"
+                "reference": "6.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.0.2-no-content.zip",
-                "shasum": "9e78ef932a99d62e6a0b045ff846fe5b2bf35e29"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.0.3-no-content.zip",
+                "shasum": "39bb6da76aa5c28c4288593e0cd6a710cde7db6e"
             },
             "require": {
                 "php": ">= 5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "6.0.2"
+                "wordpress/core-implementation": "6.0.3"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -585,7 +585,7 @@
                 "ext-xml": "Used for XML parsing, such as from a third-party site.",
                 "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
             },
-            "time": "2022-08-30T17:52:03+00:00",
+            "time": "2022-10-17T22:55:15+00:00",
             "type": "wordpress-core",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -1012,17 +1012,17 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.4.1",
-            "version_normalized": "5.4.1.0",
+            "version": "v5.5.0",
+            "version_normalized": "5.5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "264dce589e7ce37a7ba99cb901eed8249fbec92f"
+                "reference": "1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/264dce589e7ce37a7ba99cb901eed8249fbec92f",
-                "reference": "264dce589e7ce37a7ba99cb901eed8249fbec92f",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7",
+                "reference": "1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7",
                 "shasum": ""
             },
             "require": {
@@ -1037,16 +1037,20 @@
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-filter": "*",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.21 || ^9.5.10"
+                "phpunit/phpunit": "^7.5.20 || ^8.5.30 || ^9.5.25"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator."
             },
-            "time": "2021-12-12T23:22:04+00:00",
+            "time": "2022-10-16T01:01:54+00:00",
             "type": "library",
             "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
                 "branch-alias": {
-                    "dev-master": "5.4-dev"
+                    "dev-master": "5.5-dev"
                 }
             },
             "installation-source": "dist",
@@ -1079,7 +1083,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.1"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.5.0"
             },
             "funding": [
                 {
