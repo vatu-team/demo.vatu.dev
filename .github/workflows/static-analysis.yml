@@ -18,10 +18,18 @@ concurrency:
 
 jobs:
 
+  php-parallel-lint:
+
+    name: "PHP Parallel Lint"
+    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.0.0-beta.5
+    with:
+      runs-on: 'self-hosted'
+    secrets: inherit
+
   phpcs:
 
     name: "PHP CodeSniffer"
-    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta.3
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta5
     with:
       runs-on: 'self-hosted'
     secrets: inherit
@@ -29,7 +37,7 @@ jobs:
   phpcpd:
 
     name: "PHP Copy/Paste Detector"
-    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.3
+    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta5
     with:
       runs-on: 'self-hosted'
     secrets: inherit
@@ -37,7 +45,7 @@ jobs:
   phpmnd:
 
     name: "PHP Magic Number Detector"
-    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta.3
+    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta5
     with:
       runs-on: 'self-hosted'
     secrets: inherit
@@ -45,7 +53,7 @@ jobs:
   phpstan:
 
     name: "PHP Stan"
-    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta.3
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta5
     with:
       runs-on: 'self-hosted'
     secrets: inherit
