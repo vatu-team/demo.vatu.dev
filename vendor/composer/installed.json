@@ -1309,16 +1309,16 @@
         },
         {
             "name": "wpackagist-theme/twentytwentyone",
-            "version": "1.6",
-            "version_normalized": "1.6.0.0",
+            "version": "1.7",
+            "version_normalized": "1.7.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentytwentyone/",
-                "reference": "1.6"
+                "reference": "1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.6.zip"
+                "url": "https://downloads.wordpress.org/theme/twentytwentyone.1.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
