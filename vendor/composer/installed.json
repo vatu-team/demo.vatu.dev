@@ -1288,16 +1288,16 @@
         },
         {
             "name": "wpackagist-theme/generatepress",
-            "version": "3.2.1",
-            "version_normalized": "3.2.1.0",
+            "version": "3.2.2",
+            "version_normalized": "3.2.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "3.2.1"
+                "reference": "3.2.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.3.2.1.zip"
+                "url": "https://downloads.wordpress.org/theme/generatepress.3.2.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
