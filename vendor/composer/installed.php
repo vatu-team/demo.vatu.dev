@@ -3,7 +3,7 @@
         'name' => 'vatu/demo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ecdb5ed69b7199a1a66b29a1d7645379f17bada4',
+        'reference' => '20fbfe3375991a9d12531d71203dded5105e4485',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -62,8 +62,8 @@
             'dev_requirement' => false,
         ),
         'roots/wordpress' => array(
-            'pretty_version' => '6.1',
-            'version' => '6.1.0.0',
+            'pretty_version' => '6.1.1',
+            'version' => '6.1.1.0',
             'reference' => '41ff6e23ccbc3a1691406d69fe8c211a225514e2',
             'type' => 'metapackage',
             'install_path' => NULL,
@@ -80,9 +80,9 @@
             'dev_requirement' => false,
         ),
         'roots/wordpress-no-content' => array(
-            'pretty_version' => '6.1',
-            'version' => '6.1.0.0',
-            'reference' => '6.1',
+            'pretty_version' => '6.1.1',
+            'version' => '6.1.1.0',
+            'reference' => '6.1.1',
             'type' => 'wordpress-core',
             'install_path' => __DIR__ . '/../../public/wp',
             'aliases' => array(),
@@ -136,7 +136,7 @@
         'vatu/demo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ecdb5ed69b7199a1a66b29a1d7645379f17bada4',
+            'reference' => '20fbfe3375991a9d12531d71203dded5105e4485',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -154,7 +154,7 @@
         'wordpress/core-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '6.1',
+                0 => '6.1.1',
             ),
         ),
         'wpackagist-plugin/aryo-activity-log' => array(
