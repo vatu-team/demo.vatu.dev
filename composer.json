@@ -20,7 +20,7 @@
     "issues": "https://github.com/vatu-team/demo.vatu.dev/issues"
   },
   "require": {
-    "php": ">=7.3",
+    "php": ">=8.0",
     "composer/installers": "2.2.0",
     "roots/wordpress": "6.1.1",
     "oscarotero/env": "2.1.0",
@@ -90,10 +90,10 @@
       "./tools/parallel-lint/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
     ],
     "test-phpcbf": [
-      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 7.3- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.0- ./public/app/themes/vatu-gp-child-theme"
     ],
     "test-phpcs": [
-      "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 7.3- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.0- ./public/app/themes/vatu-gp-child-theme"
     ],
     "test-phpcpd": [
       "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
