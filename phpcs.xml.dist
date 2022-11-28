@@ -3,7 +3,7 @@
 
 	<description>WordPress Coding Standards.</description>
 
-	<config name="minimum_supported_wp_version" value="5.9" />
+	<config name="minimum_supported_wp_version" value="6.1" />
 
 	<!-- Exclude source code we do not control. -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
@@ -36,7 +36,6 @@
 		<properties>
 			<property name="text_domain" type="array">
 				<element value="wordpress" />
-				<element value="braintumourcharity" />
 			</property>
 		</properties>
 
