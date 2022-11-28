@@ -58,7 +58,7 @@ jobs:
       - name: "Sets up PHP with Composer."
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.0'
           tools: none
           ini-file: none
         env:
