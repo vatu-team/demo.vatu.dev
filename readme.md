@@ -17,7 +17,6 @@ These tools are needed to develop the site locally.
 - [PHP](https://php.net/)
   - [Composer](https://getcomposer.org/)
   - [PHP dotenv](https://github.com/vlucas/phpdotenv)
-	- [PHIVE](https://phar.io/)
 - [MySQL](https://mysql.com/)
 - [ [Apache](https://httpd.apache.org/) | [Nginx](https://www.nginx.com/) ]
 - [NodeJS](https://nodejs.org/en/)
