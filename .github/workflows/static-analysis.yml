@@ -1,19 +1,21 @@
-# Vatu: Static Analysis
-# Author: Michael Bragg <mike@vatu.co.uk>
+# Vatu:    Static Analysis
+# Version: 1.0.0-beta
+# Author:  Michael Bragg <mike@vatu.co.uk>
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: Static Analysis
 
 on:
+
   pull_request:
     types:
       - opened
       - synchronize
-    branches-ignore:
-      - 'dependabot/**' # Ignore Dependabot branches. Don't analise 3rd Party Code.
+      
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}--${{ github.head_ref }}
+  group: ${{ github.workflow }}--${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
@@ -21,44 +23,44 @@ jobs:
   php-parallel-lint:
 
     name: "PHP Parallel Lint"
-    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.0.0-beta.5
+    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version-php: "8.0"
+      version: "8.0"
     secrets: inherit
 
   phpcs:
 
     name: "PHP CodeSniffer"
-    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta.5
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version-php: "8.0"
+      version: "8.0"
     secrets: inherit
 
   phpcpd:
 
     name: "PHP Copy/Paste Detector"
-    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.5
+    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version-php: "8.0"
+      version: "8.0"
     secrets: inherit
 
   phpmnd:
 
     name: "PHP Magic Number Detector"
-    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta.5
+    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version-php: "8.0"
+      version: "8.0"
     secrets: inherit
 
   phpstan:
 
     name: "PHP Stan"
-    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta.5
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version-php: "8.0"
+      version: "8.0"
     secrets: inherit
