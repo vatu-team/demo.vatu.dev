@@ -62,5 +62,5 @@ jobs:
     uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version: "8.0"
+      version-php: "8.0"
     secrets: inherit
