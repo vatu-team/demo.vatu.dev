@@ -26,16 +26,16 @@ jobs:
     uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version: "8.0"
+      version-php: "8.0"
     secrets: inherit
-
+    
   phpcs:
 
     name: "PHP CodeSniffer"
     uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version: "8.0"
+      version-php: "8.0"
     secrets: inherit
 
   phpcpd:
@@ -44,7 +44,7 @@ jobs:
     uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version: "8.0"
+      version-php: "8.0"
     secrets: inherit
 
   phpmnd:
@@ -53,7 +53,7 @@ jobs:
     uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
-      version: "8.0"
+      version-php: "8.0"
     secrets: inherit
 
   phpstan:
