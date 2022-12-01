@@ -21,7 +21,6 @@ concurrency:
 jobs:
 
   php-parallel-lint:
-
     name: "PHP Parallel Lint"
     uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.0.0-beta.6
     with:
@@ -30,35 +29,37 @@ jobs:
     secrets: inherit
     
   phpcs:
-
     name: "PHP CodeSniffer"
+    needs: php-parallel-lint
     uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
       version-php: "8.0"
     secrets: inherit
 
-  phpcpd:
-
-    name: "PHP Copy/Paste Detector"
-    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.6
-    with:
-      runs-on: 'self-hosted'
-      version-php: "8.0"
-    secrets: inherit
-
   phpmnd:
-
     name: "PHP Magic Number Detector"
+    needs: phpcs
     uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
       version-php: "8.0"
     secrets: inherit
 
-  phpstan:
+  phpcpd:
+    name: "PHP Copy/Paste Detector"
+    needs: phpmnd
+    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.6
+    with:
+      runs-on: 'self-hosted'
+      version-php: "8.0"
+    secrets: inherit
 
+
+
+  phpstan:
     name: "PHP Stan"
+    needs: phpcpd
     uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta.6
     with:
       runs-on: 'self-hosted'
