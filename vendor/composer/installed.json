@@ -1266,27 +1266,6 @@
             "install-path": "../../public/app/plugins/wp-robots-txt"
         },
         {
-            "name": "wpackagist-plugin/zero-spam",
-            "version": "5.4.4",
-            "version_normalized": "5.4.4.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/zero-spam/",
-                "reference": "tags/5.4.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/zero-spam.5.4.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/plugins/zero-spam/",
-            "install-path": "../../public/app/plugins/zero-spam"
-        },
-        {
             "name": "wpackagist-theme/generatepress",
             "version": "3.2.4",
             "version_normalized": "3.2.4.0",
