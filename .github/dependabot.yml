@@ -1,4 +1,12 @@
 version: 2
+
+registries:
+  vatu:
+    type: composer-repository
+    url: satispress.vatu.dev
+    username: ${{ secrets.COMPOSER_VATU_USERNAME }}
+    password: ${{ secrets.COMPOSER_VATU_KEY }}
+
 updates:
 
   # Project Dependencies.
