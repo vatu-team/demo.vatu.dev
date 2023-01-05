@@ -72,7 +72,6 @@ jobs:
           echo Current Branch: ${{ env.branch_name }}
 
       - name: "Add Composer config."
-        if: "${{ secrets.COMPOSER_VATU_USERNAME != '' && secrets.COMPOSER_VATU_KEY != '' }}"
         run: |
           composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
 
