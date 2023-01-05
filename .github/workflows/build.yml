@@ -29,6 +29,7 @@ jobs:
   # - Checks out the repository.
   # - Sets up PHP with Composer.
   # - Logs debug information.
+  # - Add Composer config.
   # - Install Composer dependencies with development dependencies. || Install Composer dependencies with no dev option.
   # - Setup NodeJS.
   # - Logs debug information.
@@ -69,6 +70,11 @@ jobs:
           php --version
           composer --version
           echo Current Branch: ${{ env.branch_name }}
+
+      - name: "Add Composer config."
+        if: "${{ secrets.COMPOSER_VATU_USERNAME != '' && secrets.COMPOSER_VATU_KEY != '' }}"
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
 
       - name: "Install Composer dependencies with development dependencies."
         if: ${{ env.branch_name == 'develop' }}
