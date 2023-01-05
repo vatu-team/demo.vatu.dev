@@ -1,5 +1,5 @@
 # Vatu:    Static Analysis
-# Version: 1.0.0-beta
+# Version: 1.0.0
 # Author:  Michael Bragg <mike@vatu.co.uk>
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
@@ -31,7 +31,7 @@ jobs:
   phpcs:
     name: "PHP CodeSniffer"
     needs: php-parallel-lint
-    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0-beta.7
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.0.0
     with:
       runs-on: 'self-hosted'
       version-php: "8.0"
@@ -40,7 +40,7 @@ jobs:
   phpmnd:
     name: "PHP Magic Number Detector"
     needs: phpcs
-    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0-beta.7
+    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.0.0
     with:
       runs-on: 'self-hosted'
       version-php: "8.0"
@@ -49,18 +49,16 @@ jobs:
   phpcpd:
     name: "PHP Copy/Paste Detector"
     needs: phpmnd
-    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0-beta.7
+    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.0.0
     with:
       runs-on: 'self-hosted'
       version-php: "8.0"
     secrets: inherit
 
-
-
   phpstan:
     name: "PHP Stan"
     needs: phpcpd
-    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0-beta.7
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.0.0
     with:
       runs-on: 'self-hosted'
       version-php: "8.0"
