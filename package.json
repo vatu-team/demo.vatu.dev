@@ -28,7 +28,7 @@
     "@bahmutov/cy-api": "2.2.3",
     "@percy/cli": "1.17.0",
     "@percy/cypress": "3.1.2",
-    "@vatu/theme-build": "github:vatu-team/theme-build#0.0.3",
+    "@vatu/theme-build": "github:vatu-team/theme-build#0.0.4",
     "cypress": "12.3.0",
     "cypress-iframe": "1.0.1"
   }
