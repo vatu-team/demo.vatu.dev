@@ -38,3 +38,45 @@ add_filter(
 	'site_status_tests',
 	'vatu_disable_site_health_tests',
 );
+
+/**
+ * Set Content Security Policy header.
+ */
+function vatu_content_security_policy_header() {
+	header( "Content-Security-Policy: default-src https: data: 'unsafe-inline'; upgrade-insecure-requests" );
+}
+
+add_action(
+	'send_headers',
+	'vatu_content_security_policy_header',
+	10,
+	0
+);
+
+/**
+ * Set Referrer header.
+ */
+function vatu_referrer_policy_header() {
+	header( "Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin" );
+}
+
+add_action(
+	'send_headers',
+	'vatu_referrer_policy_header',
+	10,
+	0
+);
+
+/**
+ * Set Permissions Policy header.
+ */
+function vatu_permission_policy_header() {
+	header( "Permissions-Policy: accelerometer=(),autoplay=(),camera=(),display-capture=(),document-domain=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),magnetometer=(),microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),screen-wake-lock=(),sync-xhr=(self),usb=(),web-share=(),xr-spatial-tracking=()" );
+}
+
+add_action(
+	'send_headers',
+	'vatu_permission_policy_header',
+	10,
+	0
+);
