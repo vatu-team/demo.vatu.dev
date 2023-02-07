@@ -17,7 +17,7 @@ jobs:
   php-compatibility:
 
     name: "PHP Compatibility"
-    uses: vatu-team/workflows/.github/workflows/php-compatibility.yml@1.0.0-beta.7
+    uses: vatu-team/workflows/.github/workflows/php-compatibility.yml@1.0.0
     with:
       runs-on: 'self-hosted'
     secrets: inherit
