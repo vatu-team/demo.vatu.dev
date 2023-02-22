@@ -1285,27 +1285,6 @@
             "installation-source": "dist",
             "homepage": "https://wordpress.org/themes/generatepress/",
             "install-path": "../../public/app/themes/generatepress"
-        },
-        {
-            "name": "wpackagist-theme/twentytwentythree",
-            "version": "1.0",
-            "version_normalized": "1.0.0.0",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentytwentythree/",
-                "reference": "1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentytwentythree.1.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/themes/twentytwentythree/",
-            "install-path": "../../public/app/themes/twentytwentythree"
         }
     ],
     "dev": false,
