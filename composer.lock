@@ -1824,15 +1824,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-beta-tester",
-            "version": "3.2.9",
+            "version": "3.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-beta-tester/",
-                "reference": "tags/3.2.9"
+                "reference": "tags/3.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.2.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.3.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
