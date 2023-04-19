@@ -2,7 +2,7 @@
   "name": "vatu/phpstan",
   "require-dev": {
     "szepeviktor/phpstan-wordpress": "1.2.0",
-    "phpstan/extension-installer": "1.2.0",
+    "phpstan/extension-installer": "1.3.0",
     "phpstan/phpstan": "1.10.13"
   },
   "scripts": {
