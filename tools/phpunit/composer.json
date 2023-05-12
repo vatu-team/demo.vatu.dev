@@ -9,7 +9,7 @@
   "prefer-stable": true,
   "require-dev": {
     "brain/monkey": "2.6.1",
-    "phpunit/phpunit": "9.6.7",
+    "phpunit/phpunit": "9.6.8",
     "yoast/phpunit-polyfills": "1.0.5"
   },
   "autoload": {
