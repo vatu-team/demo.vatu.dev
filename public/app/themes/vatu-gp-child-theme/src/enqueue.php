@@ -19,6 +19,9 @@
  * </code>
  * }
  */
+function project_admin_enqueue(): void {
+	// @TODO: Enqueue admin styles.
+}
 
 /**
  * Action: project_admin_enqueue
@@ -39,6 +42,10 @@ add_action( 'admin_enqueue_scripts', 'project_admin_enqueue' );
  * }
  * </code>
  */
+function project_enqueue(): void {
+	// @TODO: Enqueue styles.
+}
+
 
 /**
  * Action: project_enqueue
@@ -59,6 +66,9 @@ add_action( 'wp_enqueue_scripts', 'project_enqueue' );
  * }
  * </code>
  */
+function project_login_enqueue(): void {
+	// @TODO: Enqueue login styles.
+}
 
 /**
  * Action: project_login_enqueue
