@@ -8,20 +8,6 @@
  */
 
 /**
- * Disable the emojis tinymce on the site.
- *
- * @since  1.0.0
- * @return array
- * @param  mixed $plugins List of plugins.
- */
-function disable_emojis_tinymce( $plugins ) {
-	if ( is_array( $plugins ) ) {
-		return array_diff( $plugins, array( 'wpemoji' ) );
-	}
-	return array();
-}
-
-/**
  * Remove support for comments on these post types.
  *
  * @since  1.0.0
