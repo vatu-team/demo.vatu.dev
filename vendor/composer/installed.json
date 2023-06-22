@@ -1158,16 +1158,16 @@
         },
         {
             "name": "wpackagist-plugin/limit-login-attempts-reloaded",
-            "version": "2.25.19",
-            "version_normalized": "2.25.19.0",
+            "version": "2.25.20",
+            "version_normalized": "2.25.20.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/limit-login-attempts-reloaded/",
-                "reference": "tags/2.25.19"
+                "reference": "tags/2.25.20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.25.19.zip"
+                "url": "https://downloads.wordpress.org/plugin/limit-login-attempts-reloaded.2.25.20.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
