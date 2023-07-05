@@ -52,15 +52,17 @@ jobs:
           echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
 
       - name: "Checks out the repository."
-        uses: actions/checkout@v3.0.2
+        uses: "actions/checkout@v3.5.2"
         with:
           persist-credentials: false
 
       - name: "Sets up PHP with Composer."
-        uses: shivammathur/setup-php@v2
+        uses: "shivammathur/setup-php@2.25.1"
         with:
-          php-version: '8.0'
-          tools: none
+          php-version: "8.0"
+          coverage: "none"
+          tools: composer
+          ini-values: "memory_limit=1G"
           ini-file: none
         env:
           COMPOSER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -88,9 +90,9 @@ jobs:
           composer dump-autoload --optimize --no-dev
 
       - name: "Setup NodeJS."
-        uses: actions/setup-node@v2
+        uses: "actions/setup-node@v3.6.0"
         with:
-          node-version: '14'
+          node-version: '18'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.VATU_GITHUB_TOKEN }}
 
@@ -114,7 +116,7 @@ jobs:
           echo "ls_remote=$( git ls-remote --heads "https://${{ secrets.VATU_GITHUB_TOKEN }}:x-oauth-basic@github.com/${GITHUB_REPOSITORY}.git" ${{ env.branch_name }}--built | wc -l )" >> $GITHUB_ENV
 
       - name: "Checkout copy of repository."
-        uses: actions/checkout@v3.0.2
+        uses: "actions/checkout@v3.5.2"
         with:
           path: ./built
         if: ${{ env.ls_remote == 0 }}
@@ -127,7 +129,7 @@ jobs:
           git rm --cached -r .
 
       - name: "Using existing `--built` branch."
-        uses: actions/checkout@v3.0.2
+        uses: "actions/checkout@v3.5.2"
         with:
           ref: ${{ env.branch_name }}--built
           path: ./built
