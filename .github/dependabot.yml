@@ -35,7 +35,6 @@ updates:
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
-    versioning-strategy: increase
 
   # Project Tools.
 
