@@ -74,17 +74,6 @@ updates:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
 
-  - package-ecosystem: composer
-    directory: "/tools/phpmd"
-    registries: "*"
-    schedule:
-      interval: daily
-      time: "01:25"
-      timezone: "Europe/London"
-    open-pull-requests-limit: 10
-    commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
 
   - package-ecosystem: composer
     directory: "/tools/phpstan"
