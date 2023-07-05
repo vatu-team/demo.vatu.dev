@@ -90,7 +90,7 @@ jobs:
           composer dump-autoload --optimize --no-dev
 
       - name: "Setup NodeJS."
-        uses: "actions/setup-node@v3.6.0"
+        uses: "actions/setup-node@v3"
         with:
           node-version: '18'
         env:
