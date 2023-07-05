@@ -24,6 +24,19 @@ updates:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
 
+  # Project Workflows
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "04:05"
+      timezone: "Europe/London"
+    commit-message:
+      prefix: "[Upgraded]"
+      prefix-development: "[Upgraded]"
+    versioning-strategy: increase
+
   # Project Tools.
 
   - package-ecosystem: composer
