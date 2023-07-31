@@ -20,6 +20,7 @@ updates:
       time: "01:05"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
@@ -46,6 +47,7 @@ updates:
       time: "01:25"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
@@ -58,6 +60,7 @@ updates:
       time: "01:25"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
@@ -70,6 +73,7 @@ updates:
       time: "01:25"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
@@ -83,6 +87,7 @@ updates:
       time: "01:25"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
@@ -95,6 +100,7 @@ updates:
       time: "01:25"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
@@ -108,6 +114,7 @@ updates:
       time: "01:25"
       timezone: "Europe/London"
     open-pull-requests-limit: 10
+    versioning-strategy: increase
     commit-message:
       prefix: "[Upgraded]"
       prefix-development: "[Upgraded]"
