@@ -20,23 +20,23 @@
     "issues": "https://github.com/vatu-team/demo.vatu.dev/issues"
   },
   "require": {
-    "php": "^8.0",
+    "php": "^8.1",
     "composer/installers": "^2.2.0",
-    "roots/wordpress": "^6.2.2",
     "oscarotero/env": "^2.1.0",
     "roots/bedrock-autoloader": "^1.0.4",
+    "roots/wordpress": "^6.2.2",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.1.0",
     "vlucas/phpdotenv": "^5.5.0",
-    "wpackagist-plugin/disable-emojis": "^1.7.5",
-    "wpackagist-plugin/wp-robots-txt": "^1.2.0",
-    "wpackagist-theme/generatepress":"^3.3.0",
     "wpackagist-plugin/aryo-activity-log": "^2.8.7",
     "wpackagist-plugin/better-passwords": "^1.8.0",
+    "wpackagist-plugin/disable-emojis": "^1.7.5",
     "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.20",
     "wpackagist-plugin/mailgun": "^1.9.5",
     "wpackagist-plugin/redirection": "^5.3.10",
-    "wpackagist-plugin/wordpress-seo": "^20.12.0"
+    "wpackagist-plugin/wordpress-seo": "^20.12.0",
+    "wpackagist-plugin/wp-robots-txt": "^1.2.0",
+    "wpackagist-theme/generatepress": "^3.3.0"
   },
   "require-dev": {
       "rarst/laps": "^3.3.7",
@@ -92,10 +92,10 @@
       "./tools/parallel-lint/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
     ],
     "test-phpcbf": [
-      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.0- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
     ],
     "test-phpcs": [
-      "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.0- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
     ],
     "test-phpcpd": [
       "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
@@ -104,7 +104,7 @@
       "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/vatu-gp-child-theme --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 256M"
+      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 4G"
     ],
     "test-phpunit": [
       "./tools/phpunit/vendor/bin/phpunit -c ./phpunit.xml"

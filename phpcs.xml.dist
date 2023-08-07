@@ -59,7 +59,7 @@
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<rule ref="PHPCompatibilityWP">
-		<config name="testVersion" value="8.0-" />
+		<config name="testVersion" value="8.1-" />
 	</rule>
 
 </ruleset>
