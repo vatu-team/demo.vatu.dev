@@ -3,6 +3,12 @@
 
 	<description>WordPress Coding Standards.</description>
 
+	<!--
+	Prevent errors caused by WordPress Coding Standards not supporting PHP 8.0+.
+	See https://github.com/WordPress/WordPress-Coding-Standards/issues/2035
+	-->
+	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
+
 	<config name="minimum_supported_wp_version" value="6.1" />
 
 	<!-- Exclude source code we do not control. -->
@@ -59,7 +65,7 @@
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<rule ref="PHPCompatibilityWP">
-		<config name="testVersion" value="8.0-" />
+		<config name="testVersion" value="8.1-" />
 	</rule>
 
 </ruleset>
