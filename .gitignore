@@ -59,7 +59,7 @@ error_log
 ## Composer
 auth.json
 /vendor
-/tools/*/vendor
+/tools/vendor
 
 ## Config
 /config/environments/local.php

@@ -78,36 +78,37 @@
       "preferred-install": "dist"
   },
   "scripts": {
+    "post-install-cmd": [
+      "@composer install --working-dir=tools",
+      "@composer run post-install-cmd --working-dir=tools"
+    ],
     "post-update-cmd": [
-        "@composer update --working-dir=tools/parallel-lint",
-        "@composer update --working-dir=tools/phpcs",
-        "@composer update --working-dir=tools/phpcpd",
-        "@composer update --working-dir=tools/phpmnd",
-        "@composer update --working-dir=tools/phpstan"
+      "@composer install --working-dir=tools",
+      "@composer run post-install-cmd --working-dir=tools"
     ],
     "post-root-package-install": [
         "php -r \"copy('example.env', '.env');\""
     ],
     "test-parallel-lint": [
-      "./tools/parallel-lint/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
+      "./tools/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
     ],
     "test-phpcbf": [
-      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
     ],
     "test-phpcs": [
-      "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
     ],
     "test-phpcpd": [
-      "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
+      "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
     ],
     "test-phpmnd": [
-      "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/vatu-gp-child-theme --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
+      "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-gp-child-theme --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 4G"
+      "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 4G"
     ],
     "test-phpunit": [
-      "./tools/phpunit/vendor/bin/phpunit -c ./phpunit.xml"
+      "./tools/vendor/bin/phpunit -c ./phpunit.xml"
     ],
     "test": [
       "composer run test-phpcbf",
