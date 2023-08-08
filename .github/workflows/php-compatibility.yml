@@ -1,6 +1,7 @@
 ---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-# Vatu: PHP Compatibility
+# Vatu:    PHP Compatibility
+# Version: 2.0.0
 
 name: "PHP Compatibility"
 
