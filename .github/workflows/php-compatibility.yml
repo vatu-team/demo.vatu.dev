@@ -1,23 +1,37 @@
-# Vatu: PHP Compatibility
-# Version: 0.0.1
-# Author: Michael Bragg <mike@vatu.co.uk>
+---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+# Vatu: PHP Compatibility
 
 name: "PHP Compatibility"
 
 on:
   workflow_dispatch:
 
+    inputs:
+
+      branch:
+        type: string
+        description: "Choose the branch to run this test against."
+        default: 'main'
+
+      php-version:
+        description: "Array of Version(s) of PHP to test against. Eg, `['8.2','8.3']`"
+        required: false
+        type: string
+        default: "['8.1','8.2','8.3']"
+
 concurrency:
-  group: ${{ github.workflow }}--${{ github.head_ref }}
+  group: ${{ github.workflow }}--${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
 jobs:
 
   php-compatibility:
 
-    name: "PHP Compatibility"
-    uses: vatu-team/workflows/.github/workflows/php-compatibility.yml@1.0.0
+    name: 'PHP Compatibility'
+    uses: 'vatu-team/workflows/.github/workflows/php-compatibility.yml@main'
     with:
       runs-on: 'self-hosted'
+      branch: ${{ inputs.branch }}
+      php-version: ${{ inputs.php-version }}
     secrets: inherit
