@@ -34,7 +34,7 @@
     "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.21",
     "wpackagist-plugin/mailgun": "^1.9.5",
     "wpackagist-plugin/redirection": "^5.3.10",
-    "wpackagist-plugin/wordpress-seo": "^20.12.0",
+    "wpackagist-plugin/wordpress-seo": "^20.13",
     "wpackagist-plugin/wp-robots-txt": "^1.2.0",
     "wpackagist-theme/generatepress": "^3.3.0"
   },
