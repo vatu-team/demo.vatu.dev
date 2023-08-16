@@ -1263,16 +1263,16 @@
         },
         {
             "name": "wpackagist-theme/generatepress",
-            "version": "3.3.0",
-            "version_normalized": "3.3.0.0",
+            "version": "3.3.1",
+            "version_normalized": "3.3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "3.3.0"
+                "reference": "3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.3.3.0.zip"
+                "url": "https://downloads.wordpress.org/theme/generatepress.3.3.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
