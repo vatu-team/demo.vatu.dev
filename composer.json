@@ -36,7 +36,7 @@
     "wpackagist-plugin/redirection": "^5.3.10",
     "wpackagist-plugin/wordpress-seo": "^20.13",
     "wpackagist-plugin/wp-robots-txt": "^1.2.0",
-    "wpackagist-theme/generatepress": "^3.3.0"
+    "wpackagist-theme/generatepress": "^3.3.1"
   },
   "require-dev": {
       "rarst/laps": "^3.3.7",
