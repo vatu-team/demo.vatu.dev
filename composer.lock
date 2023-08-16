@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c12122f3394dac267bcb41c61a3a1c74",
+    "content-hash": "396d98ca9d5161dd0caaa1ba89e2a1f1",
     "packages": [
         {
             "name": "composer/installers",
@@ -1204,15 +1204,15 @@
         },
         {
             "name": "wpackagist-theme/generatepress",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "3.3.0"
+                "reference": "3.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.3.3.0.zip"
+                "url": "https://downloads.wordpress.org/theme/generatepress.3.3.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
