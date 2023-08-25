@@ -1,5 +1,5 @@
 # Vatu:   Dependabot Auto Merge
-# Version 1.0.0
+# Version 1.1.0
 # Author: Michael Bragg <mike@vatu.co.uk>
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
@@ -10,12 +10,14 @@ on:
     workflows: ["Static Analysis"]
     types:
       - completed
+    branches:
+      - 'dependabot/**'
 
 jobs:
 
   auto-merge:
 
-    # Conditions for running workflow (project specific).
+    # Conditions for running workflow (project-specific).
     if: >
       github.actor == 'dependabot[bot]' &&
       github.event.workflow_run.conclusion == 'success'
@@ -26,3 +28,4 @@ jobs:
     secrets:
       BOT_ID: ${{ secrets.VATU_BOT_ID }}
       BOT_KEY: ${{ secrets.VATU_BOT_KEY }}
+      SLACK_TOKEN: ${{ secrets.SLACK_DEPENDABOT_TOKEN }}
