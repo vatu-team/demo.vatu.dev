@@ -88,7 +88,6 @@ auth.json
 ## Themes
 /public/app/themes/*
 !/public/app/themes/index.php
-!/public/app/themes/vatu-gp-child-theme/
 
 ## WPCLI
 wp-cli.local.yml
