@@ -1220,6 +1220,27 @@
             "install-path": "../../public/app/plugins/redirection"
         },
         {
+            "name": "wpackagist-plugin/spinupwp",
+            "version": "1.5.1",
+            "version_normalized": "1.5.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/spinupwp/",
+                "reference": "tags/1.5.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/spinupwp.1.5.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "homepage": "https://wordpress.org/plugins/spinupwp/",
+            "install-path": "../../public/app/plugins/spinupwp"
+        },
+        {
             "name": "wpackagist-plugin/wordpress-seo",
             "version": "21.0",
             "version_normalized": "21.0.0.0",
@@ -1260,27 +1281,6 @@
             "installation-source": "dist",
             "homepage": "https://wordpress.org/plugins/wp-robots-txt/",
             "install-path": "../../public/app/plugins/wp-robots-txt"
-        },
-        {
-            "name": "wpackagist-theme/generatepress",
-            "version": "3.3.1",
-            "version_normalized": "3.3.1.0",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/generatepress/",
-                "reference": "3.3.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/generatepress.3.3.1.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "installation-source": "dist",
-            "homepage": "https://wordpress.org/themes/generatepress/",
-            "install-path": "../../public/app/themes/generatepress"
         }
     ],
     "dev": false,
