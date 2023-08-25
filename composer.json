@@ -31,7 +31,7 @@
     "wpackagist-plugin/aryo-activity-log": "^2.8.8",
     "wpackagist-plugin/better-passwords": "^1.8.0",
     "wpackagist-plugin/disable-emojis": "^1.7.5",
-    "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.22",
+    "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.23",
     "wpackagist-plugin/mailgun": "^1.9.5",
     "wpackagist-plugin/redirection": "^5.3.10",
     "wpackagist-plugin/wordpress-seo": "^21.0",
