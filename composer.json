@@ -32,7 +32,7 @@
     "wpackagist-plugin/limit-login-attempts-reloaded": "^2.25.23",
     "wpackagist-plugin/mailgun": "^1.9.5",
     "wpackagist-plugin/redirection": "^5.3.10",
-    "wpackagist-plugin/spinupwp": "^1.5.1",
+    "wpackagist-plugin/spinupwp": "^1.5",
     "wpackagist-plugin/wordpress-seo": "^21.0",
     "wpackagist-plugin/wp-robots-txt": "^1.2.0"
   },
