@@ -90,19 +90,19 @@
       "./tools/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
     ],
     "test-phpcbf": [
-      "./tools/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-base"
     ],
     "test-phpcs": [
-      "./tools/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-gp-child-theme"
+      "./tools/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-base"
     ],
     "test-phpcpd": [
-      "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
+      "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-base/ --exclude=./vendor/*,./node_modules/*"
     ],
     "test-phpmnd": [
-      "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-gp-child-theme --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
+      "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 4G"
+      "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-base -c ./phpstan.neon.dist --memory-limit 4G"
     ],
     "test-phpunit": [
       "./tools/vendor/bin/phpunit -c ./phpunit.xml"

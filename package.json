@@ -3,19 +3,34 @@
   "version": "0.1.0",
   "description": "## Project URLS",
   "main": "index.js",
+  "config": {
+    "theme_path": "./public/app/themes/vatu-base",
+    "js_dependencies": []
+  },
+  "engines": {
+    "node": "^18.14.2",
+    "npm": "^9.5.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:cypress": "",
-    "cypress:open": "cypress open --config-file tests/cypress.json",
-    "styles:global": "sass public/app/themes/vatu-gp-child-theme/assets/sass/style.scss:public/app/themes/vatu-gp-child-theme/style.css --style=expanded --source-map --source-map-urls=relative",
-    "styles:components": "sass public/app/themes/vatu-gp-child-theme/assets/sass/06-components/:public/app/themes/vatu-gp-child-theme/assets/css/ --style=expanded --source-map --source-map-urls=relative",
-    "styles:editor": "sass public/app/themes/vatu-gp-child-theme/assets/sass/editor.scss:public/app/themes/vatu-gp-child-theme/editor.css --style=expanded --source-map --source-map-urls=relative",
-    "styles:autoprefixer": "postcss public/app/themes/vatu-gp-child-theme/*.css public/app/themes/vatu-gp-child-theme/assets/css/*.css --use autoprefixer --replace --map",
-    "styles:minify": "postcss public/app/themes/vatu-gp-child-theme/*.css public/app/themes/vatu-gp-child-theme/assets/css/*.css --use cssnano --replace --map",
-    "styles": "run-s \"styles:global\" \"styles:components\" \"styles:editor\" \"styles:autoprefixer\" \"styles:minify\"",
-    "styles:watch": "chokidar \"public/app/themes/vatu-gp-child-theme/assets/**/*.scss\" -c \"npm run styles\" --initial",
-    "build": "run-p \"styles\"",
-    "build:watch": "run-p \"styles:watch\""
+    "build": "run-p styles scripts fonts images svg",
+    "build:watch": "run-p fonts \"styles:watch\" \"scripts:watch\"",
+    "styles": "run-s \"styles:global\" \"styles:editor\"",
+    "styles:global": "postcss ${npm_package_config_theme_path}/ui/css/global.css --output ${npm_package_config_theme_path}/style.css --use postcss-easy-import autoprefixer cssnano --map",
+    "styles:editor": "postcss ${npm_package_config_theme_path}/ui/css/editor-style.css --output ${npm_package_config_theme_path}/editor-style.css --use postcss-easy-import autoprefixer cssnano --map",
+    "styles:watch": "chokidar \"${npm_package_config_theme_path}/ui/css/**/*.css\" -c \"npm run styles\" --initial",
+    "scripts": "run-s \"scripts:clean\" \"scripts:editor\" \"scripts:global\"",
+    "scripts:watch": "chokidar \"${npm_package_config_theme_path}/ui/js/**/*.js\" -c \"npm run scripts\" --initial",
+    "scripts:clean": "del ${npm_package_config_theme_path}/dist/js && make-dir ${npm_package_config_theme_path}/dist/js",
+    "scripts:global": "terser ${npm_package_config_theme_path}/ui/js/navigation.js --compress --output ${npm_package_config_theme_path}/dist/js/global.js",
+    "scripts:editor": "terser ${npm_package_config_theme_path}/ui/js/editor.js --compress --output ${npm_package_config_theme_path}/dist/js/editor.js",
+    "fonts": "cpy ui/fonts/**/* dist/fonts/ --cwd=${npm_package_config_theme_path}",
+    "images": "cpy ui/img/**/* dist/img/ --cwd=${npm_package_config_theme_path}",
+    "svg": "run-s \"svg:sprite\"",
+    "svg:watch": "chokidar \"${npm_package_config_theme_path}/ui/svg/*/*.svg\" -c \"npm run svg\" --initial",
+    "svg:sprite": "run-s \"svg:sprite:branding\" \"svg:sprite:icons\" \"svg:sprite:social\"",
+    "svg:sprite:branding": "svg-sprite -s --symbol-dest ${npm_package_config_theme_path}/dist/svg --svg-namespace-classnames false --svg-namespace-ids false --symbol-sprite branding.svg ${npm_package_config_theme_path}/ui/svg/branding/*.svg",
+    "svg:sprite:icons": "svg-sprite -s --symbol-dest ${npm_package_config_theme_path}/dist/svg --svg-namespace-classnames false --svg-namespace-ids false --symbol-sprite icons.svg ${npm_package_config_theme_path}/ui/svg/icons/*.svg",
+    "svg:sprite:social": "svg-sprite -s --symbol-dest ${npm_package_config_theme_path}/dist/svg --svg-namespace-classnames false --svg-namespace-ids false --symbol-sprite social.svg ${npm_package_config_theme_path}/ui/svg/social/*.svg"
   },
   "repository": {
     "type": "git",
@@ -25,11 +40,18 @@
   "license": "ISC",
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
-    "@bahmutov/cy-api": "2.2.5",
-    "@percy/cli": "1.26.3",
-    "@percy/cypress": "3.1.2",
-    "@vatu/theme-build": "github:vatu-team/theme-build#0.0.5",
-    "cypress": "12.17.4",
-    "cypress-iframe": "1.0.1"
+    "autoprefixer": "^10.4.13",
+    "chokidar-cli": "^3.0.0",
+    "cpy-cli": "^5.0.0",
+    "cssnano": "^6.0.1",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.44.0",
+    "make-dir-cli": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-easy-import": "^4.0.0",
+    "svg-sprite": "2.0.2",
+    "terser": "^5.18.2"
   }
 }
