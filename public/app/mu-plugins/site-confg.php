@@ -40,6 +40,7 @@ add_filter( 'validate_current_theme', '__return_false' );
  */
 function vatu_disable_site_health_tests( array $tests ) {
 	unset( $tests['direct']['debug_enabled'] );
+	unset( $tests['direct']['available_updates_disk_space'] );
 	unset( $tests['async']['background_updates'] );
 	return $tests;
 }
