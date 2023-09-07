@@ -23,7 +23,7 @@ jobs:
 
   php-parallel-lint:
     name: "PHP Parallel Lint"
-    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.7.0
+    uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.8.0
     with:
       runs-on: 'self-hosted'
       version-php: '8.1'
@@ -32,7 +32,7 @@ jobs:
   phpcs:
     name: "PHP CodeSniffer"
     needs: php-parallel-lint
-    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.7.0
+    uses: vatu-team/workflows/.github/workflows/php-codesniffer.yml@1.8.0
     with:
       runs-on: 'self-hosted'
       version-php: '8.1'
@@ -41,7 +41,7 @@ jobs:
   phpmnd:
     name: "PHP Magic Number Detector"
     needs: phpcs
-    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.7.0
+    uses: vatu-team/workflows/.github/workflows/php-magic-number-detector.yml@1.8.0
     with:
       runs-on: 'self-hosted'
       version-php: '8.1'
@@ -50,7 +50,7 @@ jobs:
   phpcpd:
     name: "PHP Copy/Paste Detector"
     needs: phpmnd
-    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.7.0
+    uses: vatu-team/workflows/.github/workflows/php-copy-paste-detector.yml@1.8.0
     with:
       runs-on: 'self-hosted'
       version-php: '8.1'
@@ -59,7 +59,7 @@ jobs:
   phpstan:
     name: "PHP Stan"
     needs: phpcpd
-    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.7.0
+    uses: vatu-team/workflows/.github/workflows/php-stan.yml@1.8.0
     with:
       runs-on: 'self-hosted'
       version-php: '8.1'
