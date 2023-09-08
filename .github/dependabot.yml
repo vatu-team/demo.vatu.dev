@@ -19,11 +19,11 @@ updates:
       interval: daily
       time: "01:05"
       timezone: "Europe/London"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
     versioning-strategy: increase
     commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"
 
   # Project Workflows
 
@@ -33,77 +33,25 @@ updates:
       interval: daily
       time: "04:05"
       timezone: "Europe/London"
+    open-pull-requests-limit: 1
     commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"
 
   # Project Tools.
 
   - package-ecosystem: composer
-    directory: "/tools/parallel-lint"
+    directory: "/tools"
     registries: "*"
     schedule:
       interval: daily
       time: "01:25"
       timezone: "Europe/London"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 1
     versioning-strategy: increase
     commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
-
-  - package-ecosystem: composer
-    directory: "/tools/phpcs"
-    registries: "*"
-    schedule:
-      interval: daily
-      time: "01:25"
-      timezone: "Europe/London"
-    open-pull-requests-limit: 10
-    versioning-strategy: increase
-    commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
-
-  - package-ecosystem: composer
-    directory: "/tools/phpcpd"
-    registries: "*"
-    schedule:
-      interval: daily
-      time: "01:25"
-      timezone: "Europe/London"
-    open-pull-requests-limit: 10
-    versioning-strategy: increase
-    commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
-
-
-  - package-ecosystem: composer
-    directory: "/tools/phpstan"
-    registries: "*"
-    schedule:
-      interval: daily
-      time: "01:25"
-      timezone: "Europe/London"
-    open-pull-requests-limit: 10
-    versioning-strategy: increase
-    commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
-
-  - package-ecosystem: composer
-    directory: "/tools/phpunit"
-    registries: "*"
-    schedule:
-      interval: daily
-      time: "01:25"
-      timezone: "Europe/London"
-    open-pull-requests-limit: 10
-    versioning-strategy: increase
-    commit-message:
-      prefix: "[Upgraded]"
-      prefix-development: "[Upgraded]"
+      prefix: "Upgraded"
+      prefix-development: "Upgraded"
 
   # NPM.
   - package-ecosystem: "npm"
