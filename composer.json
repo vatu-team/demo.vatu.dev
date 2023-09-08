@@ -102,7 +102,7 @@
       "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-base -c ./phpstan.neon.dist --memory-limit 4G"
+      "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-base -c ./phpstan.neon.dist"
     ],
     "test-phpunit": [
       "./tools/vendor/bin/phpunit -c ./phpunit.xml"
