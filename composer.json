@@ -109,6 +109,7 @@
     ],
     "test": [
       "composer run test-phpcbf",
+      "composer run test-parallel-lint",
       "composer run test-phpcs",
       "composer run test-phpmnd",
       "composer run test-phpcpd",
