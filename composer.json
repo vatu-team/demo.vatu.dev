@@ -47,7 +47,7 @@
     "wpackagist-plugin/rewrite-testing": "^0.1.1",
     "wpackagist-plugin/transients-manager": "^2.0.3",
     "wpackagist-plugin/user-switching": "^1.7.0",
-    "wpackagist-plugin/wordpress-beta-tester": "^3.5.3",
+    "wpackagist-plugin/wordpress-beta-tester": "^3.5.4",
     "wpackagist-plugin/wordpress-importer": "^0.8.1",
     "wpackagist-plugin/wp-crontrol": "^1.15.3"
   },
