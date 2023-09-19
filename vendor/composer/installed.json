@@ -1179,16 +1179,16 @@
         },
         {
             "name": "wpackagist-plugin/mailgun",
-            "version": "1.9.5",
-            "version_normalized": "1.9.5.0",
+            "version": "1.9.6",
+            "version_normalized": "1.9.6.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/mailgun/",
-                "reference": "tags/1.9.5"
+                "reference": "tags/1.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/mailgun.1.9.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/mailgun.1.9.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
