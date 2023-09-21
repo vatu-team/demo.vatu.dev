@@ -52,6 +52,6 @@
     "postcss-cli": "^10.1.0",
     "postcss-easy-import": "^4.0.0",
     "svg-sprite": "2.0.2",
-    "terser": "^5.19.4"
+    "terser": "^5.20.0"
   }
 }
