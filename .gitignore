@@ -84,6 +84,7 @@ auth.json
 !/public/app/plugins/index.php
 /public/app/mu-plugins/*
 !/public/app/mu-plugins/index.php
+!/public/app/mu-plugins/site-config.php
 
 ## Themes
 /public/app/themes/*
