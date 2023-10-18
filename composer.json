@@ -90,10 +90,10 @@
       "./tools/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
     ],
     "test-phpcbf": [
-      "./tools/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-base"
+      "./tools/vendor/bin/phpcbf --standard=phpcs.dist.xml"
     ],
     "test-phpcs": [
-      "./tools/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 8.1- ./public/app/themes/vatu-base"
+      "./tools/vendor/bin/phpcs --standard=phpcs.dist.xml"
     ],
     "test-phpcpd": [
       "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-base/ --exclude=./vendor/*,./node_modules/*"
