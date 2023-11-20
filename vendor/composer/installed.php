@@ -3,7 +3,7 @@
         'name' => 'vatu/demo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '2772c049ab8329948e42b56554cac21ad676c366',
+        'reference' => '523d510862579e50c315badf1f0eeb367bde3eca',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -136,7 +136,7 @@
         'vatu/demo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '2772c049ab8329948e42b56554cac21ad676c366',
+            'reference' => '523d510862579e50c315badf1f0eeb367bde3eca',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
