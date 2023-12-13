@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bee235b1611f993412c84cbbcb4b8647",
+    "content-hash": "0776a360964e694aba64edb170f5765a",
     "packages": [
         {
             "name": "composer/installers",
@@ -1784,15 +1784,15 @@
         },
         {
             "name": "wpackagist-plugin/transients-manager",
-            "version": "2.0.3",
+            "version": "2.0.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/transients-manager/",
-                "reference": "tags/2.0.3"
+                "reference": "tags/2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/transients-manager.2.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/transients-manager.2.0.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
