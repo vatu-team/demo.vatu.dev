@@ -21,6 +21,9 @@ on:
 #       - 'composer.json'
 #       - 'package.json'
 
+env:
+  COMPOSER_ALLOW_SUPERUSER: "1" # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
+
 jobs:
   # Deploy code to production.
   #
