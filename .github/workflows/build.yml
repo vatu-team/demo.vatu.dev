@@ -50,14 +50,19 @@ jobs:
     runs-on: self-hosted
     steps:
 
-      - name: "Get current branch name."
-        run : |
-          echo "branch_name=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-
-      - name: "Checks out the repository."
-        uses: "actions/checkout@v4.1.1"
+      - name: 'Generate GitHub token from GitHub App (Bot)'
+        uses: 'tibdex/github-app-token@v2.1.0'
+        id: generate_token
         with:
-          persist-credentials: false
+          app_id: ${{ secrets.VATU_BOT_ID }}
+          private_key: ${{ secrets.VATU_BOT_KEY }}
+
+      - name: 'Checks out the repository.'
+        uses: 'actions/checkout@v4.1.1'
+
+      - name: 'Get current branch name.'
+        run : |
+          echo "branch_name=${{ github.event.workflow_run.head_branch }}" >> $GITHUB_ENV
 
       - name: "Sets up PHP with Composer."
         uses: "shivammathur/setup-php@2.30.0"
@@ -163,3 +168,42 @@ jobs:
       - name: "Clean up."
         run: |
           rm -rf ${GITHUB_WORKSPACE}/built/
+
+      - name: "Failure notification."
+        if: ${{ failure() }}
+        id: 'slack'
+        uses: 'slackapi/slack-github-action@v1.25.0'
+        with:
+          channel-id: 'deploys'
+          payload: |
+            {
+              "blocks": [
+                {
+                  "type": "divider"
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "`${{ github.workflow }}` workflow failed for ${{ github.event.repository.name }}"
+                  },
+                },
+                {
+                  "type": "actions",
+                  "elements": [
+                    {
+                      "type": "button",
+                      "text": {
+                        "type": "plain_text",
+                        "emoji": true,
+                        "text": "View"
+                      },
+                      "style": "danger",
+                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }"
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
