@@ -186,7 +186,7 @@ jobs:
                   "text": {
                     "type": "mrkdwn",
                     "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
-                  },
+                  }
                 },
                 {
                   "type": "actions",
