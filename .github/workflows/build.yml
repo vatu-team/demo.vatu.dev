@@ -146,8 +146,8 @@ jobs:
         run: |
           rm ${GITHUB_WORKSPACE}/built/.gitignore
           rm ${GITHUB_WORKSPACE}/built/public/app/themes/*/.gitignore
-      - name: "Setup deploy ignore files."
 
+      - name: "Setup deploy ignore files."
         run: mv ${GITHUB_WORKSPACE}/built/.deployignore ${GITHUB_WORKSPACE}/built/.gitignore
 
       - name: "Push build to deployment branch."
@@ -159,7 +159,6 @@ jobs:
           MESSAGE=$( printf 'Build changes from %s\n\n%s' "${GITHUB_SHA}" "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" )
           git commit --author="${{ github.event.pusher.name }} <${{ github.event.pusher.email }}>" -m "${MESSAGE}"
           git push origin ${{ env.branch_name }}--built
-
 
       - name: "Clean up."
         run: |
