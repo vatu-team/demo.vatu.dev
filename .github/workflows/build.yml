@@ -185,7 +185,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "`${{ github.workflow }}` workflow failed for ${{ github.event.repository.name }}"
+                    "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
                   },
                 },
                 {
@@ -206,4 +206,4 @@ jobs:
               ]
             }
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
