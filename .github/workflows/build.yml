@@ -9,17 +9,15 @@ name: "Build"
 # To add extra deployment branches, add a new starting point to the allow branches.
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - 'Commit'
+    types:
+      - completed
     branches:
       - main
       - develop
-#     paths:
-#       - 'config'
-#       - 'public'
-#       - '.browserlistrc'
-#       - '.deployignore'
-#       - 'composer.json'
-#       - 'package.json'
+      - uat
 
 env:
   COMPOSER_ALLOW_SUPERUSER: "1" # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
@@ -46,6 +44,10 @@ jobs:
   # - Push build to deployment branch.
 
   build:
+
+    if: >
+      github.event.workflow_run.conclusion == 'success'
+
     name: "Build"
     runs-on: self-hosted
     steps:
