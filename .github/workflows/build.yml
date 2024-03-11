@@ -177,7 +177,7 @@ jobs:
           channel-id: 'deploys'
           payload: |
             {
-              "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}"
+              "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}",
               "blocks": [
                 {
                   "type": "divider"
