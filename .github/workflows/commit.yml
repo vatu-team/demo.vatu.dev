@@ -74,3 +74,36 @@ jobs:
       runs-on: 'self-hosted'
       version-php: '8.3'
     secrets: inherit
+
+  notify-failure:
+    name: "Notify on failure."
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    needs:
+      - php-parallel-lint
+      - phpcs
+      - phpmnd
+      - phpcpd
+      - phpstan
+    runs-on: 'self-hosted'
+    steps:
+      - name: "Failure notification."
+        if: ${{ failure() }}
+        id: 'slack'
+        uses: 'slackapi/slack-github-action@v1.25.0'
+        with:
+          channel-id: 'updates'
+          payload: |
+            {
+              "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}.\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View>"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
