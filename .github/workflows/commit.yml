@@ -87,7 +87,6 @@ jobs:
     runs-on: 'self-hosted'
     steps:
       - name: "Failure notification."
-        if: ${{ failure() }}
         id: 'slack'
         uses: 'slackapi/slack-github-action@v1.25.0'
         with:
