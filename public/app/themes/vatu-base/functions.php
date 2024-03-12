@@ -11,6 +11,8 @@
 
 declare(strict_types=1);
 
+$123_test_error;
+
 if ( ! is_admin() ) {
 	wp_enqueue_style(
 		'base-styles',
