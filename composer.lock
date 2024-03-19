@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eee0304fbadc6cc5db00b4a238cb5237",
+    "content-hash": "8529c2e07811f7ec82ec0a8d3513d96d",
     "packages": [
         {
             "name": "composer/installers",
@@ -1051,15 +1051,15 @@
         },
         {
             "name": "wpackagist-plugin/aryo-activity-log",
-            "version": "2.9.1",
+            "version": "2.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/aryo-activity-log/",
-                "reference": "tags/2.9.1"
+                "reference": "tags/2.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/aryo-activity-log.2.9.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/aryo-activity-log.2.9.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
