@@ -33,7 +33,7 @@
     "wpackagist-plugin/mailgun": "^1.9.9",
     "wpackagist-plugin/redirection": "^5.4.2",
     "wpackagist-plugin/spinupwp": "^1.6",
-    "wpackagist-plugin/wordpress-seo": "^22.2",
+    "wpackagist-plugin/wordpress-seo": "^22.3",
     "wpackagist-plugin/wp-robots-txt": "^1.3"
   },
   "require-dev": {
