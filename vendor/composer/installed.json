@@ -1233,16 +1233,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "22.3",
-            "version_normalized": "22.3.0.0",
+            "version": "22.4",
+            "version_normalized": "22.4.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/22.3"
+                "reference": "tags/22.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.22.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
