@@ -123,6 +123,7 @@
       "@composer test:lint",
       "composer run test-phpmnd",
       "composer run test-phpcpd",
+      "@composer test:unit",
       "composer run test-phpstan"
     ],
     "test:lint": [
@@ -137,6 +138,9 @@
     ],
     "test:lint:coding-standards": [
         "./tools/vendor/bin/phpcs -n"
+    ],
+    "test:unit": [
+        "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
     ],
     "test-parallel-lint": [
       "@composer test:lint:lint"
@@ -157,7 +161,7 @@
       "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-base -c ./phpstan.neon.dist"
     ],
     "test-phpunit": [
-      "./tools/vendor/bin/phpunit -c ./phpunit.xml"
+      "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
     ],
     "tools": [
       "@composer install --working-dir=tools",

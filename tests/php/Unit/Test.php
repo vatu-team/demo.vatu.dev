@@ -1,7 +1,7 @@
 <?php
 
 /**
- * PHPUnit bootstrap file.
+ * Test: Suite is running.
  *
  * @package   Vatu\Wordpress\Tests
  * @author    Vatu <hello@vatu.dev>
@@ -12,8 +12,17 @@
 
 declare(strict_types=1);
 
-$root_dir = dirname( __DIR__ );
+namespace Vatu\Wordpress\Tests;
 
-require_once $root_dir . '/tools/vendor/autoload.php';
-require_once $root_dir . '/vendor/autoload.php';
-require_once $root_dir . '/tests/php/TestCase.php';
+class Test extends TestCase
+{
+	/**
+	 * Test Suite is running.
+	 *
+	 * @coversNothing
+	 */
+	public function testIsRun(): void
+	{
+		self::assertTrue( true );
+	}
+}

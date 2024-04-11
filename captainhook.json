@@ -12,6 +12,9 @@
         "actions": [
             {
                 "action": "composer run test:lint"
+            },
+            {
+                "action": "composer run test:unit"
             }
         ]
     },
