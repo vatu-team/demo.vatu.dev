@@ -21,6 +21,8 @@
   },
   "require": {
     "php": "^8.3",
+    "captainhook/captainhook": "^5.22",
+    "captainhook/hook-installer": "^1.0",
     "composer/installers": "^2.2.0",
     "cweagans/composer-patches": "^1.7",
     "oscarotero/env": "^2.1.0",
@@ -75,7 +77,8 @@
       "composer/installers": true,
       "cweagans/composer-patches": true,
       "ergebnis/composer-normalize": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "captainhook/hook-installer": true
     },
     "optimize-autoloader": true,
     "preferred-install": "dist",
