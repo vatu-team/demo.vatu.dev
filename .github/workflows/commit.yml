@@ -21,8 +21,74 @@ env:
 
 jobs:
 
+  # Security Test
+
+  php-security:
+    name: 'PHP Security Analysis'
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        php-version: ['8.3']
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.1.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.30.2'
+        with:
+          coverage: 'none'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: "Add Composer config."
+        run: |
+          composer config http-basic.satispress.vatu.dev ${{ secrets.COMPOSER_VATU_USERNAME }} ${{ secrets.COMPOSER_VATU_KEY }}
+
+      - name: 'Validate Composer file.'
+        run: |
+          composer validate --working-dir=tools --ansi --strict
+          composer validate --ansi --strict
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: 'Sets up Caching.'
+        uses: 'actions/cache@v4.0.2'
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-build-${{ hashFiles('composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-build-
+
+      - name: 'Install dependencies.'
+        run: |
+          composer install --no-interaction --prefer-dist
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+
+      - name: 'Run security test.'
+        run: |
+          composer audit --ansi
+
+  # Code Checking
+
   php-lint:
     name: "PHP Parallel Lint"
+    needs: php-security
     uses: vatu-team/workflows/.github/workflows/php-parallel-lint.yml@1.12.0
     with:
       runs-on: 'self-hosted'
@@ -143,6 +209,7 @@ jobs:
     name: "Notify on failure."
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     needs:
+      - php-security
       - php-lint
       - phpcs
       - php-unit

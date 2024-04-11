@@ -14,6 +14,9 @@
                 "action": "composer run test:lint"
             },
             {
+                "action": "composer run test:security"
+            },
+            {
                 "action": "composer run test:unit"
             },
             {

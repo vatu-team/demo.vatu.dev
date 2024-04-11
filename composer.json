@@ -121,6 +121,7 @@
     ],
     "test": [
       "@composer test:lint",
+      "@composer test:security",
       "@composer test:unit",
       "@composer test:analysis"
     ],
@@ -136,6 +137,9 @@
     ],
     "test:lint:coding-standards": [
         "./tools/vendor/bin/phpcs -n"
+    ],
+    "test:security": [
+        "composer audit --ansi"
     ],
     "test:unit": [
         "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
