@@ -142,13 +142,13 @@
       "@composer test:lint:lint"
     ],
     "test-phpcbf": [
-      "./tools/vendor/bin/phpcbf --standard=phpcs.dist.xml"
+      "./tools/vendor/bin/phpcbf"
     ],
     "test-phpcpd": [
       "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-base/ --exclude=./vendor/*,./node_modules/*"
     ],
     "test-phpcs": [
-      "./tools/vendor/bin/phpcs --standard=phpcs.dist.xml"
+      "./tools/vendor/bin/phpcs"
     ],
     "test-phpmnd": [
       "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
