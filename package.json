@@ -8,8 +8,8 @@
     "js_dependencies": []
   },
   "engines": {
-    "node": "^18.14.2",
-    "npm": "^9.5.0"
+    "node": "^20.11",
+    "npm": "^10.2"
   },
   "scripts": {
     "build": "run-p styles scripts fonts images svg",
@@ -40,6 +40,8 @@
   "license": "ISC",
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
+    "@wordpress/create-block": "^4.39.0",
+    "@wordpress/scripts": "^27.6.0",
     "autoprefixer": "^10.4.19",
     "chokidar-cli": "^3.0.0",
     "cpy-cli": "^5.0.0",
@@ -51,7 +53,7 @@
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-easy-import": "^4.0.0",
-    "svg-sprite": "2.0.4",
+    "svg-sprite": "2.0.1",
     "terser": "^5.30.3"
   }
 }
