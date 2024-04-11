@@ -20,6 +20,7 @@
   "require": {
     "php": "^8.3",
     "composer/installers": "^2.2.0",
+    "cweagans/composer-patches": "^1.7",
     "oscarotero/env": "^2.1.0",
     "roots/bedrock-autoloader": "^1.0.4",
     "roots/wordpress": "^6.5",
@@ -68,7 +69,8 @@
   "config": {
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true
+      "roots/wordpress-core-installer": true,
+      "cweagans/composer-patches": true
     },
     "optimize-autoloader": true,
     "sort-packages": true,
@@ -124,6 +126,7 @@
       "public/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "public/app/themes/{$name}/": ["type:wordpress-theme"]
     },
-    "wordpress-install-dir": "public/wp"
+    "wordpress-install-dir": "public/wp",
+    "patches-file": "patches/composer.patches.json"
   }
 }
