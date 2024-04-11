@@ -121,10 +121,8 @@
     ],
     "test": [
       "@composer test:lint",
-      "composer run test-phpmnd",
-      "composer run test-phpcpd",
       "@composer test:unit",
-      "composer run test-phpstan"
+      "@composer test:analysis"
     ],
     "test:lint": [
         "@composer validate --ansi --strict",
@@ -142,6 +140,9 @@
     "test:unit": [
         "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
     ],
+    "test:analysis": [
+        "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+    ],
     "test-parallel-lint": [
       "@composer test:lint:lint"
     ],
@@ -158,7 +159,7 @@
       "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
     ],
     "test-phpstan": [
-      "./tools/vendor/bin/phpstan analyse ./public/app/themes/vatu-base -c ./phpstan.neon.dist"
+      "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
     ],
     "test-phpunit": [
       "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"

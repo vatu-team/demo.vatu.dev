@@ -15,6 +15,9 @@
             },
             {
                 "action": "composer run test:unit"
+            },
+            {
+                "action": "composer run test:analysis"
             }
         ]
     },

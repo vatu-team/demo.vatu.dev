@@ -61,6 +61,13 @@ auth.json
 /vendor
 /tools/vendor
 
+## Tests
+/.phpunit.cache
+/phpcs.xml
+/phpstan.neon
+/phpunit.xml
+/tests/php/Coverage
+
 ## Config
 /config/environments/local.php
 
