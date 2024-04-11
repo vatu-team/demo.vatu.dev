@@ -1,19 +1,21 @@
 {
   "name": "vatu/demo",
   "description": "Demo of Vatu development project workflow.",
+  "license": "proprietary",
   "type": "project",
   "keywords": [
     "wordpress"
   ],
-  "homepage": "https://projecturl.com",
   "readme": "https://github.com/vatu-team/demo.vatu.dev/blob/main/readme.md",
-  "license": "proprietary",
-  "authors": [{
-    "name": "Vatu",
-    "email": "hello@vatu.dev",
-    "homepage": "https://vatu.dev",
-    "role": "Agency"
-  }],
+  "authors": [
+    {
+      "name": "Vatu",
+      "email": "hello@vatu.dev",
+      "homepage": "https://vatu.dev",
+      "role": "Agency"
+    }
+  ],
+  "homepage": "https://projecturl.com",
   "support": {
     "issues": "https://github.com/vatu-team/demo.vatu.dev/issues"
   },
@@ -53,12 +55,8 @@
     "wpackagist-plugin/wordpress-importer": "^0.8.2",
     "wpackagist-plugin/wp-crontrol": "^1.16.2"
   },
-  "autoload": {
-    "psr-4": {}
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true,
-  "repositories": [{
+  "repositories": [
+    {
       "type": "composer",
       "url": "https://wpackagist.org"
     },
@@ -67,30 +65,58 @@
       "url": "https://satispress.vatu.dev/satispress/"
     }
   ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {}
+  },
   "config": {
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true,
       "cweagans/composer-patches": true,
-      "ergebnis/composer-normalize": true
+      "ergebnis/composer-normalize": true,
+      "roots/wordpress-core-installer": true
     },
     "optimize-autoloader": true,
-    "sort-packages": true,
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "installer-paths": {
+      "public/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "public/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "public/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "normalize": {
+      "indent-size": 4,
+      "indent-style": "space"
+    },
+    "patches-file": "patches/composer.patches.json",
+    "wordpress-install-dir": "public/wp"
   },
   "scripts": {
+    "post-install-cmd": [
+      "@composer run tools"
+    ],
+    "post-update-cmd": [
+      "@composer run tools"
+    ],
     "post-root-package-install": [
       "php -r \"copy('example.env', '.env');\""
     ],
-    "post-install-cmd": [
-        "@composer run tools"
-    ],
-    "post-update-cmd": [
-        "@composer run tools"
-    ],
-    "tools": [
-        "@composer install --working-dir=tools",
-        "@composer run post-install-cmd --working-dir=tools"
+    "test": [
+      "composer run test-phpcbf",
+      "composer run test-parallel-lint",
+      "composer run test-phpcs",
+      "composer run test-phpmnd",
+      "composer run test-phpcpd",
+      "composer run test-phpstan"
     ],
     "test-parallel-lint": [
       "./tools/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
@@ -98,11 +124,11 @@
     "test-phpcbf": [
       "./tools/vendor/bin/phpcbf --standard=phpcs.dist.xml"
     ],
-    "test-phpcs": [
-      "./tools/vendor/bin/phpcs --standard=phpcs.dist.xml"
-    ],
     "test-phpcpd": [
       "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-base/ --exclude=./vendor/*,./node_modules/*"
+    ],
+    "test-phpcs": [
+      "./tools/vendor/bin/phpcs --standard=phpcs.dist.xml"
     ],
     "test-phpmnd": [
       "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
@@ -113,26 +139,9 @@
     "test-phpunit": [
       "./tools/vendor/bin/phpunit -c ./phpunit.xml"
     ],
-    "test": [
-      "composer run test-phpcbf",
-      "composer run test-parallel-lint",
-      "composer run test-phpcs",
-      "composer run test-phpmnd",
-      "composer run test-phpcpd",
-      "composer run test-phpstan"
+    "tools": [
+      "@composer install --working-dir=tools",
+      "@composer run post-install-cmd --working-dir=tools"
     ]
-  },
-  "extra": {
-    "installer-paths": {
-      "public/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "public/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "public/app/themes/{$name}/": ["type:wordpress-theme"]
-    },
-    "wordpress-install-dir": "public/wp",
-    "patches-file": "patches/composer.patches.json",
-    "normalize": {
-      "indent-size": 4,
-      "indent-style": "space"
-    }
   }
 }
