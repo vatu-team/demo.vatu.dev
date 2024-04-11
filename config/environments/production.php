@@ -1,8 +1,15 @@
 <?php
+
 /**
- * Configuration overrides for WP_ENVIRONMENT_TYPE === 'production'
+ * Environment config: Production
  *
- * @package    Roots
+ * Configuration overrides for WP_ENVIRONMENT_TYPE === 'production'.
+ *
+ * @package   Vatu\Wordpress\Config
+ * @author    Vatu <hello@vatu.dev>
+ * @link      https://vatu.dev/
+ * @license   GNU General Public License v3.0
+ * @copyright 2023-2024 Vatu Limited.
  */
 
-use Roots\WPConfig\Config;
+declare(strict_types=1);

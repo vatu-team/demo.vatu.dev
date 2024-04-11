@@ -1,29 +1,39 @@
 <?php
+
 /**
+ * Project Configuration.
+ *
  * Your base production configuration goes in this file. Environment-specific
  * overrides go in their respective config/environments/{{WP_ENVIRONMENT_TYPE}}.php file.
  *
- * A good default policy is to deviate from the production config as little as
- * possible. Try to define as much of your configuration in this file as you
- * can.
+ * @package   Vatu\Wordpress\Config
+ * @author    Vatu <hello@vatu.dev>
+ * @link      https://vatu.dev/
+ * @license   GNU General Public License v3.0
+ * @copyright 2023-2024 Vatu Limited.
  *
- * @package    Roots
+ * phpcs:disable PSR1.Files.SideEffects.FoundWithSymbols -- Required to bootstrap WordPress.
+ * phpcs:disable Squiz.PHP.DiscouragedFunctions.Discouraged -- False positive, using dependency function.
+ * phpcs:disable SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable.DisallowedSuperGlobalVariable -- Required
  */
 
+declare(strict_types=1);
+
 use Roots\WPConfig\Config;
+
 use function Env\env;
 
 /**
  * Directory containing all of the site's files
  *
- * @var string
+ * @var string $root_dir
  */
 $root_dir = dirname( __DIR__ );
 
 /**
  * Document Root
  *
- * @var string
+ * @var string $webroot_dir
  */
 $webroot_dir = $root_dir . '/public';
 
@@ -31,9 +41,11 @@ $webroot_dir = $root_dir . '/public';
  * Use Dotenv to set required environment variables and load .env file in root
  */
 $dotenv = Dotenv\Dotenv::createUnsafeImmutable( $root_dir );
+
 if ( file_exists( $root_dir . '/.env' ) ) {
 	$dotenv->load();
 	$dotenv->required( [ 'WP_HOME', 'WP_SITEURL' ] );
+
 	if ( ! env( 'DATABASE_URL' ) ) {
 		$dotenv->required( [ 'DB_NAME', 'DB_USER', 'DB_PASSWORD' ] );
 	}
@@ -45,6 +57,7 @@ if ( file_exists( $root_dir . '/.env' ) ) {
  */
 define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
 define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE' ) ?: 'production' );
+define( 'WP_DEVELOPMENT_MODE', env( 'WP_DEVELOPMENT_MODE' ) ?: null );
 
 /**
  * URLs
@@ -68,7 +81,8 @@ Config::define( 'DB_PASSWORD', env( 'DB_PASSWORD' ) );
 Config::define( 'DB_HOST', env( 'DB_HOST' ) ?: 'localhost' );
 Config::define( 'DB_CHARSET', 'utf8mb4' );
 Config::define( 'DB_COLLATE', '' );
-// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+
+// phpcs:ignore SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable
 $table_prefix = env( 'DB_PREFIX' ) ?: 'wp_';
 
 if ( env( 'DATABASE_URL' ) ) {
@@ -77,7 +91,7 @@ if ( env( 'DATABASE_URL' ) ) {
 
 	Config::define( 'DB_NAME', substr( $dsn->path, 1 ) );
 	Config::define( 'DB_USER', $dsn->user );
-	Config::define( 'DB_PASSWORD', isset( $dsn->pass ) ? $dsn->pass : null );
+	Config::define( 'DB_PASSWORD', $dsn->pass ?? null );
 	Config::define( 'DB_HOST', isset( $dsn->port ) ? "{$dsn->host}:{$dsn->port}" : $dsn->host );
 }
 
@@ -118,7 +132,7 @@ ini_set( 'display_errors', '0' );
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
-if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 'https' === $_SERVER['HTTP_X_FORWARDED_PROTO'] ) {
+if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
 	$_SERVER['HTTPS'] = 'on';
 }
 
@@ -140,19 +154,29 @@ if ( env( 'MULTISITE' ) === true ) {
 	Config::define( 'PATH_CURRENT_SITE', '/' );
 	Config::define( 'SITE_ID_CURRENT_SITE', 1 );
 	Config::define( 'BLOG_ID_CURRENT_SITE', 1 );
+	Config::define( 'COOKIE_DOMAIN', env( 'COOKIE_DOMAIN' ) ?: null );
 }
 
-/**
- * Query Monitor
+/*
+ * S3 Uploads
  */
-Config::define( 'QM_DARK_MODE', true );
-Config::define( 'QM_ENABLE_CAPS_PANEL', true );
+Config::define( 'S3_UPLOADS_BUCKET', env( 'S3_UPLOADS_BUCKET' ) ?: null );
+Config::define( 'S3_UPLOADS_REGION', env( 'S3_UPLOADS_REGION' ) ?: null );
+Config::define( 'S3_UPLOADS_KEY', env( 'S3_UPLOADS_KEY' ) ?: null );
+Config::define( 'S3_UPLOADS_SECRET', env( 'S3_UPLOADS_SECRET' ) ?: null );
+Config::define( 'S3_UPLOADS_BUCKET_URL', env( 'S3_UPLOADS_BUCKET_URL' ) ?: null );
+Config::define( 'S3_UPLOADS_USE_LOCAL', env( 'S3_UPLOADS_USE_LOCAL' ) ?: null );
+Config::define( 'S3_UPLOADS_OBJECT_ACL', env( 'S3_UPLOADS_OBJECT_ACL' ) ?: null );
+
+/**
+ * Google Tag Manager
+ */
+Config::define( 'GOOGLE_TAG_MANAGER_CONTAINER_ID', env( 'GOOGLE_TAG_MANAGER_CONTAINER_ID' ) ?: null );
 
 /**
  * Use X-Forwarded-For HTTP Header to Get Visitor's Real IP Address
  */
 if ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
-	// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized WordPress.Security.ValidatedSanitizedInput.MissingUnslash
 	$http_x_headers         = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] );
 	$_SERVER['REMOTE_ADDR'] = $http_x_headers[0];
 }
