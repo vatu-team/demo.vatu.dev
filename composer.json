@@ -113,16 +113,33 @@
     "post-root-package-install": [
       "php -r \"copy('example.env', '.env');\""
     ],
+    "fix": [
+        " @composer fix:coding-standards"
+    ],
+    "fix:coding-standards": [
+        "./tools/vendor/bin/phpcbf"
+    ],
     "test": [
-      "composer run test-phpcbf",
-      "composer run test-parallel-lint",
-      "composer run test-phpcs",
+      "@composer test:lint",
       "composer run test-phpmnd",
       "composer run test-phpcpd",
       "composer run test-phpstan"
     ],
+    "test:lint": [
+        "@composer validate --ansi --strict",
+        "@composer test:lint:lint",
+        "@composer test:lint:coding-standards"
+    ],
+    "test:lint:lint": [
+        "./tools/vendor/bin/parallel-lint --exclude */vendor ./config",
+        "./tools/vendor/bin/parallel-lint --exclude */vendor ./tests",
+        "./tools/vendor/bin/parallel-lint --exclude */vendor ./public/app/mu-plugins/site-config.php"
+    ],
+    "test:lint:coding-standards": [
+        "./tools/vendor/bin/phpcs -n"
+    ],
     "test-parallel-lint": [
-      "./tools/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
+      "@composer test:lint:lint"
     ],
     "test-phpcbf": [
       "./tools/vendor/bin/phpcbf --standard=phpcs.dist.xml"

@@ -10,6 +10,9 @@
     "pre-commit": {
         "enabled": true,
         "actions": [
+            {
+                "action": "composer run test:lint"
+            }
         ]
     },
     "prepare-commit-msg": {
