@@ -1,5 +1,7 @@
 # Demo Site
 
+[![Commit](https://github.com/vatu-team/demo.vatu.dev/actions/workflows/commit.yml/badge.svg)](https://github.com/vatu-team/demo.vatu.dev/actions/workflows/commit.yml) [![Build](https://github.com/vatu-team/demo.vatu.dev/actions/workflows/build.yml/badge.svg)](https://github.com/vatu-team/demo.vatu.dev/actions/workflows/build.yml)
+
 ## Project URLS
 
 - [Readme](https://github.com/vatu-team/demo.vatu.dev/blob/main/readme.md)
@@ -15,10 +17,8 @@ These tools are needed to develop the site locally.
 
 - [GIT](https://git-scm.com/downloads)
 - [PHP](https://php.net/)
-  - [Composer](https://getcomposer.org/)
-  - [PHP dotenv](https://github.com/vlucas/phpdotenv)
 - [MySQL](https://mysql.com/)
-- [ [Apache](https://httpd.apache.org/) | [Nginx](https://www.nginx.com/) ]
+- [Nginx](https://www.nginx.com/)
 - [NodeJS](https://nodejs.org/en/)
 
 Most of this can be acquired using [MAMP](https://www.mamp.info/en/mamp-pro/) or [Docker](https://www.docker.com/).
@@ -30,7 +30,7 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 
 ## Folder Structure
 
-```
+```sh
 ├── config
 ├── public
 │   ├── index.php
@@ -42,17 +42,18 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 │   │   └── languages
 │   └── wp
 ├── tests
+├── tools
 ├── vendor
 ├── example.env
 ├── package.json
 └── composer.json
-
 ```
 
 - `/public` files that need to be accessed by the public.
 - `/public/app/` contains WordPress dependencies.
 - `/tests/` All configs related to testing the project.
-- `/vendor` is where the Composer managed dependencies are installed to.
+- `/tools/` Development tools not specific to the project.
+- `/vendor` Dependencies install location.
 - `composer.json` loads the PHP dependencies for this project.
 - `example.env` sampled file with our environment variables are set.
 
@@ -77,31 +78,24 @@ During the Alpha/Beta stages, due to constant changes, documentation will be mai
 
 Watch theme files for changes and compile:
 
-```
+```sh
 npm run build:watch
 ```
 
 Build files for deployment:
 
-```
+```sh
 npm run build
 ```
 
 ## Testing
 
-### Static Analysis
+We automatically run our code against the following tests at the commit, pull request, and build stages.
 
-Installing our static analaysis tools is done via the inital composer install and updates.
-
-Running the tests locally:
-
-PHP CodeSniffer: `./tools/phpcs/vendor/bin/phpcs -p -s --standard=./phpcs.xml --runtime-set testVersion 7.3-`
-
-### Acceptance Testing
-
-```
-$(npm bin)/cypress open --config-file tests/cypress.json --config baseUrl=http://www.demo.test/
-```
+- `composer run test:lint`: Check our code is able to run without fatal errors
+- `composer run test:security`: 3rd Party Dependencies we rely on do not contain known vulnerabilities
+- `composer run test:unit`: Unit tests written during the development of our code
+- `composer run test:analysis`: Check our code is writen to the highest standards we can
 
 ## Deploying
 
