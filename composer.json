@@ -148,7 +148,7 @@
       "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-base/ --exclude=./vendor/*,./node_modules/*"
     ],
     "test-phpcs": [
-      "./tools/vendor/bin/phpcs"
+      "./tools/vendor/bin/phpcs -n"
     ],
     "test-phpmnd": [
       "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
