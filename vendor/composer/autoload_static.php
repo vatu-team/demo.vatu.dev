@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816
+class ComposerStaticInit1fef4069c4f1fa57fd72d67330fde8ec
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -330,6 +330,7 @@ class ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816
         'CaptainHook\\App\\Hook\\Template\\Local' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Template/Local.php',
         'CaptainHook\\App\\Hook\\Template\\Local\\PHP' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Template/Local/PHP.php',
         'CaptainHook\\App\\Hook\\Template\\Local\\Shell' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Template/Local/Shell.php',
+        'CaptainHook\\App\\Hook\\Template\\Local\\WSL' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Template/Local/WSL.php',
         'CaptainHook\\App\\Hook\\Template\\PathInfo' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Template/PathInfo.php',
         'CaptainHook\\App\\Hook\\UserInput\\AskConfirmation' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/UserInput/AskConfirmation.php',
         'CaptainHook\\App\\Hook\\UserInput\\EventHandler\\AskConfirmation' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/UserInput/EventHandler/AskConfirmation.php',
@@ -804,6 +805,7 @@ class ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816
         'Symfony\\Contracts\\Service\\ServiceSubscriberInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberInterface.php',
         'Symfony\\Contracts\\Service\\ServiceSubscriberTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceSubscriberTrait.php',
         'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTest' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTest.php',
+        'Symfony\\Contracts\\Service\\Test\\ServiceLocatorTestCase' => __DIR__ . '/..' . '/symfony/service-contracts/Test/ServiceLocatorTestCase.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
         'Symfony\\Polyfill\\Intl\\Grapheme\\Grapheme' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/Grapheme.php',
         'Symfony\\Polyfill\\Intl\\Normalizer\\Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Normalizer.php',
@@ -820,9 +822,9 @@ class ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitcefb8d3d1d61a2ba517de16ae884d816::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1fef4069c4f1fa57fd72d67330fde8ec::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1fef4069c4f1fa57fd72d67330fde8ec::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit1fef4069c4f1fa57fd72d67330fde8ec::$classMap;
 
         }, null, ClassLoader::class);
     }

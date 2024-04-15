@@ -2,17 +2,17 @@
     "packages": [
         {
             "name": "captainhook/captainhook",
-            "version": "5.22.2",
-            "version_normalized": "5.22.2.0",
+            "version": "5.23.0",
+            "version_normalized": "5.23.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/captainhookphp/captainhook.git",
-                "reference": "6c519d192beaf5114813945ed3668a461866dd7d"
+                "reference": "08d90e4d98db123ab58826be8e891d7d36c14f2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/captainhookphp/captainhook/zipball/6c519d192beaf5114813945ed3668a461866dd7d",
-                "reference": "6c519d192beaf5114813945ed3668a461866dd7d",
+                "url": "https://api.github.com/repos/captainhookphp/captainhook/zipball/08d90e4d98db123ab58826be8e891d7d36c14f2a",
+                "reference": "08d90e4d98db123ab58826be8e891d7d36c14f2a",
                 "shasum": ""
             },
             "require": {
@@ -35,7 +35,7 @@
                 "composer/composer": "~1 || ^2.0",
                 "mikey179/vfsstream": "~1"
             },
-            "time": "2024-04-05T11:27:43+00:00",
+            "time": "2024-04-12T10:39:21+00:00",
             "bin": [
                 "bin/captainhook"
             ],
@@ -77,7 +77,7 @@
             ],
             "support": {
                 "issues": "https://github.com/captainhookphp/captainhook/issues",
-                "source": "https://github.com/captainhookphp/captainhook/tree/5.22.2"
+                "source": "https://github.com/captainhookphp/captainhook/tree/5.23.0"
             },
             "funding": [
                 {
@@ -1943,17 +1943,17 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.5.2",
-            "version_normalized": "2.5.2.0",
+            "version": "v2.5.3",
+            "version_normalized": "2.5.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "4b426aac47d6427cc1a1d0f7e2ac724627f5966c"
+                "reference": "a2329596ddc8fd568900e3fc76cba42489ecc7f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/4b426aac47d6427cc1a1d0f7e2ac724627f5966c",
-                "reference": "4b426aac47d6427cc1a1d0f7e2ac724627f5966c",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/a2329596ddc8fd568900e3fc76cba42489ecc7f3",
+                "reference": "a2329596ddc8fd568900e3fc76cba42489ecc7f3",
                 "shasum": ""
             },
             "require": {
@@ -1967,7 +1967,7 @@
             "suggest": {
                 "symfony/service-implementation": ""
             },
-            "time": "2022-05-30T19:17:29+00:00",
+            "time": "2023-04-21T15:04:16+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2009,7 +2009,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/v2.5.2"
+                "source": "https://github.com/symfony/service-contracts/tree/v2.5.3"
             },
             "funding": [
                 {

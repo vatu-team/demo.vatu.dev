@@ -3,7 +3,7 @@
         'name' => 'vatu/demo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1f937cdab30f0b277cbb1b186befd4799850d7ba',
+        'reference' => '51010510ef83b27890ac4cf17e1d810e80590eb5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'captainhook/captainhook' => array(
-            'pretty_version' => '5.22.2',
-            'version' => '5.22.2.0',
-            'reference' => '6c519d192beaf5114813945ed3668a461866dd7d',
+            'pretty_version' => '5.23.0',
+            'version' => '5.23.0.0',
+            'reference' => '08d90e4d98db123ab58826be8e891d7d36c14f2a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../captainhook/captainhook',
             'aliases' => array(),
@@ -272,9 +272,9 @@
             'dev_requirement' => false,
         ),
         'symfony/service-contracts' => array(
-            'pretty_version' => 'v2.5.2',
-            'version' => '2.5.2.0',
-            'reference' => '4b426aac47d6427cc1a1d0f7e2ac724627f5966c',
+            'pretty_version' => 'v2.5.3',
+            'version' => '2.5.3.0',
+            'reference' => 'a2329596ddc8fd568900e3fc76cba42489ecc7f3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/service-contracts',
             'aliases' => array(),
@@ -292,7 +292,7 @@
         'vatu/demo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1f937cdab30f0b277cbb1b186befd4799850d7ba',
+            'reference' => '51010510ef83b27890ac4cf17e1d810e80590eb5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
