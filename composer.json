@@ -31,7 +31,7 @@
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.1.0",
     "vlucas/phpdotenv": "^5.6.0",
-    "wpackagist-plugin/aryo-activity-log": "^2.10.0",
+    "wpackagist-plugin/aryo-activity-log": "^2.10.1",
     "wpackagist-plugin/better-passwords": "^1.8.0",
     "wpackagist-plugin/disable-emojis": "^1.7.6",
     "wpackagist-plugin/limit-login-attempts-reloaded": "^2.26.8",
