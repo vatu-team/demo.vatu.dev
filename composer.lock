@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9fd032a292fd5b12b8955e2820d46c1",
+    "content-hash": "0c79d985e588b8a60478a11640f35b74",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3151,15 +3151,15 @@
         },
         {
             "name": "wpackagist-plugin/rewrite-rules-inspector",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/rewrite-rules-inspector/",
-                "reference": "tags/1.3.1"
+                "reference": "tags/1.4.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/rewrite-rules-inspector.1.3.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/rewrite-rules-inspector.1.4.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
