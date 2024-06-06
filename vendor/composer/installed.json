@@ -726,8 +726,8 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.5.3",
-            "version_normalized": "6.5.3.0",
+            "version": "6.5.4",
+            "version_normalized": "6.5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -759,7 +759,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.5.3"
+                "source": "https://github.com/roots/wordpress/tree/6.5.4"
             },
             "funding": [
                 {
@@ -845,23 +845,23 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.5.3",
-            "version_normalized": "6.5.3.0",
+            "version": "6.5.4",
+            "version_normalized": "6.5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.5.3"
+                "reference": "6.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.5.3-no-content.zip",
-                "shasum": "adeffdc339d34eab4209e88b17966d8917e36e91"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.5.4-no-content.zip",
+                "shasum": "d6b3a78653efeff8edd463b2c24d62228bb98284"
             },
             "require": {
                 "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.5.3"
+                "wordpress/core-implementation": "6.5.4"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -879,9 +879,9 @@
                 "ext-xml": "Used for XML parsing, such as from a third-party site.",
                 "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
             },
-            "time": "2024-05-07T16:02:20+00:00",
+            "time": "2024-06-05T16:02:37+00:00",
             "type": "wordpress-core",
-            "installation-source": "dist",
+            "installation-source": "source",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
