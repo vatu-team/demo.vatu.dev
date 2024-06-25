@@ -3,7 +3,7 @@
         'name' => 'vatu/demo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'b15204e4e8079357a77794d03bfcccae733f7bd0',
+        'reference' => '1f2a0b6a58388b371b93ab6e1ea14bd90a7086aa',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'composer/installers' => array(
-            'pretty_version' => 'v2.2.0',
-            'version' => '2.2.0.0',
-            'reference' => 'c29dc4b93137acb82734f672c37e029dfbd95b35',
+            'pretty_version' => 'v2.3.0',
+            'version' => '2.3.0.0',
+            'reference' => '12fb2dfe5e16183de69e784a7b84046c43d97e8e',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/./installers',
             'aliases' => array(),
@@ -113,8 +113,8 @@
             'dev_requirement' => false,
         ),
         'roots/wordpress' => array(
-            'pretty_version' => '6.5.4',
-            'version' => '6.5.4.0',
+            'pretty_version' => '6.5.5',
+            'version' => '6.5.5.0',
             'reference' => '41ff6e23ccbc3a1691406d69fe8c211a225514e2',
             'type' => 'metapackage',
             'install_path' => null,
@@ -131,9 +131,9 @@
             'dev_requirement' => false,
         ),
         'roots/wordpress-no-content' => array(
-            'pretty_version' => '6.5.4',
-            'version' => '6.5.4.0',
-            'reference' => '6.5.4',
+            'pretty_version' => '6.5.5',
+            'version' => '6.5.5.0',
+            'reference' => '6.5.5',
             'type' => 'wordpress-core',
             'install_path' => __DIR__ . '/../../public/wp',
             'aliases' => array(),
@@ -292,7 +292,7 @@
         'vatu/demo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b15204e4e8079357a77794d03bfcccae733f7bd0',
+            'reference' => '1f2a0b6a58388b371b93ab6e1ea14bd90a7086aa',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -310,7 +310,7 @@
         'wordpress/core-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '6.5.4',
+                0 => '6.5.5',
             ),
         ),
         'wpackagist-plugin/aryo-activity-log' => array(

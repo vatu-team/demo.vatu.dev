@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3e7d29f5684d20d55212a7495047195c
+class ComposerStaticInit92e5572ae71e4210a24f01174c0fd8bc
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -413,6 +413,7 @@ class ComposerStaticInit3e7d29f5684d20d55212a7495047195c
         'Composer\\Installers\\BaseInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/BaseInstaller.php',
         'Composer\\Installers\\BitrixInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/BitrixInstaller.php',
         'Composer\\Installers\\BonefishInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/BonefishInstaller.php',
+        'Composer\\Installers\\BotbleInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/BotbleInstaller.php',
         'Composer\\Installers\\CakePHPInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CakePHPInstaller.php',
         'Composer\\Installers\\ChefInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ChefInstaller.php',
         'Composer\\Installers\\CiviCrmInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CiviCrmInstaller.php',
@@ -420,6 +421,7 @@ class ComposerStaticInit3e7d29f5684d20d55212a7495047195c
         'Composer\\Installers\\CockpitInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CockpitInstaller.php',
         'Composer\\Installers\\CodeIgniterInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CodeIgniterInstaller.php',
         'Composer\\Installers\\Concrete5Installer' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/Concrete5Installer.php',
+        'Composer\\Installers\\ConcreteCMSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ConcreteCMSInstaller.php',
         'Composer\\Installers\\CroogoInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/CroogoInstaller.php',
         'Composer\\Installers\\DecibelInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DecibelInstaller.php',
         'Composer\\Installers\\DframeInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/DframeInstaller.php',
@@ -430,6 +432,7 @@ class ComposerStaticInit3e7d29f5684d20d55212a7495047195c
         'Composer\\Installers\\EliasisInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/EliasisInstaller.php',
         'Composer\\Installers\\ExpressionEngineInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ExpressionEngineInstaller.php',
         'Composer\\Installers\\EzPlatformInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/EzPlatformInstaller.php',
+        'Composer\\Installers\\ForkCMSInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ForkCMSInstaller.php',
         'Composer\\Installers\\FuelInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/FuelInstaller.php',
         'Composer\\Installers\\FuelphpInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/FuelphpInstaller.php',
         'Composer\\Installers\\GravInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/GravInstaller.php',
@@ -823,9 +826,9 @@ class ComposerStaticInit3e7d29f5684d20d55212a7495047195c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3e7d29f5684d20d55212a7495047195c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3e7d29f5684d20d55212a7495047195c::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3e7d29f5684d20d55212a7495047195c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit92e5572ae71e4210a24f01174c0fd8bc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit92e5572ae71e4210a24f01174c0fd8bc::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit92e5572ae71e4210a24f01174c0fd8bc::$classMap;
 
         }, null, ClassLoader::class);
     }
