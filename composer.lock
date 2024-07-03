@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08f126e8199e3bce62975d1896efc3f5",
+    "content-hash": "90856e8296b7239d061b74ec048229bc",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -2235,15 +2235,15 @@
         },
         {
             "name": "wpackagist-plugin/spinupwp",
-            "version": "1.6",
+            "version": "1.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/spinupwp/",
-                "reference": "tags/1.6"
+                "reference": "tags/1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/spinupwp.1.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/spinupwp.1.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
