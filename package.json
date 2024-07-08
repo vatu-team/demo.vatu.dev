@@ -45,7 +45,7 @@
     "autoprefixer": "^10.4.19",
     "chokidar-cli": "^3.0.0",
     "cpy-cli": "^5.0.0",
-    "cssnano": "^7.0.3",
+    "cssnano": "^7.0.4",
     "del-cli": "^5.1.0",
     "eslint": "^9.6.0",
     "make-dir-cli": "^4.0.0",
