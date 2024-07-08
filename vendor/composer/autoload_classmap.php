@@ -181,6 +181,7 @@ return array(
     'CaptainHook\\App\\Runner\\Action\\Cli\\Command\\Placeholder\\StagedFiles' => $vendorDir . '/captainhook/captainhook/src/Runner/Action/Cli/Command/Placeholder/StagedFiles.php',
     'CaptainHook\\App\\Runner\\Action\\Log' => $vendorDir . '/captainhook/captainhook/src/Runner/Action/Log.php',
     'CaptainHook\\App\\Runner\\Action\\PHP' => $vendorDir . '/captainhook/captainhook/src/Runner/Action/PHP.php',
+    'CaptainHook\\App\\Runner\\Bootstrap\\Util' => $vendorDir . '/captainhook/captainhook/src/Runner/Bootstrap/Util.php',
     'CaptainHook\\App\\Runner\\Condition' => $vendorDir . '/captainhook/captainhook/src/Runner/Condition.php',
     'CaptainHook\\App\\Runner\\Config\\Change' => $vendorDir . '/captainhook/captainhook/src/Runner/Config/Change.php',
     'CaptainHook\\App\\Runner\\Config\\Change\\AddAction' => $vendorDir . '/captainhook/captainhook/src/Runner/Config/Change/AddAction.php',

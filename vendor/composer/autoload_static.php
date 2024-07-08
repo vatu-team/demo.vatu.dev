@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit92185e55dbcddd2f6c8f74e08e45045b
+class ComposerStaticInit5e8981ff24b65266dabc4cebaba1b839
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -354,6 +354,7 @@ class ComposerStaticInit92185e55dbcddd2f6c8f74e08e45045b
         'CaptainHook\\App\\Runner\\Action\\Cli\\Command\\Placeholder\\StagedFiles' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Cli/Command/Placeholder/StagedFiles.php',
         'CaptainHook\\App\\Runner\\Action\\Log' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Log.php',
         'CaptainHook\\App\\Runner\\Action\\PHP' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/PHP.php',
+        'CaptainHook\\App\\Runner\\Bootstrap\\Util' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Bootstrap/Util.php',
         'CaptainHook\\App\\Runner\\Condition' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Condition.php',
         'CaptainHook\\App\\Runner\\Config\\Change' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Change.php',
         'CaptainHook\\App\\Runner\\Config\\Change\\AddAction' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Change/AddAction.php',
@@ -826,9 +827,9 @@ class ComposerStaticInit92185e55dbcddd2f6c8f74e08e45045b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit92185e55dbcddd2f6c8f74e08e45045b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit92185e55dbcddd2f6c8f74e08e45045b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit92185e55dbcddd2f6c8f74e08e45045b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit5e8981ff24b65266dabc4cebaba1b839::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit5e8981ff24b65266dabc4cebaba1b839::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit5e8981ff24b65266dabc4cebaba1b839::$classMap;
 
         }, null, ClassLoader::class);
     }

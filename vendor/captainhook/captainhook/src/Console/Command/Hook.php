@@ -14,7 +14,7 @@ namespace CaptainHook\App\Console\Command;
 use CaptainHook\App\Config;
 use CaptainHook\App\Console\IOUtil;
 use CaptainHook\App\Hook\Util;
-use Exception;
+use CaptainHook\App\Runner\Bootstrap\Util as BootstrapUtil;
 use RuntimeException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -112,11 +112,17 @@ abstract class Hook extends RepositoryAware
      */
     private function handleBootstrap(Config $config): void
     {
+        // we only have to care about bootstrapping PHAR builds because for
+        // Composer installs the bootstrapping is already done in the bin script
         if ($this->resolver->isPharRelease()) {
-            $bootstrapFile = dirname($config->getPath()) . '/' . $config->getBootstrap();
-            if (!file_exists($bootstrapFile) && $config->getBootstrap() !== 'vendor/autoload.php') {
-                throw new RuntimeException('bootstrap file not found');
+            // check the custom and default autoloader
+            $bootstrapFile = BootstrapUtil::validateBootstrapPath($this->resolver->isPharRelease(), $config);
+            // since the phar has its own autoloader we don't need to do anything
+            // if the bootstrap file is not actively set
+            if (empty($bootstrapFile)) {
+                return;
             }
+            // the bootstrap file exists so lets load it
             try {
                 require $bootstrapFile;
             } catch (Throwable $t) {
