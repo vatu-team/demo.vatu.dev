@@ -727,8 +727,8 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.6",
-            "version_normalized": "6.6.0.0",
+            "version": "6.6.1",
+            "version_normalized": "6.6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -760,7 +760,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.6"
+                "source": "https://github.com/roots/wordpress/tree/6.6.1"
             },
             "funding": [
                 {
@@ -846,23 +846,23 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.6",
-            "version_normalized": "6.6.0.0",
+            "version": "6.6.1",
+            "version_normalized": "6.6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.6"
+                "reference": "6.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.6-no-content.zip",
-                "shasum": "6c0d82185d47782aab67a72d07dee459f9f6ceba"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.6.1-no-content.zip",
+                "shasum": "954aa560a66112cd999aa9d9519da5f964e6692a"
             },
             "require": {
                 "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.6"
+                "wordpress/core-implementation": "6.6.1"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -880,7 +880,7 @@
                 "ext-xml": "Used for XML parsing, such as from a third-party site.",
                 "ext-zip": "Used for decompressing Plugins, Themes, and WordPress update packages."
             },
-            "time": "2024-07-16T16:26:38+00:00",
+            "time": "2024-07-23T15:25:13+00:00",
             "type": "wordpress-core",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -2357,16 +2357,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "23.0",
-            "version_normalized": "23.0.0.0",
+            "version": "23.1",
+            "version_normalized": "23.1.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/23.0"
+                "reference": "tags/23.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.23.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.23.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
