@@ -42,7 +42,7 @@
   "devDependencies": {
     "@wordpress/create-block": "^4.47.0",
     "@wordpress/scripts": "^28.4.0",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "chokidar-cli": "^3.0.0",
     "cpy-cli": "^5.0.0",
     "cssnano": "^7.0.4",
