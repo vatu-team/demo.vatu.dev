@@ -40,7 +40,7 @@
   "license": "ISC",
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
-    "@wordpress/create-block": "^4.48.0",
+    "@wordpress/create-block": "^4.49.0",
     "@wordpress/scripts": "^28.5.0",
     "autoprefixer": "^10.4.20",
     "chokidar-cli": "^3.0.0",
