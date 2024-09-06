@@ -352,6 +352,7 @@ class ComposerStaticInitd399e0be6ea0a9e91df657e586bfdbe2
         'CaptainHook\\App\\Runner\\Action\\Cli\\Command\\Placeholder\\Env' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Cli/Command/Placeholder/Env.php',
         'CaptainHook\\App\\Runner\\Action\\Cli\\Command\\Placeholder\\Foundation' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Cli/Command/Placeholder/Foundation.php',
         'CaptainHook\\App\\Runner\\Action\\Cli\\Command\\Placeholder\\StagedFiles' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Cli/Command/Placeholder/StagedFiles.php',
+        'CaptainHook\\App\\Runner\\Action\\Cli\\Command\\Placeholder\\StdIn' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Cli/Command/Placeholder/StdIn.php',
         'CaptainHook\\App\\Runner\\Action\\Log' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/Log.php',
         'CaptainHook\\App\\Runner\\Action\\PHP' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Action/PHP.php',
         'CaptainHook\\App\\Runner\\Bootstrap\\Util' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Bootstrap/Util.php',
