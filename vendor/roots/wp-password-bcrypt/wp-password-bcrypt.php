@@ -81,7 +81,7 @@ function wp_hash_password($password)
  *
  * @param  string $password The new user password in plaintext.
  * @param  int    $user_id  The user ID.
- * @return string
+ * @return string The new hashed password.
  */
 function wp_set_password($password, $user_id)
 {
@@ -102,6 +102,14 @@ function wp_set_password($password, $user_id)
 
         clean_user_cache($user_id);
 
+        /**
+         * Fires after the user password is set.
+         *
+         * @param string  $password The plaintext password just set.
+         * @param int     $user_id  The ID of the user whose password was just set.
+         */
+        do_action('wp_set_password', $password, $user_id);
+
         return $hash;
     }
 
@@ -109,7 +117,7 @@ function wp_set_password($password, $user_id)
         ! class_exists('WP_Application_Passwords') ||
         empty($passwords = WP_Application_Passwords::get_user_application_passwords($user_id))
     ) {
-        return;
+        return $hash;
     }
 
     global $wp_hasher;
