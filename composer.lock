@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d6a2a1bd8b47d67b55e328d5e2c3b0b",
+    "content-hash": "be2dc714b78cf96c46799981ed923f29",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3187,15 +3187,15 @@
         },
         {
             "name": "wpackagist-plugin/transients-manager",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/transients-manager/",
-                "reference": "tags/2.0.5"
+                "reference": "tags/2.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/transients-manager.2.0.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/transients-manager.2.0.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
