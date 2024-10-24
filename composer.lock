@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d36b72689b1ac1b743d72d62035f161b",
+    "content-hash": "9ae87704c7f6e665d9b3eed45ddabfc0",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3223,15 +3223,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-beta-tester",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-beta-tester/",
-                "reference": "tags/3.6.0"
+                "reference": "tags/3.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.6.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-beta-tester.3.6.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
