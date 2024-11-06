@@ -134,6 +134,9 @@ class LimitLoginAttempts
 		add_action( 'admin_init', array( $this, 'setup_cookie' ), 10 );
 
 		add_action( 'login_footer', array( $this, 'login_page_gdpr_message' ) );
+		add_action( 'wp_footer', array( $this, 'login_page_gdpr_message' ) );
+		add_action( 'wp_footer', array( $this, 'login_page_enqueue' ) );
+
 		add_action( 'login_footer', array( $this, 'login_page_render_js' ), 9999 );
 		add_action( 'wp_footer', array( $this, 'login_page_render_js' ), 9999 );
 
@@ -227,10 +230,8 @@ class LimitLoginAttempts
 			Config::update( 'auto_update_choice', 0 );
 		}
 
-		// Load languages files via hook
-	    add_action('admin_init', function() {
-		    load_plugin_textdomain( 'limit-login-attempts-reloaded', false, plugin_basename( __DIR__ ) . '/../languages' );
-	    });
+		// Load languages files via a later hook
+	    add_action('init', array( $this, 'load_plugin_textdomain_in_time' ) );
 
 		// Check if installed old plugin
 		$this->check_original_installed();
@@ -299,6 +300,15 @@ class LimitLoginAttempts
 	}
 
 
+	/**
+	 * Later loading of translations load_plugin_textdomain
+	 */
+	public function load_plugin_textdomain_in_time()
+	{
+		load_plugin_textdomain( 'limit-login-attempts-reloaded', false, plugin_basename( __DIR__ ) . '/../languages' );
+		Config::init_defaults();
+	}
+
 	public function login_page_gdpr_message()
 	{
 		if ( ! Config::get( 'gdpr' ) || isset( $_REQUEST['interim-login'] ) ) return;
@@ -306,6 +316,9 @@ class LimitLoginAttempts
 		?>
         <div id="llar-login-page-gdpr">
             <div class="llar-login-page-gdpr__message"><?php echo do_shortcode( stripslashes( Config::get( 'gdpr_message' ) ) ); ?></div>
+            <div class="llar-login-page-gdpr__close" onclick="document.getElementById('llar-login-page-gdpr').style.display = 'none';">
+                &times;
+            </div>
         </div>
 		<?php
 	}
@@ -751,6 +764,7 @@ class LimitLoginAttempts
 
 	public function login_page_enqueue()
 	{
+		if ( ! Config::get( 'gdpr' ) || isset( $_REQUEST['interim-login'] ) ) return;
 
 		$plugin_data = get_plugin_data( LLA_PLUGIN_DIR . 'limit-login-attempts-reloaded.php' );
 
