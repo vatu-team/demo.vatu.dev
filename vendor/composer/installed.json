@@ -2206,16 +2206,16 @@
         },
         {
             "name": "wpackagist-plugin/aryo-activity-log",
-            "version": "2.11.1",
-            "version_normalized": "2.11.1.0",
+            "version": "2.11.2",
+            "version_normalized": "2.11.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/aryo-activity-log/",
-                "reference": "tags/2.11.1"
+                "reference": "tags/2.11.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/aryo-activity-log.2.11.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/aryo-activity-log.2.11.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
