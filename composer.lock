@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e24675e44faf7ff3d73c6d3c4840a5b",
+    "content-hash": "16d115a9b97f5019d7f197fc18919a21",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -2123,15 +2123,15 @@
         },
         {
             "name": "wpackagist-plugin/aryo-activity-log",
-            "version": "2.11.1",
+            "version": "2.11.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/aryo-activity-log/",
-                "reference": "tags/2.11.1"
+                "reference": "tags/2.11.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/aryo-activity-log.2.11.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/aryo-activity-log.2.11.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
