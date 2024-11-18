@@ -41,7 +41,7 @@
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
     "@wordpress/create-block": "^4.54.0",
-    "@wordpress/scripts": "^30.4.0",
+    "@wordpress/scripts": "^30.5.0",
     "autoprefixer": "^10.4.20",
     "chokidar-cli": "^3.0.0",
     "cpy-cli": "^5.0.0",
