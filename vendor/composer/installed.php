@@ -3,7 +3,7 @@
         'name' => 'vatu/demo',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '33173f311ece2ceeb55532d4ef12a0c3f77e71ee',
+        'reference' => 'a51d3c20c342eb3289fb144ef4ebc285e646f226',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -113,9 +113,9 @@
             'dev_requirement' => false,
         ),
         'roots/wordpress' => array(
-            'pretty_version' => '6.7',
-            'version' => '6.7.0.0',
-            'reference' => '1bdabdb9171ac5323edbf4792ce353d475467d27',
+            'pretty_version' => '6.7.1',
+            'version' => '6.7.1.0',
+            'reference' => '9451af491af7124c12186398c56ab87a6e145123',
             'type' => 'metapackage',
             'install_path' => null,
             'aliases' => array(),
@@ -131,9 +131,9 @@
             'dev_requirement' => false,
         ),
         'roots/wordpress-no-content' => array(
-            'pretty_version' => '6.7',
-            'version' => '6.7.0.0',
-            'reference' => '6.7',
+            'pretty_version' => '6.7.1',
+            'version' => '6.7.1.0',
+            'reference' => '6.7.1',
             'type' => 'wordpress-core',
             'install_path' => __DIR__ . '/../../public/wp',
             'aliases' => array(),
@@ -292,7 +292,7 @@
         'vatu/demo' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '33173f311ece2ceeb55532d4ef12a0c3f77e71ee',
+            'reference' => 'a51d3c20c342eb3289fb144ef4ebc285e646f226',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -310,7 +310,7 @@
         'wordpress/core-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '6.7',
+                0 => '6.7.1',
             ),
         ),
         'wpackagist-plugin/aryo-activity-log' => array(
