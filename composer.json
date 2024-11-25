@@ -36,7 +36,7 @@
     "wpackagist-plugin/disable-emojis": "^1.7.6",
     "wpackagist-plugin/limit-login-attempts-reloaded": "^2.26.16",
     "wpackagist-plugin/mailgun": "^2.1.2",
-    "wpackagist-plugin/redirection": "^5.5.0",
+    "wpackagist-plugin/redirection": "^5.5.1",
     "wpackagist-plugin/spinupwp": "^1.7",
     "wpackagist-plugin/wordpress-seo": "^23.9",
     "wpackagist-plugin/wp-robots-txt": "^1.3"
