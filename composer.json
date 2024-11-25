@@ -55,7 +55,7 @@
     "wpackagist-plugin/user-switching": "^1.9.0",
     "wpackagist-plugin/wordpress-beta-tester": "^3.6.1",
     "wpackagist-plugin/wordpress-importer": "^0.8.3",
-    "wpackagist-plugin/wp-crontrol": "^1.17.0"
+    "wpackagist-plugin/wp-crontrol": "^1.17.1"
   },
   "repositories": [
     {
