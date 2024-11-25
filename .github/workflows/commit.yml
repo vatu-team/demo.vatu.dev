@@ -202,7 +202,7 @@ jobs:
         id: 'slack'
         uses: 'slackapi/slack-github-action@v2.0.0'
         with:
-          channel-id: 'updates'
+          channel-id: 'failed-updates'
           payload: |
             {
               "text": "${{ github.workflow }} workflow failed for ${{ github.event.repository.name }}",
