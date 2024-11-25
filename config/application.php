@@ -187,5 +187,5 @@ Config::apply();
  * Bootstrap WordPress
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', $webroot_dir . '/wp/' );
+	define( 'ABSPATH', "{$webroot_dir}/wp/" );
 }
