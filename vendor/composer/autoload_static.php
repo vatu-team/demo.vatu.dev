@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a
+class ComposerStaticInit43ca84e3e129cd9f3550a30733265562
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -206,6 +206,7 @@ class ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a
         'CaptainHook\\App\\Console\\Command\\Hook\\PreCommit' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/Hook/PreCommit.php',
         'CaptainHook\\App\\Console\\Command\\Hook\\PrePush' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/Hook/PrePush.php',
         'CaptainHook\\App\\Console\\Command\\Hook\\PrepareCommitMsg' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/Hook/PrepareCommitMsg.php',
+        'CaptainHook\\App\\Console\\Command\\Info' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/Info.php',
         'CaptainHook\\App\\Console\\Command\\Install' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/Install.php',
         'CaptainHook\\App\\Console\\Command\\RepositoryAware' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/RepositoryAware.php',
         'CaptainHook\\App\\Console\\Command\\Uninstall' => __DIR__ . '/..' . '/captainhook/captainhook/src/Console/Command/Uninstall.php',
@@ -250,6 +251,7 @@ class ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a
         'CaptainHook\\App\\Hook\\Action' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Action.php',
         'CaptainHook\\App\\Hook\\Branch\\Action\\BlockFixupAndSquashCommits' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Branch/Action/BlockFixupAndSquashCommits.php',
         'CaptainHook\\App\\Hook\\Branch\\Action\\EnsureNaming' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Branch/Action/EnsureNaming.php',
+        'CaptainHook\\App\\Hook\\Cli\\Command' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Cli/Command.php',
         'CaptainHook\\App\\Hook\\Composer\\Action\\CheckLockFile' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Composer/Action/CheckLockFile.php',
         'CaptainHook\\App\\Hook\\Condition' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Condition.php',
         'CaptainHook\\App\\Hook\\Condition\\Branch\\Files' => __DIR__ . '/..' . '/captainhook/captainhook/src/Hook/Condition/Branch/Files.php',
@@ -364,12 +366,14 @@ class ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a
         'CaptainHook\\App\\Runner\\Config\\Change\\Hook' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Change/Hook.php',
         'CaptainHook\\App\\Runner\\Config\\Creator' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Creator.php',
         'CaptainHook\\App\\Runner\\Config\\Editor' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Editor.php',
+        'CaptainHook\\App\\Runner\\Config\\Reader' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Reader.php',
         'CaptainHook\\App\\Runner\\Config\\Setup' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Setup.php',
         'CaptainHook\\App\\Runner\\Config\\Setup\\Advanced' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Setup/Advanced.php',
         'CaptainHook\\App\\Runner\\Config\\Setup\\Express' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Setup/Express.php',
         'CaptainHook\\App\\Runner\\Config\\Setup\\Guided' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Config/Setup/Guided.php',
         'CaptainHook\\App\\Runner\\Files' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Files.php',
         'CaptainHook\\App\\Runner\\Hook' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Hook.php',
+        'CaptainHook\\App\\Runner\\Hook\\Arg' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Hook/Arg.php',
         'CaptainHook\\App\\Runner\\Hook\\CommitMsg' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Hook/CommitMsg.php',
         'CaptainHook\\App\\Runner\\Hook\\Log' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Hook/Log.php',
         'CaptainHook\\App\\Runner\\Hook\\PostCheckout' => __DIR__ . '/..' . '/captainhook/captainhook/src/Runner/Hook/PostCheckout.php',
@@ -828,9 +832,9 @@ class ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7091e98b8394a79c3741f64abb8f5c9a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit43ca84e3e129cd9f3550a30733265562::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit43ca84e3e129cd9f3550a30733265562::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit43ca84e3e129cd9f3550a30733265562::$classMap;
 
         }, null, ClassLoader::class);
     }
