@@ -15,21 +15,22 @@
       "role": "Agency"
     }
   ],
-  "homepage": "https://projecturl.com",
+  "homepage": "https://www.example.com",
   "support": {
     "issues": "https://github.com/vatu-team/demo.vatu.dev/issues"
   },
   "require": {
-    "php": "^8.3",
-    "captainhook/captainhook": "^5.24",
-    "captainhook/hook-installer": "^1.0",
+    "php": "~8.3",
+    "captainhook/captainhook": "^5.24.0",
+    "captainhook/hook-installer": "^1.0.3",
     "composer/installers": "^2.3.0",
-    "cweagans/composer-patches": "^1.7",
+    "cweagans/composer-patches": "^1.7.3",
     "oscarotero/env": "^2.1.0",
     "roots/bedrock-autoloader": "^1.0.4",
     "roots/wordpress": "^6.7",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.2.0",
+    "thoughtsideas/wp-infrastructure": "^0.1.0",
     "vlucas/phpdotenv": "^5.6.1",
     "wpackagist-plugin/aryo-activity-log": "^2.11.2",
     "wpackagist-plugin/better-passwords": "^1.8.0",
@@ -37,9 +38,9 @@
     "wpackagist-plugin/limit-login-attempts-reloaded": "^2.26.16",
     "wpackagist-plugin/mailgun": "^2.1.2",
     "wpackagist-plugin/redirection": "^5.5.1",
-    "wpackagist-plugin/spinupwp": "^1.7",
+    "wpackagist-plugin/two-factor": "^0.9.1",
     "wpackagist-plugin/wordpress-seo": "^23.9",
-    "wpackagist-plugin/wp-robots-txt": "^1.3"
+    "wpackagist-plugin/wp-robots-txt": "^1.3.3"
   },
   "require-dev": {
     "ergebnis/composer-normalize": "^2.44",
@@ -55,7 +56,8 @@
     "wpackagist-plugin/user-switching": "^1.9.0",
     "wpackagist-plugin/wordpress-beta-tester": "^3.6.1",
     "wpackagist-plugin/wordpress-importer": "^0.8.3",
-    "wpackagist-plugin/wp-crontrol": "^1.17.1"
+    "wpackagist-plugin/wp-crontrol": "^1.17.1",
+    "wpackagist-theme/twentytwentyfour": "^1.3"
   },
   "repositories": [
     {
@@ -153,20 +155,14 @@
     "test-phpcbf": [
       "./tools/vendor/bin/phpcbf"
     ],
-    "test-phpcpd": [
-      "./tools/vendor/bin/phpcpd ./public/app/themes/vatu-base/ --exclude=./vendor/*,./node_modules/*"
-    ],
     "test-phpcs": [
-      "./tools/vendor/bin/phpcs -n"
-    ],
-    "test-phpmnd": [
-      "./tools/vendor/bin/phpmnd ./public/app/themes/vatu-base --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
+      "@composer test:lint:coding-standards"
     ],
     "test-phpstan": [
-      "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+      "@composer test:analysis"
     ],
     "test-phpunit": [
-      "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
+      "@composer test:unit"
     ],
     "tools": [
       "@composer install --working-dir=tools",

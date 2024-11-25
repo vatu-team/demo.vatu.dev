@@ -3,34 +3,16 @@
   "version": "0.1.0",
   "description": "## Project URLS",
   "main": "index.js",
-  "config": {
-    "theme_path": "./public/app/themes/vatu-base",
-    "js_dependencies": []
-  },
+  "config": {},
   "engines": {
-    "node": "^20.11",
-    "npm": "^10.2"
+    "node": "^22.11",
+    "npm": "^10.9"
   },
   "scripts": {
-    "build": "run-p styles scripts fonts images svg",
-    "build:watch": "run-p fonts \"styles:watch\" \"scripts:watch\"",
-    "styles": "run-s \"styles:global\" \"styles:editor\"",
-    "styles:global": "postcss ${npm_package_config_theme_path}/ui/css/global.css --output ${npm_package_config_theme_path}/style.css --use postcss-easy-import autoprefixer cssnano --map",
-    "styles:editor": "postcss ${npm_package_config_theme_path}/ui/css/editor-style.css --output ${npm_package_config_theme_path}/editor-style.css --use postcss-easy-import autoprefixer cssnano --map",
-    "styles:watch": "chokidar \"${npm_package_config_theme_path}/ui/css/**/*.css\" -c \"npm run styles\" --initial",
-    "scripts": "run-s \"scripts:clean\" \"scripts:editor\" \"scripts:global\"",
-    "scripts:watch": "chokidar \"${npm_package_config_theme_path}/ui/js/**/*.js\" -c \"npm run scripts\" --initial",
-    "scripts:clean": "del ${npm_package_config_theme_path}/dist/js && make-dir ${npm_package_config_theme_path}/dist/js",
-    "scripts:global": "terser ${npm_package_config_theme_path}/ui/js/navigation.js --compress --output ${npm_package_config_theme_path}/dist/js/global.js",
-    "scripts:editor": "terser ${npm_package_config_theme_path}/ui/js/editor.js --compress --output ${npm_package_config_theme_path}/dist/js/editor.js",
-    "fonts": "cpy ui/fonts/**/* dist/fonts/ --cwd=${npm_package_config_theme_path}",
-    "images": "cpy ui/img/**/* dist/img/ --cwd=${npm_package_config_theme_path}",
-    "svg": "run-s \"svg:sprite\"",
-    "svg:watch": "chokidar \"${npm_package_config_theme_path}/ui/svg/*/*.svg\" -c \"npm run svg\" --initial",
-    "svg:sprite": "run-s \"svg:sprite:branding\" \"svg:sprite:icons\" \"svg:sprite:social\"",
-    "svg:sprite:branding": "svg-sprite -s --symbol-dest ${npm_package_config_theme_path}/dist/svg --svg-namespace-classnames false --svg-namespace-ids false --symbol-sprite branding.svg ${npm_package_config_theme_path}/ui/svg/branding/*.svg",
-    "svg:sprite:icons": "svg-sprite -s --symbol-dest ${npm_package_config_theme_path}/dist/svg --svg-namespace-classnames false --svg-namespace-ids false --symbol-sprite icons.svg ${npm_package_config_theme_path}/ui/svg/icons/*.svg",
-    "svg:sprite:social": "svg-sprite -s --symbol-dest ${npm_package_config_theme_path}/dist/svg --svg-namespace-classnames false --svg-namespace-ids false --symbol-sprite social.svg ${npm_package_config_theme_path}/ui/svg/social/*.svg"
+    "build": "run-p 'build:theme'",
+    "watch": "run-p 'watch:theme'",
+    "build:theme": "wp-scripts build --config ./theme.webpack.config.js",
+    "watch:theme": "wp-scripts watch --config ./theme.webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -42,18 +24,12 @@
   "devDependencies": {
     "@wordpress/create-block": "^4.55.0",
     "@wordpress/scripts": "^30.5.1",
-    "autoprefixer": "^10.4.20",
-    "chokidar-cli": "^3.0.0",
-    "cpy-cli": "^5.0.0",
-    "cssnano": "^7.0.6",
-    "del-cli": "^6.0.0",
-    "eslint": "^9.15.0",
+    "copy-webpack-plugin": "^12.0.2",
     "make-dir-cli": "^4.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
-    "postcss-easy-import": "^4.0.0",
+    "path": "^0.12.7",
     "svg-sprite": "2.0.1",
-    "terser": "^5.36.0"
+    "terser": "^5.36.0",
+    "webpack-remove-empty-scripts": "^1.0.4"
   }
 }

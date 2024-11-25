@@ -95,7 +95,7 @@ auth.json
 
 ## Themes
 /public/app/themes/*
-!/public/app/themes/vatu-base
+!/public/app/themes/base-theme
 !/public/app/themes/index.php
 
 ## WPCLI

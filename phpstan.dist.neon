@@ -15,6 +15,7 @@ parameters:
     analyse:
       - */vendor/*
       - */vendor_prefixed/*
+    analyseAndScan:
       - */tests/*
       - */tools/*
 

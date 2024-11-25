@@ -27,10 +27,11 @@
 	<coverage>
 
 		<include>
-			<!-- Include bespoke Unit Test directories. -->
+			<!-- Include bespoke directories. -->
 		</include>
 
 		<exclude>
+			<!-- Exclude bespoke Unit Test directories. -->
 		</exclude>
 
 		<report>

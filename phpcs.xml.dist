@@ -9,8 +9,8 @@
 	-->
 	<ini name="error_reporting" value="E_ALL &#38; ~E_DEPRECATED" />
 
-	<config name="testVersion" value="8.2" />
-	<config name="minimum_supported_wp_version" value="6.3" />
+	<config name="testVersion" value="8.3" />
+	<config name="minimum_supported_wp_version" value="6.7" />
 
 	<file>./config</file>
 	<file>./tests</file>
@@ -57,7 +57,8 @@
 
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="demo" />
+				<element value="bargate-homes" />
+				<element value="bargate-homes-core" />
 			</property>
 		</properties>
 
