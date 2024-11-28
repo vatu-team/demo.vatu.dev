@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "54253aa47c1a1536a976ebfa2f760768",
+    "content-hash": "44c8d9bdc1a665ed9e6e0b87948bc08d",
     "packages": [
         {
             "name": "captainhook/captainhook",
@@ -3210,15 +3210,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.16.4",
+            "version": "3.17.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.16.4"
+                "reference": "tags/3.17.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.16.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.17.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
