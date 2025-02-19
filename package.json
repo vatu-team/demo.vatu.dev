@@ -3,19 +3,16 @@
   "version": "0.1.0",
   "description": "## Project URLS",
   "main": "index.js",
+  "config": {},
+  "engines": {
+    "node": "^22.11",
+    "npm": "^10.9"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:cypress": "",
-    "cypress:open": "cypress open --config-file tests/cypress.json",
-    "styles:global": "sass public/app/themes/vatu-gp-child-theme/assets/sass/style.scss:public/app/themes/vatu-gp-child-theme/style.css --style=expanded --source-map --source-map-urls=relative",
-    "styles:components": "sass public/app/themes/vatu-gp-child-theme/assets/sass/06-components/:public/app/themes/vatu-gp-child-theme/assets/css/ --style=expanded --source-map --source-map-urls=relative",
-    "styles:editor": "sass public/app/themes/vatu-gp-child-theme/assets/sass/editor.scss:public/app/themes/vatu-gp-child-theme/editor.css --style=expanded --source-map --source-map-urls=relative",
-    "styles:autoprefixer": "postcss public/app/themes/vatu-gp-child-theme/*.css public/app/themes/vatu-gp-child-theme/assets/css/*.css --use autoprefixer --replace --map",
-    "styles:minify": "postcss public/app/themes/vatu-gp-child-theme/*.css public/app/themes/vatu-gp-child-theme/assets/css/*.css --use cssnano --replace --map",
-    "styles": "run-s \"styles:global\" \"styles:components\" \"styles:editor\" \"styles:autoprefixer\" \"styles:minify\"",
-    "styles:watch": "chokidar \"public/app/themes/vatu-gp-child-theme/assets/**/*.scss\" -c \"npm run styles\" --initial",
-    "build": "run-p \"styles\"",
-    "build:watch": "run-p \"styles:watch\""
+    "build": "run-p 'build:theme'",
+    "watch": "run-p 'watch:theme'",
+    "build:theme": "wp-scripts build --config ./theme.webpack.config.js",
+    "watch:theme": "wp-scripts watch --config ./theme.webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +22,14 @@
   "license": "ISC",
   "homepage": "https://github.com/vatu-team/demo.vatu.dev/#readme",
   "devDependencies": {
-    "@bahmutov/cy-api": "2.2.1",
-    "@percy/cli": "1.11.0",
-    "@percy/cypress": "3.1.2",
-    "@vatu/theme-build": "github:vatu-team/theme-build#0.0.1",
-    "cypress": "10.10.0",
-    "cypress-iframe": "1.0.1"
+    "@wordpress/create-block": "^4.61.0",
+    "@wordpress/scripts": "^30.11.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "make-dir-cli": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "svg-sprite": "2.0.1",
+    "terser": "^5.39.0",
+    "webpack-remove-empty-scripts": "^1.0.4"
   }
 }

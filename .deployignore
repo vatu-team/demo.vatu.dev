@@ -13,12 +13,15 @@ error_log
 /.bin
 .browserlistrc
 .github
+.git-blame-ignore-revs
 .phive
+/patches
 /shared
 /tests
 /tools
 .editorconfig
 .gitattributes
+captainhook.json
 LocalValetDriver.php
 phpcs.xml
 phpcs.xml.dist
@@ -42,6 +45,8 @@ cypress/*
 package.json
 package-lock.json
 cypress.json
+/webpack.config.js
+/*.webpack.config.js
 
 # Server
 .env
@@ -63,6 +68,7 @@ composer.lock
 ## WordPress
 /public/app/cache/*
 /public/app/languages/*
+!/public/app/languages/index.php
 /public/app/upgrade
 /public/app/uploads/*
 /public/app/wflogs/*

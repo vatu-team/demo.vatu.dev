@@ -1,33 +1,32 @@
-# Vatu: Dependabot Auto Merge
-# Version: 1.0.0
-# Author: Michael Bragg <mike@vatu.co.uk>
+---
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+# Vatu:   Dependabot Auto Merge
+# Version 1.1.0
+# Author: Michael Bragg <mike@vatu.co.uk>
 
 name: "Dependabot Auto Merge"
 
 on:
   workflow_run:
-    workflows: ["Static Analysis"]
+    workflows: ["Commit"]
     types:
       - completed
-
-concurrency:
-  group: ${{ github.workflow }}--${{ github.head_ref }}
-  cancel-in-progress: true
-
-permissions:
-  pull-requests: write
-  contents: write
+    branches:
+      - 'dependabot/**'
 
 jobs:
 
-  dependabot-auto-merge:
+  auto-merge:
 
-    # Only run if the creator is Dependabot or previous workflow was successful.
-    if: ${{ github.actor == 'dependabot[bot]' && github.event.workflow_run.conclusion == 'success' }}
-
-    name: "Dependabot Auto Merge"
-    uses: vatu-team/workflows/.github/workflows/dependabot-auto-merge-pr.yml@main
+    # Conditions for running workflow (project-specific).
+    if: >
+      github.actor == 'dependabot[bot]' &&
+      github.event.workflow_run.conclusion == 'success'
+    name: "Auto Merge"
+    uses: vatu-team/workflows/.github/workflows/auto-merge-pr.yml@1.14.0
     with:
-      runs-on: 'self-hosted'
-    secrets: inherit
+      runs-on: 'ubuntu-24.04'
+    secrets:
+      BOT_ID: ${{ secrets.VATU_BOT_ID }}
+      BOT_KEY: ${{ secrets.VATU_BOT_KEY }}
+      SLACK_TOKEN: ${{ secrets.SLACK_DEPENDABOT_TOKEN }}

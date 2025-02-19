@@ -1,126 +1,172 @@
 {
   "name": "vatu/demo",
   "description": "Demo of Vatu development project workflow.",
+  "license": "proprietary",
   "type": "project",
   "keywords": [
     "wordpress"
   ],
-  "homepage": "https://projecturl.com",
   "readme": "https://github.com/vatu-team/demo.vatu.dev/blob/main/readme.md",
-  "license": "proprietary",
   "authors": [
-      {
-        "name": "Vatu",
-        "email": "hello@vatu.dev",
-        "homepage": "https://vatu.dev",
-        "role": "Agency"
-      }
+    {
+      "name": "Vatu",
+      "email": "hello@vatu.dev",
+      "homepage": "https://vatu.dev",
+      "role": "Agency"
+    }
   ],
+  "homepage": "https://www.example.com",
   "support": {
     "issues": "https://github.com/vatu-team/demo.vatu.dev/issues"
   },
   "require": {
-    "php": ">=7.3",
-    "composer/installers": "2.2.0",
-    "roots/wordpress": "6.0.2",
-    "oscarotero/env": "2.1.0",
-    "roots/bedrock-autoloader": "1.0.4",
-    "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.1.0",
-    "vlucas/phpdotenv": "5.4.1",
-    "wpackagist-plugin/disable-emojis": "1.7.4",
-    "wpackagist-plugin/wp-robots-txt": "1.1.0",
-    "wpackagist-theme/twentytwentyone":"1.6",
-    "wpackagist-theme/generatepress":"3.1.3",
-    "wpackagist-plugin/aryo-activity-log": "2.8.4",
-    "wpackagist-plugin/better-passwords": "1.8.0",
-    "wpackagist-plugin/limit-login-attempts-reloaded": "2.25.7",
-    "wpackagist-plugin/mailgun": "1.8.5",
-    "wpackagist-plugin/redirection": "5.3.4",
-    "wpackagist-plugin/wordpress-seo": "19.8",
-    "wpackagist-plugin/zero-spam": "5.4.3"
+    "php": "~8.3",
+    "captainhook/captainhook": "^5.25.0",
+    "captainhook/hook-installer": "^1.0.3",
+    "composer/installers": "^2.3.0",
+    "cweagans/composer-patches": "^1.7.3",
+    "oscarotero/env": "^2.1.1",
+    "roots/bedrock-autoloader": "^1.0.4",
+    "roots/wordpress": "^6.7",
+    "roots/wp-config": "^1.0.0",
+    "roots/wp-password-bcrypt": "^1.2.0",
+    "thoughtsideas/wp-infrastructure": "^0.2.0",
+    "vlucas/phpdotenv": "^5.6.1",
+    "wpackagist-plugin/aryo-activity-log": "^2.11.2",
+    "wpackagist-plugin/better-passwords": "^1.8.0",
+    "wpackagist-plugin/disable-emojis": "^1.7.7",
+    "wpackagist-plugin/limit-login-attempts-reloaded": "^2.26.18",
+    "wpackagist-plugin/mailgun": "^2.1.3",
+    "wpackagist-plugin/redirection": "^5.5.2",
+    "wpackagist-plugin/two-factor": "^0.12.0",
+    "wpackagist-plugin/wordpress-seo": "^24.4",
+    "wpackagist-plugin/wp-robots-txt": "^1.3.4"
   },
   "require-dev": {
-      "rarst/laps": "3.3.7",
-      "wpackagist-plugin/debug-bar-post-types": "2.0.0",
-      "wpackagist-plugin/duplicate-post": "4.5",
-      "wpackagist-plugin/log-deprecated-notices": "0.4.1",
-      "wpackagist-plugin/query-monitor": "3.10.1",
-      "wpackagist-plugin/redis-cache": "2.2.0",
-      "wpackagist-plugin/rewrite-rules-inspector": "1.3.1",
-      "wpackagist-plugin/rewrite-testing": "0.1.1",
-      "wpackagist-plugin/transients-manager": "2.0.3",
-      "wpackagist-plugin/user-switching": "1.7.0",
-      "wpackagist-plugin/wordpress-beta-tester": "3.2.3",
-      "wpackagist-plugin/wordpress-importer": "0.8",
-      "wpackagist-plugin/wp-crontrol": "1.14.0"
+    "ergebnis/composer-normalize": "^2.45",
+    "rarst/laps": "^3.3.7",
+    "wpackagist-plugin/debug-bar-post-types": "^2.0.0",
+    "wpackagist-plugin/duplicate-post": "^4.5.0",
+    "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
+    "wpackagist-plugin/query-monitor": "^3.17.2",
+    "wpackagist-plugin/redis-cache": "^2.5.4",
+    "wpackagist-plugin/rewrite-rules-inspector": "^1.4.0",
+    "wpackagist-plugin/rewrite-testing": "^0.1.1",
+    "wpackagist-plugin/transients-manager": "^2.0.7",
+    "wpackagist-plugin/user-switching": "^1.9.1",
+    "wpackagist-plugin/wordpress-beta-tester": "^3.6.2",
+    "wpackagist-plugin/wordpress-importer": "^0.8.3",
+    "wpackagist-plugin/wp-crontrol": "^1.18.0",
+    "wpackagist-theme/twentytwentyfour": "^1.3"
   },
-  "autoload": {
-    "psr-4": {}
-  },
-  "minimum-stability": "stable",
-  "prefer-stable": true,
   "repositories": [
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://satispress.vatu.dev/satispress/"
     }
   ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {}
+  },
   "config": {
-      "allow-plugins": {
+    "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true
+      "cweagans/composer-patches": true,
+      "ergebnis/composer-normalize": true,
+      "roots/wordpress-core-installer": true,
+      "captainhook/hook-installer": true
     },
-      "optimize-autoloader": true,
-      "sort-packages": true,
-      "preferred-install": "dist"
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "installer-paths": {
+      "public/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "public/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "public/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "normalize": {
+      "indent-size": 4,
+      "indent-style": "space"
+    },
+    "patches-file": "patches/composer.patches.json",
+    "wordpress-install-dir": "public/wp"
   },
   "scripts": {
+    "post-install-cmd": [
+      "@composer run tools"
+    ],
     "post-update-cmd": [
-        "@composer update --working-dir=tools/parallel-lint",
-        "@composer update --working-dir=tools/phpcs",
-        "@composer update --working-dir=tools/phpcpd",
-        "@composer update --working-dir=tools/phpmnd",
-        "@composer update --working-dir=tools/phpstan"
+      "@composer run tools"
     ],
     "post-root-package-install": [
-        "php -r \"copy('example.env', '.env');\""
+      "php -r \"copy('example.env', '.env');\""
     ],
-    "test-parallel-lint": [
-      "./tools/parallel-lint/vendor/bin/parallel-lint --exclude */vendor --exclude */vendor_prefixed ./public"
+    "fix": [
+        " @composer fix:coding-standards"
     ],
-    "test-phpcbf": [
-      "./tools/phpcs/vendor/bin/phpcbf -p -s --standard=phpcs.xml.dist --runtime-set testVersion 7.3- ./public/app/themes/vatu-gp-child-theme"
-    ],
-    "test-phpcs": [
-      "./tools/phpcs/vendor/bin/phpcs -p -s --standard=phpcs.xml.dist --runtime-set testVersion 7.3- ./public/app/themes/vatu-gp-child-theme"
-    ],
-    "test-phpcpd": [
-      "./tools/phpcpd/vendor/bin/phpcpd ./public/app/themes/vatu-gp-child-theme/ --exclude=./vendor/*,./node_modules/*"
-    ],
-    "test-phpmnd": [
-      "./tools/phpmnd/vendor/bin/phpmnd ./public/app/themes/vatu-gp-child-theme --ignore-funcs=round,sleep --exclude=./vendor/ --exclude=./node_modules/ --progress"
-    ],
-    "test-phpstan": [
-      "./tools/phpstan/vendor/bin/phpstan analyse ./public/app/themes/vatu-gp-child-theme -c ./phpstan.neon.dist --memory-limit 256M"
-    ],
-    "test-phpunit": [
-      "./tools/phpunit/vendor/bin/phpunit -c ./phpunit.xml"
+    "fix:coding-standards": [
+        "./tools/vendor/bin/phpcbf"
     ],
     "test": [
-      "composer run test-phpcbf",
-      "composer run test-phpcs",
-      "composer run test-phpmnd",
-      "composer run test-phpcpd",
-      "composer run test-phpstan"
+      "@composer test:lint",
+      "@composer test:security",
+      "@composer test:unit",
+      "@composer test:analysis"
+    ],
+    "test:lint": [
+        "@composer validate --ansi --strict",
+        "@composer test:lint:lint",
+        "@composer test:lint:coding-standards"
+    ],
+    "test:lint:lint": [
+        "./tools/vendor/bin/parallel-lint --exclude */vendor ./config",
+        "./tools/vendor/bin/parallel-lint --exclude */vendor ./tests",
+        "./tools/vendor/bin/parallel-lint --exclude */vendor ./public/app/mu-plugins/site-config.php"
+    ],
+    "test:lint:coding-standards": [
+        "./tools/vendor/bin/phpcs -n"
+    ],
+    "test:security": [
+        "composer audit --ansi"
+    ],
+    "test:unit": [
+        "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
+    ],
+    "test:analysis": [
+        "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+    ],
+    "test-parallel-lint": [
+      "@composer test:lint:lint"
+    ],
+    "test-phpcbf": [
+      "./tools/vendor/bin/phpcbf"
+    ],
+    "test-phpcs": [
+      "@composer test:lint:coding-standards"
+    ],
+    "test-phpstan": [
+      "@composer test:analysis"
+    ],
+    "test-phpunit": [
+      "@composer test:unit"
+    ],
+    "tools": [
+      "@composer install --working-dir=tools",
+      "@composer run post-install-cmd --working-dir=tools"
     ]
-},
-  "extra": {
-      "installer-paths": {
-          "public/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-          "public/app/plugins/{$name}/": ["type:wordpress-plugin"],
-          "public/app/themes/{$name}/": ["type:wordpress-theme"]
-      },
-      "wordpress-install-dir": "public/wp"
   }
 }

@@ -58,9 +58,15 @@ error_log
 
 ## Composer
 auth.json
-composer.lock
 /vendor
-/tools/*/vendor
+/tools/vendor
+
+## Tests
+/.phpunit.cache
+/phpcs.xml
+/phpstan.neon
+/phpunit.xml
+/tests/php/Coverage
 
 ## Config
 /config/environments/local.php
@@ -68,6 +74,7 @@ composer.lock
 ## WordPress
 /public/app/cache/*
 /public/app/languages/*
+!/public/app/languages/index.php
 /public/app/upgrade
 /public/app/uploads/*
 /public/app/wflogs/*
@@ -84,11 +91,12 @@ composer.lock
 !/public/app/plugins/index.php
 /public/app/mu-plugins/*
 !/public/app/mu-plugins/index.php
+!/public/app/mu-plugins/site-config.php
 
 ## Themes
 /public/app/themes/*
+!/public/app/themes/base-theme
 !/public/app/themes/index.php
-!/public/app/themes/vatu-gp-child-theme/
 
 ## WPCLI
 wp-cli.local.yml
