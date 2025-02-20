@@ -196,7 +196,7 @@ jobs:
       - phpcs
       - php-unit
       - phpstan
-    runs-on: 'self-hosted'
+    runs-on: 'ubuntu-24.04'
     steps:
       - name: "Failure notification."
         id: 'slack'
