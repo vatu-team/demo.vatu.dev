@@ -4,6 +4,7 @@ error_log
 .DS_Store
 
 # Development
+/.devcontainer
 
 ## Docker
 /.docker/*
