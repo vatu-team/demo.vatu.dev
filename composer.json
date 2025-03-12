@@ -1,0 +1,150 @@
+{
+    "name": "vatu/wordpress-demo",
+    "description": "Demo of WordPress",
+    "license": "proprietary",
+    "type": "project",
+    "readme": "https://github.com/vatu-team/project-wordpress/blob/main/readme.md",
+    "authors": [
+        {
+            "name": "Vatu",
+            "email": "info@vatu.dev",
+            "homepage": "https://vatu.dev",
+            "role": "Agency"
+        }
+    ],
+    "homepage": "https://demo.vatu.dev",
+    "support": {
+        "issues": "https://github.com/vatu-team/demo.vatu.dev/issues"
+    },
+    "require": {
+        "php": "~8.3",
+        "composer/installers": "^2.3.0",
+        "cweagans/composer-patches": "^1.7.3",
+        "johnpbloch/wordpress": "^6.7.1",
+        "roots/wp-config": "^1.0",
+        "vatu/base-theme": "dev-trunk",
+        "vlucas/phpdotenv": "^5.6.1",
+        "wpackagist-plugin/better-passwords": "^1.8",
+        "wpackagist-plugin/disable-emojis": "^1.7.6",
+        "wpackagist-plugin/safe-svg": "^2.3.1",
+        "wpackagist-plugin/two-factor": "^0.12.0",
+        "wpackagist-plugin/wordpress-seo": "^24.2",
+        "wpackagist-plugin/wp-robots-txt": "^1.3.4"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.24.2",
+        "captainhook/hook-installer": "^1.0.3",
+        "ergebnis/composer-normalize": "*",
+        "wpackagist-plugin/duplicate-post": "^4.5",
+        "wpackagist-plugin/log-deprecated-notices": "^0.4.1",
+        "wpackagist-plugin/query-monitor": "^3.17",
+        "wpackagist-plugin/rewrite-rules-inspector": "^1.4",
+        "wpackagist-plugin/rewrite-testing": "^0.1.1",
+        "wpackagist-plugin/transients-manager": "^2.0.7",
+        "wpackagist-plugin/user-switching": "^1.9.1",
+        "wpackagist-plugin/wordpress-beta-tester": "^3.6.2",
+        "wpackagist-plugin/wordpress-importer": "^0.8.3",
+        "wpackagist-plugin/wp-crontrol": "^1.18",
+        "wpackagist-theme/twentytwentyfive": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {}
+    },
+    "config": {
+        "allow-plugins": {
+            "captainhook/hook-installer": true,
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "ergebnis/composer-normalize": true,
+            "johnpbloch/wordpress-core-installer": true
+        },
+        "lock": false,
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "installer-paths": {
+            "public/app/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "public/app/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "public/app/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        },
+        "patches-file": "patches/composer.patches.json",
+        "wordpress-install-dir": "public/wp"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer run tools"
+        ],
+        "post-update-cmd": [
+            "@composer run tools"
+        ],
+        "post-create-project-cmd": [
+            "@php --version"
+        ],
+        "fix": [
+            "@composer fix:normalize",
+            "@composer fix:standards"
+        ],
+        "fix:normalize": [
+            "@composer normalize"
+        ],
+        "fix:standards": [
+            "./tools/vendor/bin/phpcbf"
+        ],
+        "test": [
+            "@composer test:security",
+            "@composer test:lint",
+            "@composer test:analysis",
+            "@composer test:compatibility",
+            "@composer test:unit"
+        ],
+        "test:lint": [
+            "@composer validate --ansi --strict",
+            "@composer test:lint:syntax",
+            "@composer test:lint:standards"
+        ],
+        "test:lint:standards": [
+            "./tools/vendor/bin/phpcs -n"
+        ],
+        "test:lint:syntax": [
+            "./tools/vendor/bin/parallel-lint --exclude */vendor ./config",
+            "./tools/vendor/bin/parallel-lint --exclude */vendor ./public/app/mu-plugins/site-config.php"
+        ],
+        "test:security": [
+            "composer audit --ansi"
+        ],
+        "test:unit": [
+            "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
+        ],
+        "test:analysis": [
+            "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+        ],
+        "test:compatibility": [
+            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
+        ],
+        "tools": [
+            "@composer install --working-dir=tools",
+            "@composer run post-install-cmd --working-dir=tools"
+        ]
+    },
+    "scripts-descriptions": {}
+}
