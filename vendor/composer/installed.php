@@ -226,7 +226,7 @@
         'vatu/base-theme' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'e1bee315fca96a025d57b0464e7f44cd7a2e2528',
+            'reference' => '1d110ab5e1eb28af9f6f01752842c715313c5c46',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../public/app/themes/base-theme',
             'aliases' => array(
