@@ -1680,12 +1680,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "96af0e6504165f8f0df2d651492166648aed3c6f"
+                "reference": "26ebd233cc06d5663217b1f1b35a2bdc6a177d36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/96af0e6504165f8f0df2d651492166648aed3c6f",
-                "reference": "96af0e6504165f8f0df2d651492166648aed3c6f",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/26ebd233cc06d5663217b1f1b35a2bdc6a177d36",
+                "reference": "26ebd233cc06d5663217b1f1b35a2bdc6a177d36",
                 "shasum": ""
             },
             "require": {
@@ -1701,7 +1701,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.6.0",
                 "wpackagist-plugin/query-monitor": "^3.17.2"
             },
-            "time": "2025-03-31T04:12:11+00:00",
+            "time": "2025-04-02T04:03:48+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
@@ -1901,16 +1901,16 @@
         },
         {
             "name": "wpackagist-plugin/two-factor",
-            "version": "0.12.0",
-            "version_normalized": "0.12.0.0",
+            "version": "0.13.0",
+            "version_normalized": "0.13.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/two-factor/",
-                "reference": "tags/0.12.0"
+                "reference": "tags/0.13.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/two-factor.0.12.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/two-factor.0.13.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -1922,16 +1922,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "24.8",
-            "version_normalized": "24.8.0.0",
+            "version": "24.8.1",
+            "version_normalized": "24.8.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/24.8"
+                "reference": "tags/24.8.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.24.8.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
