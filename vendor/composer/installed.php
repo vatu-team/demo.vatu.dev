@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => 'a9d04af5e4da46c4844eca14d1f4b2122b711feb',
+        'reference' => '99ea5015414a497341f40e6e310fb96bd370de76',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'captainhook/hook-installer' => array(
-            'pretty_version' => '1.0.3',
-            'version' => '1.0.3.0',
-            'reference' => '3308a9152727af4e3d1c7b63ca219d6938b702b8',
+            'pretty_version' => '1.0.4',
+            'version' => '1.0.4.0',
+            'reference' => 'fb3c45f6204b08baba999f4ffc4ae707bf684e8b',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../captainhook/hook-installer',
             'aliases' => array(),
@@ -237,7 +237,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'a9d04af5e4da46c4844eca14d1f4b2122b711feb',
+            'reference' => '99ea5015414a497341f40e6e310fb96bd370de76',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
