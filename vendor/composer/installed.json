@@ -474,32 +474,32 @@
         },
         {
             "name": "madewithlove/license-checker",
-            "version": "v1.6",
-            "version_normalized": "1.6.0.0",
+            "version": "v2.0",
+            "version_normalized": "2.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/madewithlove/license-checker-php.git",
-                "reference": "e106bd392787b3a9131b6a9c9196b5f82bf6aa96"
+                "reference": "82fcb8645df0186037ce93c817f1847d954e6dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/madewithlove/license-checker-php/zipball/e106bd392787b3a9131b6a9c9196b5f82bf6aa96",
-                "reference": "e106bd392787b3a9131b6a9c9196b5f82bf6aa96",
+                "url": "https://api.github.com/repos/madewithlove/license-checker-php/zipball/82fcb8645df0186037ce93c817f1847d954e6dbc",
+                "reference": "82fcb8645df0186037ce93c817f1847d954e6dbc",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1",
+                "php": "^8.3",
                 "symfony/console": "^4.0 || ^5.0 || ^6.0 || ^7.0",
                 "symfony/process": "^4.0 || ^5.0 || ^6.0 || ^7.0",
                 "symfony/yaml": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.16",
-                "phpunit/phpunit": "^10.1",
-                "psalm/plugin-phpunit": "^0.18",
-                "vimeo/psalm": "^5.9"
+                "phpunit/phpunit": "^12.1",
+                "psalm/plugin-phpunit": "^0.19",
+                "vimeo/psalm": "^6.10"
             },
-            "time": "2024-03-26T13:09:34+00:00",
+            "time": "2025-04-25T09:08:57+00:00",
             "bin": [
                 "bin/license-checker"
             ],
@@ -523,7 +523,7 @@
             "description": "CLI tool to verify allowed licenses for composer dependencies",
             "support": {
                 "issues": "https://github.com/madewithlove/license-checker-php/issues",
-                "source": "https://github.com/madewithlove/license-checker-php/tree/v1.6"
+                "source": "https://github.com/madewithlove/license-checker-php/tree/v2.0"
             },
             "install-path": "../madewithlove/license-checker"
         },
@@ -1680,17 +1680,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "983869a33222ed90be3ae25cc4fbc1095c11ede9"
+                "reference": "c63dceb012c7c5f0112695f7f73f71340f3498e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/983869a33222ed90be3ae25cc4fbc1095c11ede9",
-                "reference": "983869a33222ed90be3ae25cc4fbc1095c11ede9",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/c63dceb012c7c5f0112695f7f73f71340f3498e0",
+                "reference": "c63dceb012c7c5f0112695f7f73f71340f3498e0",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.3.0",
-                "madewithlove/license-checker": "^1.6",
+                "madewithlove/license-checker": "^2.0",
                 "php": "^8.3",
                 "thoughtsideas/wp-infrastructure": "^0.2.0"
             },
@@ -1698,10 +1698,10 @@
                 "captainhook/captainhook": "^5.25.2",
                 "captainhook/hook-installer": "^1.0.3",
                 "johnpbloch/wordpress": "^6.8.0",
-                "wpackagist-plugin/create-block-theme": "^2.6.0",
+                "wpackagist-plugin/create-block-theme": "^2.7.0",
                 "wpackagist-plugin/query-monitor": "^3.17.2"
             },
-            "time": "2025-04-16T03:54:55+00:00",
+            "time": "2025-04-28T03:40:33+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
