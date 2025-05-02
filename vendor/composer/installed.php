@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => 'fb3c47f43523f3771dad1758ee6c29a7317cdcfa',
+        'reference' => '43d32d1b82ffd6cec2aca44f912a1b436cdf990c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -226,7 +226,7 @@
         'vatu/base-theme' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'c63dceb012c7c5f0112695f7f73f71340f3498e0',
+            'reference' => '60dd25962aea549ad7d714502ee801a213f45fba',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../public/app/themes/base-theme',
             'aliases' => array(
@@ -237,7 +237,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'fb3c47f43523f3771dad1758ee6c29a7317cdcfa',
+            'reference' => '43d32d1b82ffd6cec2aca44f912a1b436cdf990c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -295,9 +295,9 @@
             'dev_requirement' => false,
         ),
         'wpackagist-plugin/wordpress-seo' => array(
-            'pretty_version' => '24.9',
-            'version' => '24.9.0.0',
-            'reference' => 'tags/24.9',
+            'pretty_version' => '25.0',
+            'version' => '25.0.0.0',
+            'reference' => 'tags/25.0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../public/app/plugins/wordpress-seo',
             'aliases' => array(),
