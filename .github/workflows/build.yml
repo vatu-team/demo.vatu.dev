@@ -167,7 +167,7 @@ jobs:
       - name: "Notify on failure."
         if: ${{ failure() }}
         id: 'slack'
-        uses: 'slackapi/slack-github-action@v2.0.0'
+        uses: 'slackapi/slack-github-action@v2.1.0'
         with:
           method: chat.postMessage
           token: ${{ secrets.SLACK_TOKEN }}
