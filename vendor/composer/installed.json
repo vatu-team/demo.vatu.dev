@@ -1681,12 +1681,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "2b4b0bc0a08331faf87c3fb93819ee6b7eb32063"
+                "reference": "77186754c007a8b280c0115ebad3fab71a035718"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/2b4b0bc0a08331faf87c3fb93819ee6b7eb32063",
-                "reference": "2b4b0bc0a08331faf87c3fb93819ee6b7eb32063",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/77186754c007a8b280c0115ebad3fab71a035718",
+                "reference": "77186754c007a8b280c0115ebad3fab71a035718",
                 "shasum": ""
             },
             "require": {
@@ -1702,7 +1702,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.7.0",
                 "wpackagist-plugin/query-monitor": "^3.17.2"
             },
-            "time": "2025-05-02T03:18:01+00:00",
+            "time": "2025-05-09T03:46:34+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
