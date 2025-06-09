@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => 'bf2de2663299e81349f893e3bc2ab6f6dbac6908',
+        'reference' => '55cd7722f4482f0d87a4b33e5aca87347be0e2fa',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -226,7 +226,7 @@
         'vatu/base-theme' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => '7a6f4994434c4720d67f26562c2459463bd8238b',
+            'reference' => '8d7c376eb02f4fd75d249469508f675f7a6cc5f8',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../public/app/themes/base-theme',
             'aliases' => array(
@@ -237,7 +237,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'bf2de2663299e81349f893e3bc2ab6f6dbac6908',
+            'reference' => '55cd7722f4482f0d87a4b33e5aca87347be0e2fa',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
