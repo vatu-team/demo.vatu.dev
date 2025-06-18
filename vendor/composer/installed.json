@@ -1682,12 +1682,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "be98bd3099ea799d1a90c8f74c442c079ccbcdfe"
+                "reference": "4f2d49f287835ae5d4a1c7dc04680142fbfdf775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/be98bd3099ea799d1a90c8f74c442c079ccbcdfe",
-                "reference": "be98bd3099ea799d1a90c8f74c442c079ccbcdfe",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/4f2d49f287835ae5d4a1c7dc04680142fbfdf775",
+                "reference": "4f2d49f287835ae5d4a1c7dc04680142fbfdf775",
                 "shasum": ""
             },
             "require": {
@@ -1701,9 +1701,9 @@
                 "captainhook/hook-installer": "^1.0.3",
                 "johnpbloch/wordpress": "^6.8.1",
                 "wpackagist-plugin/create-block-theme": "^2.7.0",
-                "wpackagist-plugin/query-monitor": "^3.17.2"
+                "wpackagist-plugin/query-monitor": "^3.18.0"
             },
-            "time": "2025-06-13T03:49:05+00:00",
+            "time": "2025-06-17T03:44:37+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
