@@ -1682,12 +1682,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "4f2d49f287835ae5d4a1c7dc04680142fbfdf775"
+                "reference": "d7f5e34acbfde041572366ba3312b3878db0ef1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/4f2d49f287835ae5d4a1c7dc04680142fbfdf775",
-                "reference": "4f2d49f287835ae5d4a1c7dc04680142fbfdf775",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/d7f5e34acbfde041572366ba3312b3878db0ef1a",
+                "reference": "d7f5e34acbfde041572366ba3312b3878db0ef1a",
                 "shasum": ""
             },
             "require": {
@@ -1703,7 +1703,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.7.0",
                 "wpackagist-plugin/query-monitor": "^3.18.0"
             },
-            "time": "2025-06-17T03:44:37+00:00",
+            "time": "2025-06-24T20:46:13+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
@@ -1924,16 +1924,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "25.3",
-            "version_normalized": "25.3.0.0",
+            "version": "25.3.1",
+            "version_normalized": "25.3.1.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/25.3"
+                "reference": "tags/25.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.25.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.25.3.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

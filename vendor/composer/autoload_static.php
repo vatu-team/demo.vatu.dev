@@ -178,6 +178,7 @@ class ComposerStaticInit626eac80016c9884d15643402873c54c
         'Client\\BaseTheme\\Domain\\GlobalScripts' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/GlobalScripts.php',
         'Client\\BaseTheme\\Domain\\GlobalStyles' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/GlobalStyles.php',
         'Client\\BaseTheme\\Domain\\Openverse' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/Openverse.php',
+        'Client\\BaseTheme\\Domain\\Patterns' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/Patterns.php',
         'Client\\BaseTheme\\Domain\\TemplateEditor' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/TemplateEditor.php',
         'Client\\BaseTheme\\Domain\\TitleFormat' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/TitleFormat.php',
         'Client\\BaseTheme\\Theme' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Theme.php',

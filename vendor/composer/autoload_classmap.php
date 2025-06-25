@@ -19,6 +19,7 @@ return array(
     'Client\\BaseTheme\\Domain\\GlobalScripts' => $baseDir . '/public/app/themes/base-theme/src/Domain/GlobalScripts.php',
     'Client\\BaseTheme\\Domain\\GlobalStyles' => $baseDir . '/public/app/themes/base-theme/src/Domain/GlobalStyles.php',
     'Client\\BaseTheme\\Domain\\Openverse' => $baseDir . '/public/app/themes/base-theme/src/Domain/Openverse.php',
+    'Client\\BaseTheme\\Domain\\Patterns' => $baseDir . '/public/app/themes/base-theme/src/Domain/Patterns.php',
     'Client\\BaseTheme\\Domain\\TemplateEditor' => $baseDir . '/public/app/themes/base-theme/src/Domain/TemplateEditor.php',
     'Client\\BaseTheme\\Domain\\TitleFormat' => $baseDir . '/public/app/themes/base-theme/src/Domain/TitleFormat.php',
     'Client\\BaseTheme\\Theme' => $baseDir . '/public/app/themes/base-theme/src/Theme.php',
