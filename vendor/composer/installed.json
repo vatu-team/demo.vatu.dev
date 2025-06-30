@@ -712,17 +712,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.3.0",
-            "version_normalized": "7.3.0.0",
+            "version": "v7.3.1",
+            "version_normalized": "7.3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "66c1440edf6f339fd82ed6c7caa76cb006211b44"
+                "reference": "9e27aecde8f506ba0fd1d9989620c04a87697101"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/66c1440edf6f339fd82ed6c7caa76cb006211b44",
-                "reference": "66c1440edf6f339fd82ed6c7caa76cb006211b44",
+                "url": "https://api.github.com/repos/symfony/console/zipball/9e27aecde8f506ba0fd1d9989620c04a87697101",
+                "reference": "9e27aecde8f506ba0fd1d9989620c04a87697101",
                 "shasum": ""
             },
             "require": {
@@ -755,7 +755,7 @@
                 "symfony/stopwatch": "^6.4|^7.0",
                 "symfony/var-dumper": "^6.4|^7.0"
             },
-            "time": "2025-05-24T10:34:04+00:00",
+            "time": "2025-06-27T19:55:54+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -789,7 +789,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.3.0"
+                "source": "https://github.com/symfony/console/tree/v7.3.1"
             },
             "funding": [
                 {
@@ -1533,17 +1533,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.3.0",
-            "version_normalized": "7.3.0.0",
+            "version": "v7.3.1",
+            "version_normalized": "7.3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "cea40a48279d58dc3efee8112634cb90141156c2"
+                "reference": "0c3555045a46ab3cd4cc5a69d161225195230edb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/cea40a48279d58dc3efee8112634cb90141156c2",
-                "reference": "cea40a48279d58dc3efee8112634cb90141156c2",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0c3555045a46ab3cd4cc5a69d161225195230edb",
+                "reference": "0c3555045a46ab3cd4cc5a69d161225195230edb",
                 "shasum": ""
             },
             "require": {
@@ -1557,7 +1557,7 @@
             "require-dev": {
                 "symfony/console": "^6.4|^7.0"
             },
-            "time": "2025-04-04T10:10:33+00:00",
+            "time": "2025-06-03T06:57:57+00:00",
             "bin": [
                 "Resources/bin/yaml-lint"
             ],
@@ -1588,7 +1588,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.3.0"
+                "source": "https://github.com/symfony/yaml/tree/v7.3.1"
             },
             "funding": [
                 {
@@ -1682,12 +1682,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "d7f5e34acbfde041572366ba3312b3878db0ef1a"
+                "reference": "f2ab98b0042e75a7046076f55ec75c1419a7ba93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/d7f5e34acbfde041572366ba3312b3878db0ef1a",
-                "reference": "d7f5e34acbfde041572366ba3312b3878db0ef1a",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/f2ab98b0042e75a7046076f55ec75c1419a7ba93",
+                "reference": "f2ab98b0042e75a7046076f55ec75c1419a7ba93",
                 "shasum": ""
             },
             "require": {
@@ -1703,7 +1703,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.7.0",
                 "wpackagist-plugin/query-monitor": "^3.18.0"
             },
-            "time": "2025-06-24T20:46:13+00:00",
+            "time": "2025-06-26T04:04:37+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
@@ -1945,16 +1945,16 @@
         },
         {
             "name": "wpackagist-plugin/wp-robots-txt",
-            "version": "1.3.4",
-            "version_normalized": "1.3.4.0",
+            "version": "1.3.5",
+            "version_normalized": "1.3.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-robots-txt/",
-                "reference": "tags/1.3.4"
+                "reference": "tags/1.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-robots-txt.1.3.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-robots-txt.1.3.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
