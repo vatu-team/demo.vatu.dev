@@ -1682,12 +1682,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "f2ab98b0042e75a7046076f55ec75c1419a7ba93"
+                "reference": "38d9f06256f1ca318886336d8dfcc60ff9c2a102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/f2ab98b0042e75a7046076f55ec75c1419a7ba93",
-                "reference": "f2ab98b0042e75a7046076f55ec75c1419a7ba93",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/38d9f06256f1ca318886336d8dfcc60ff9c2a102",
+                "reference": "38d9f06256f1ca318886336d8dfcc60ff9c2a102",
                 "shasum": ""
             },
             "require": {
@@ -1697,13 +1697,13 @@
                 "thoughtsideas/wp-infrastructure": "^0.2.0"
             },
             "require-dev": {
-                "captainhook/captainhook": "^5.25.5",
+                "captainhook/captainhook": "^5.25.6",
                 "captainhook/hook-installer": "^1.0.3",
                 "johnpbloch/wordpress": "^6.8.1",
                 "wpackagist-plugin/create-block-theme": "^2.7.0",
                 "wpackagist-plugin/query-monitor": "^3.18.0"
             },
-            "time": "2025-06-26T04:04:37+00:00",
+            "time": "2025-07-03T17:01:15+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
@@ -1903,16 +1903,16 @@
         },
         {
             "name": "wpackagist-plugin/two-factor",
-            "version": "0.13.0",
-            "version_normalized": "0.13.0.0",
+            "version": "0.14.0",
+            "version_normalized": "0.14.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/two-factor/",
-                "reference": "tags/0.13.0"
+                "reference": "tags/0.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/two-factor.0.13.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/two-factor.0.14.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
