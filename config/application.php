@@ -80,9 +80,14 @@ Config::define( key: 'DB_COLLATE', value: '' );
 // phpcs:ignore SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable
 $table_prefix = getenv( name: 'DB_PREFIX' ) ?: 'wp_';
 
-if ( getenv( name: 'DATABASE_URL' ) ) {
+/**
+ * @var string $database_url
+ */
+$database_url = is_string( getenv( name: 'DATABASE_URL' ) ) ? getenv( name: 'DATABASE_URL' ) : '';
+
+if ( $database_url !== '' ) {
 	// phpcs:ignore WordPress.WP.AlternativeFunctions.parse_url_parse_url
-	$dsn = (object) parse_url( url: strval( value: getenv( name: 'DATABASE_URL' ) ) );
+	$dsn = (object) parse_url( url: $database_url );
 
 	Config::define( key: 'DB_NAME', value: substr( string: $dsn->path, offset: 1 ) );
 	Config::define( key: 'DB_USER', value: $dsn->user );
@@ -119,7 +124,7 @@ Config::define( key: 'WP_DEFAULT_THEME', value: getenv( 'WP_DEFAULT_THEME' ) ?: 
  * Debugging Settings
  */
 Config::define( key: 'WP_DEBUG', value: getenv( name: 'WP_DEBUG' ) ?: false );
-Config::define( key: 'WP_DEBUG_DISPLAY', value: getenv( name: 'WP_DEBUG' ) ?: false );
+Config::define( key: 'WP_DEBUG_DISPLAY', value: getenv( name: 'WP_DEBUG_DISPLAY' ) ?: false );
 Config::define( key: 'WP_DEBUG_LOG', value: getenv( name: 'WP_DEBUG_LOG' ) ?: false );
 Config::define( key: 'SCRIPT_DEBUG', value: false );
 ini_set( option: 'display_errors', value: '0' );
@@ -140,12 +145,6 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_P
 	$_SERVER['HTTPS'] = 'on';
 }
 
-$env_config = __DIR__ . '/environments/' . WP_ENVIRONMENT_TYPE . '.php';
-
-if ( file_exists( filename: $env_config ) ) {
-	require_once $env_config;
-}
-
 /**
  * Multisite
  */
@@ -153,12 +152,33 @@ Config::define( key: 'WP_ALLOW_MULTISITE', value: getenv( name: 'WP_ALLOW_MULTIS
 // Config::define( key: 'MULTISITE', value: getenv( name: 'MULTISITE' ) ?: false );
 
 if ( getenv( name: 'MULTISITE' ) === 'true' ) {
+	Config::define( key: 'MULTISITE', value: getenv( name: 'MULTISITE' ) );
 	Config::define( key: 'SUBDOMAIN_INSTALL', value: true );
 	Config::define( key: 'DOMAIN_CURRENT_SITE', value: getenv( name: 'WP_DOMAIN_CURRENT_SITE' ) );
 	Config::define( key: 'PATH_CURRENT_SITE', value: '/' );
 	Config::define( key: 'SITE_ID_CURRENT_SITE', value: 1 );
 	Config::define( key: 'BLOG_ID_CURRENT_SITE', value: 1 );
 	Config::define( key: 'COOKIE_DOMAIN', value: getenv( name: 'COOKIE_DOMAIN' ) ?: null );
+}
+
+/**
+ * Runcloud
+ */
+Config::define(
+	key: 'RCWP_REDIS_DOMAIN',
+	value: getenv( name: 'RCWP_REDIS_DOMAIN' ) ?: null
+);
+
+/**
+ * @var string $rcwp_redis_password
+ */
+$rcwp_redis_password = is_string( getenv( name: 'RCWP_REDIS_PASSWORD' ) ) ? getenv( name: 'RCWP_REDIS_PASSWORD' ) : '';
+
+if ( $rcwp_redis_password !== '' ) {
+	Config::define(
+		key: 'RCWP_REDIS_PASSWORD',
+		value: explode( ',', $rcwp_redis_password )
+	);
 }
 
 /*
@@ -179,6 +199,22 @@ Config::define(
 	key: 'GOOGLE_TAG_MANAGER_CONTAINER_ID',
 	value: getenv( name: 'GOOGLE_TAG_MANAGER_CONTAINER_ID' ) ?: null
 );
+
+/**
+ * FluentSMTP
+*/
+Config::define( key: 'FLUENTMAIL_MAILGUN_API_KEY', value: getenv( name: 'FLUENTMAIL_MAILGUN_API_KEY' ) ?: null );
+Config::define( key: 'FLUENTMAIL_MAILGUN_DOMAIN', value: getenv( name: 'FLUENTMAIL_MAILGUN_DOMAIN' ) ?: null );
+
+/**
+ * @var string $env
+ */
+$env        = WP_ENVIRONMENT_TYPE;
+$env_config = "{$root_dir}/config/environments/{$env}.php";
+
+if ( file_exists( filename: $env_config ) ) {
+	require_once $env_config;
+}
 
 Config::apply();
 
