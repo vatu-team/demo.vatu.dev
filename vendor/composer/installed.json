@@ -1959,16 +1959,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "25.9",
-            "version_normalized": "25.9.0.0",
+            "version": "26.2",
+            "version_normalized": "26.2.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/25.9"
+                "reference": "tags/26.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.25.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
