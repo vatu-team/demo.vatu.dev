@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b
+class ComposerStaticInitc3bd8a178cf7f634e1c31b35fa262892
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -71,6 +71,7 @@ class ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b
         'cweagans\\Composer\\' => 
         array (
             0 => __DIR__ . '/..' . '/cweagans/composer-patches/src',
+            1 => __DIR__ . '/..' . '/cweagans/composer-configurable-plugin/src',
         ),
         'ThoughtsIdeas\\Wordpress\\Infrastructure\\' => 
         array (
@@ -174,6 +175,8 @@ class ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b
         'Client\\BaseTheme\\Domain\\BlockPatterns' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/BlockPatterns.php',
         'Client\\BaseTheme\\Domain\\BlockStyles' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/BlockStyles.php',
         'Client\\BaseTheme\\Domain\\CodeEditor' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/CodeEditor.php',
+        'Client\\BaseTheme\\Domain\\Copyright' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/Copyright.php',
+        'Client\\BaseTheme\\Domain\\Credit' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/Credit.php',
         'Client\\BaseTheme\\Domain\\EditorScript' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/EditorScript.php',
         'Client\\BaseTheme\\Domain\\GlobalScripts' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/GlobalScripts.php',
         'Client\\BaseTheme\\Domain\\GlobalStyles' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/GlobalStyles.php',
@@ -564,9 +567,47 @@ class ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b
         'ThoughtsIdeas\\Wordpress\\Infrastructure\\Uninstallable' => __DIR__ . '/..' . '/thoughtsideas/wp-infrastructure/src/Uninstallable.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
-        'cweagans\\Composer\\PatchEvent' => __DIR__ . '/..' . '/cweagans/composer-patches/src/PatchEvent.php',
-        'cweagans\\Composer\\PatchEvents' => __DIR__ . '/..' . '/cweagans/composer-patches/src/PatchEvents.php',
-        'cweagans\\Composer\\Patches' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patches.php',
+        'cweagans\\Composer\\Capability\\CommandProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/CommandProvider.php',
+        'cweagans\\Composer\\Capability\\Downloader\\BaseDownloaderProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Downloader/BaseDownloaderProvider.php',
+        'cweagans\\Composer\\Capability\\Downloader\\CoreDownloaderProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Downloader/CoreDownloaderProvider.php',
+        'cweagans\\Composer\\Capability\\Downloader\\DownloaderProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Downloader/DownloaderProvider.php',
+        'cweagans\\Composer\\Capability\\Patcher\\BasePatcherProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Patcher/BasePatcherProvider.php',
+        'cweagans\\Composer\\Capability\\Patcher\\CorePatcherProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Patcher/CorePatcherProvider.php',
+        'cweagans\\Composer\\Capability\\Patcher\\PatcherProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Patcher/PatcherProvider.php',
+        'cweagans\\Composer\\Capability\\Resolver\\BaseResolverProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Resolver/BaseResolverProvider.php',
+        'cweagans\\Composer\\Capability\\Resolver\\CoreResolverProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Resolver/CoreResolverProvider.php',
+        'cweagans\\Composer\\Capability\\Resolver\\ResolverProvider' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Capability/Resolver/ResolverProvider.php',
+        'cweagans\\Composer\\Command\\DoctorCommand' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Command/DoctorCommand.php',
+        'cweagans\\Composer\\Command\\PatchesCommandBase' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Command/PatchesCommandBase.php',
+        'cweagans\\Composer\\Command\\RelockCommand' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Command/RelockCommand.php',
+        'cweagans\\Composer\\Command\\RepatchCommand' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Command/RepatchCommand.php',
+        'cweagans\\Composer\\ConfigurablePlugin' => __DIR__ . '/..' . '/cweagans/composer-configurable-plugin/src/ConfigurablePlugin.php',
+        'cweagans\\Composer\\Downloader' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Downloader.php',
+        'cweagans\\Composer\\Downloader\\ComposerDownloader' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Downloader/ComposerDownloader.php',
+        'cweagans\\Composer\\Downloader\\DownloaderBase' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Downloader/DownloaderBase.php',
+        'cweagans\\Composer\\Downloader\\DownloaderInterface' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Downloader/DownloaderInterface.php',
+        'cweagans\\Composer\\Downloader\\Exception\\HashMismatchException' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Downloader/Exception/HashMismatchException.php',
+        'cweagans\\Composer\\Event\\PatchEvent' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Event/PatchEvent.php',
+        'cweagans\\Composer\\Event\\PatchEvents' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Event/PatchEvents.php',
+        'cweagans\\Composer\\Event\\PluginEvent' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Event/PluginEvent.php',
+        'cweagans\\Composer\\Event\\PluginEvents' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Event/PluginEvents.php',
+        'cweagans\\Composer\\Locker' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Locker.php',
+        'cweagans\\Composer\\Patch' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patch.php',
+        'cweagans\\Composer\\PatchCollection' => __DIR__ . '/..' . '/cweagans/composer-patches/src/PatchCollection.php',
+        'cweagans\\Composer\\Patcher' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patcher.php',
+        'cweagans\\Composer\\Patcher\\FreeformPatcher' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patcher/FreeformPatcher.php',
+        'cweagans\\Composer\\Patcher\\GitInitPatcher' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patcher/GitInitPatcher.php',
+        'cweagans\\Composer\\Patcher\\GitPatcher' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patcher/GitPatcher.php',
+        'cweagans\\Composer\\Patcher\\PatcherBase' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patcher/PatcherBase.php',
+        'cweagans\\Composer\\Patcher\\PatcherInterface' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Patcher/PatcherInterface.php',
+        'cweagans\\Composer\\Plugin\\Patches' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Plugin/Patches.php',
+        'cweagans\\Composer\\Resolver' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Resolver.php',
+        'cweagans\\Composer\\Resolver\\Dependencies' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Resolver/Dependencies.php',
+        'cweagans\\Composer\\Resolver\\PatchesFile' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Resolver/PatchesFile.php',
+        'cweagans\\Composer\\Resolver\\ResolverBase' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Resolver/ResolverBase.php',
+        'cweagans\\Composer\\Resolver\\ResolverInterface' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Resolver/ResolverInterface.php',
+        'cweagans\\Composer\\Resolver\\RootComposer' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Resolver/RootComposer.php',
+        'cweagans\\Composer\\Util' => __DIR__ . '/..' . '/cweagans/composer-patches/src/Util.php',
         'johnpbloch\\Composer\\WordPressCoreInstaller' => __DIR__ . '/..' . '/johnpbloch/wordpress-core-installer/src/johnpbloch/Composer/WordPressCoreInstaller.php',
         'johnpbloch\\Composer\\WordPressCorePlugin' => __DIR__ . '/..' . '/johnpbloch/wordpress-core-installer/src/johnpbloch/Composer/WordPressCorePlugin.php',
     );
@@ -574,10 +615,10 @@ class ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitb52944a52ff528ae4f9c6ff7b5927f5b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc3bd8a178cf7f634e1c31b35fa262892::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc3bd8a178cf7f634e1c31b35fa262892::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc3bd8a178cf7f634e1c31b35fa262892::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc3bd8a178cf7f634e1c31b35fa262892::$classMap;
 
         }, null, ClassLoader::class);
     }
