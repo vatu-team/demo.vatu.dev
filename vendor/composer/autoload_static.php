@@ -17,15 +17,15 @@ class ComposerStaticInitad7f202ff31e1e6eb9d2909b5a063222
     );
 
     public static $prefixLengthsPsr4 = array (
-        'c' => 
+        'c' =>
         array (
             'cweagans\\Composer\\' => 18,
         ),
-        'T' => 
+        'T' =>
         array (
             'ThoughtsIdeas\\Wordpress\\Infrastructure\\' => 39,
         ),
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -38,28 +38,28 @@ class ComposerStaticInitad7f202ff31e1e6eb9d2909b5a063222
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\Console\\' => 26,
         ),
-        'R' => 
+        'R' =>
         array (
             'Roots\\WPConfig\\' => 15,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Container\\' => 14,
             'PhpOption\\' => 10,
         ),
-        'L' => 
+        'L' =>
         array (
             'LicenseChecker\\' => 15,
         ),
-        'G' => 
+        'G' =>
         array (
             'GrahamCampbell\\ResultType\\' => 26,
         ),
-        'D' => 
+        'D' =>
         array (
             'Dotenv\\' => 7,
         ),
-        'C' => 
+        'C' =>
         array (
             'Composer\\Installers\\' => 20,
             'Client\\BaseTheme\\' => 17,
@@ -68,97 +68,97 @@ class ComposerStaticInitad7f202ff31e1e6eb9d2909b5a063222
     );
 
     public static $prefixDirsPsr4 = array (
-        'cweagans\\Composer\\' => 
+        'cweagans\\Composer\\' =>
         array (
             0 => __DIR__ . '/..' . '/cweagans/composer-patches/src',
             1 => __DIR__ . '/..' . '/cweagans/composer-configurable-plugin/src',
         ),
-        'ThoughtsIdeas\\Wordpress\\Infrastructure\\' => 
+        'ThoughtsIdeas\\Wordpress\\Infrastructure\\' =>
         array (
             0 => __DIR__ . '/..' . '/thoughtsideas/wp-infrastructure/src',
         ),
-        'Symfony\\Polyfill\\Php80\\' => 
+        'Symfony\\Polyfill\\Php80\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
+        'Symfony\\Polyfill\\Mbstring\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
-        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
         ),
-        'Symfony\\Polyfill\\Intl\\Grapheme\\' => 
+        'Symfony\\Polyfill\\Intl\\Grapheme\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme',
         ),
-        'Symfony\\Polyfill\\Ctype\\' => 
+        'Symfony\\Polyfill\\Ctype\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\Service\\' => 
+        'Symfony\\Contracts\\Service\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
         ),
-        'Symfony\\Component\\Yaml\\' => 
+        'Symfony\\Component\\Yaml\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
-        'Symfony\\Component\\String\\' => 
+        'Symfony\\Component\\String\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
         ),
-        'Symfony\\Component\\Process\\' => 
+        'Symfony\\Component\\Process\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/process',
         ),
-        'Symfony\\Component\\Console\\' => 
+        'Symfony\\Component\\Console\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
-        'Roots\\WPConfig\\' => 
+        'Roots\\WPConfig\\' =>
         array (
             0 => __DIR__ . '/..' . '/roots/wp-config/src',
         ),
-        'Psr\\Container\\' => 
+        'Psr\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'PhpOption\\' => 
+        'PhpOption\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
-        'LicenseChecker\\' => 
+        'LicenseChecker\\' =>
         array (
             0 => __DIR__ . '/..' . '/madewithlove/license-checker/src',
         ),
-        'GrahamCampbell\\ResultType\\' => 
+        'GrahamCampbell\\ResultType\\' =>
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
-        'Dotenv\\' => 
+        'Dotenv\\' =>
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'Composer\\Installers\\' => 
+        'Composer\\Installers\\' =>
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
-        'Client\\BaseTheme\\' => 
+        'Client\\BaseTheme\\' =>
         array (
             0 => __DIR__ . '/../..' . '/public/app/themes/base-theme/src',
         ),
-        'CaptainHook\\HookInstaller\\' => 
+        'CaptainHook\\HookInstaller\\' =>
         array (
             0 => __DIR__ . '/..' . '/captainhook/hook-installer/src',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'j' => 
+        'j' =>
         array (
-            'johnpbloch\\Composer\\' => 
+            'johnpbloch\\Composer\\' =>
             array (
                 0 => __DIR__ . '/..' . '/johnpbloch/wordpress-core-installer/src',
             ),
