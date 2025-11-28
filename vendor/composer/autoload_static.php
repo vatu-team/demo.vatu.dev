@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff
+class ComposerStaticInit07faf49a030462a574f050a7778accd7
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -366,7 +366,12 @@ class ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Attribute\\Argument' => __DIR__ . '/..' . '/symfony/console/Attribute/Argument.php',
         'Symfony\\Component\\Console\\Attribute\\AsCommand' => __DIR__ . '/..' . '/symfony/console/Attribute/AsCommand.php',
+        'Symfony\\Component\\Console\\Attribute\\Ask' => __DIR__ . '/..' . '/symfony/console/Attribute/Ask.php',
+        'Symfony\\Component\\Console\\Attribute\\Interact' => __DIR__ . '/..' . '/symfony/console/Attribute/Interact.php',
+        'Symfony\\Component\\Console\\Attribute\\InteractiveAttributeInterface' => __DIR__ . '/..' . '/symfony/console/Attribute/InteractiveAttributeInterface.php',
+        'Symfony\\Component\\Console\\Attribute\\MapInput' => __DIR__ . '/..' . '/symfony/console/Attribute/MapInput.php',
         'Symfony\\Component\\Console\\Attribute\\Option' => __DIR__ . '/..' . '/symfony/console/Attribute/Option.php',
+        'Symfony\\Component\\Console\\Attribute\\Reflection\\ReflectionMember' => __DIR__ . '/..' . '/symfony/console/Attribute/Reflection/ReflectionMember.php',
         'Symfony\\Component\\Console\\CI\\GithubActionReporter' => __DIR__ . '/..' . '/symfony/console/CI/GithubActionReporter.php',
         'Symfony\\Component\\Console\\Color' => __DIR__ . '/..' . '/symfony/console/Color.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
@@ -460,6 +465,7 @@ class ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff
         'Symfony\\Component\\Console\\Input\\InputOption' => __DIR__ . '/..' . '/symfony/console/Input/InputOption.php',
         'Symfony\\Component\\Console\\Input\\StreamableInputInterface' => __DIR__ . '/..' . '/symfony/console/Input/StreamableInputInterface.php',
         'Symfony\\Component\\Console\\Input\\StringInput' => __DIR__ . '/..' . '/symfony/console/Input/StringInput.php',
+        'Symfony\\Component\\Console\\Interaction\\Interaction' => __DIR__ . '/..' . '/symfony/console/Interaction/Interaction.php',
         'Symfony\\Component\\Console\\Logger\\ConsoleLogger' => __DIR__ . '/..' . '/symfony/console/Logger/ConsoleLogger.php',
         'Symfony\\Component\\Console\\Messenger\\RunCommandContext' => __DIR__ . '/..' . '/symfony/console/Messenger/RunCommandContext.php',
         'Symfony\\Component\\Console\\Messenger\\RunCommandMessage' => __DIR__ . '/..' . '/symfony/console/Messenger/RunCommandMessage.php',
@@ -615,10 +621,10 @@ class ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit41ee828cf021b1e4e051bd12bccbbeff::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit07faf49a030462a574f050a7778accd7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit07faf49a030462a574f050a7778accd7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit07faf49a030462a574f050a7778accd7::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit07faf49a030462a574f050a7778accd7::$classMap;
 
         }, null, ClassLoader::class);
     }
