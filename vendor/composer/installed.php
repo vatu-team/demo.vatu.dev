@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => 'bda6fe9885921d0ea4eeeeedc64b5818387684e9',
+        'reference' => '84f98c786523185daf1545b31fba7fc3dfcf8e4e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -56,18 +56,18 @@
             'dev_requirement' => false,
         ),
         'johnpbloch/wordpress' => array(
-            'pretty_version' => '6.8.3',
-            'version' => '6.8.3.0',
-            'reference' => '1edda09c44b2e185b21941ae92e7ddfce09c31b8',
+            'pretty_version' => '6.9.0',
+            'version' => '6.9.0.0',
+            'reference' => 'fbc8bf2209d0ab8d579d937b3df89003a3b86b8e',
             'type' => 'package',
             'install_path' => __DIR__ . '/../johnpbloch/wordpress',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'johnpbloch/wordpress-core' => array(
-            'pretty_version' => '6.8.3',
-            'version' => '6.8.3.0',
-            'reference' => '0641ab5518c94c1ab094ad4ccdc46aa9c4657fc1',
+            'pretty_version' => '6.9.0',
+            'version' => '6.9.0.0',
+            'reference' => '4626d4e896c36ab77a69ce58627bc76243b5dd07',
             'type' => 'wordpress-core',
             'install_path' => __DIR__ . '/../../public/wp',
             'aliases' => array(),
@@ -235,7 +235,7 @@
         'vatu/base-theme' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'c589da5dd203d938debbc0a62ef85ac0e59a8e81',
+            'reference' => '3f4300b605423ea1ddd4c031383c929b3642edca',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../public/app/themes/base-theme',
             'aliases' => array(
@@ -246,7 +246,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'bda6fe9885921d0ea4eeeeedc64b5818387684e9',
+            'reference' => '84f98c786523185daf1545b31fba7fc3dfcf8e4e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -264,7 +264,7 @@
         'wordpress/core-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '6.8.3',
+                0 => '6.9.0',
             ),
         ),
         'wpackagist-plugin/better-passwords' => array(
@@ -304,9 +304,9 @@
             'dev_requirement' => false,
         ),
         'wpackagist-plugin/wordpress-seo' => array(
-            'pretty_version' => '26.4',
-            'version' => '26.4.0.0',
-            'reference' => 'tags/26.4',
+            'pretty_version' => '26.5',
+            'version' => '26.5.0.0',
+            'reference' => 'tags/26.5',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../public/app/plugins/wordpress-seo',
             'aliases' => array(),
