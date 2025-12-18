@@ -1800,12 +1800,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "1881615a21e9a2cc79251104e9832507a3f04ebd"
+                "reference": "79b7e37d666804876810a0a9df6bd3aacafdef40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/1881615a21e9a2cc79251104e9832507a3f04ebd",
-                "reference": "1881615a21e9a2cc79251104e9832507a3f04ebd",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/79b7e37d666804876810a0a9df6bd3aacafdef40",
+                "reference": "79b7e37d666804876810a0a9df6bd3aacafdef40",
                 "shasum": ""
             },
             "require": {
@@ -1815,13 +1815,13 @@
                 "thoughtsideas/wp-infrastructure": "^0.2.0"
             },
             "require-dev": {
-                "captainhook/captainhook": "^5.27.3",
+                "captainhook/captainhook": "^5.27.4",
                 "captainhook/hook-installer": "^1.0.3",
                 "johnpbloch/wordpress": "^6.9.0",
                 "wpackagist-plugin/create-block-theme": "^2.8.0",
                 "wpackagist-plugin/query-monitor": "^3.20.2"
             },
-            "time": "2025-12-15T03:13:26+00:00",
+            "time": "2025-12-15T04:16:01+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
@@ -2042,16 +2042,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "26.5",
-            "version_normalized": "26.5.0.0",
+            "version": "26.6",
+            "version_normalized": "26.6.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/26.5"
+                "reference": "tags/26.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.6.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
