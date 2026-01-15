@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => 'ac13c2592a40a033a91a559d0a094fd30aa9012a',
+        'reference' => 'aedc6a4fa53f5a847caa46d2ad4e145b4b4540df',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -224,9 +224,9 @@
             'dev_requirement' => false,
         ),
         'thoughtsideas/wp-infrastructure' => array(
-            'pretty_version' => '0.2.0',
-            'version' => '0.2.0.0',
-            'reference' => '4f71268b0cd6798b615120407c27c310b37689fb',
+            'pretty_version' => '0.2.1',
+            'version' => '0.2.1.0',
+            'reference' => '5339ca94ca21d249fc4d4bbec7ab1000b8d7e8b5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../thoughtsideas/wp-infrastructure',
             'aliases' => array(),
@@ -235,7 +235,7 @@
         'vatu/base-theme' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => '067e0dfb8bce7d0f64796a590587d5147da35d37',
+            'reference' => '79c9a6454828f4c038d0222288fd8ec3ea45bbe2',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../public/app/themes/base-theme',
             'aliases' => array(
@@ -246,7 +246,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => 'ac13c2592a40a033a91a559d0a094fd30aa9012a',
+            'reference' => 'aedc6a4fa53f5a847caa46d2ad4e145b4b4540df',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

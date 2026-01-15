@@ -1726,17 +1726,17 @@
         },
         {
             "name": "thoughtsideas/wp-infrastructure",
-            "version": "0.2.0",
-            "version_normalized": "0.2.0.0",
+            "version": "0.2.1",
+            "version_normalized": "0.2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thoughtsideas/wp-infrastructure.git",
-                "reference": "4f71268b0cd6798b615120407c27c310b37689fb"
+                "reference": "5339ca94ca21d249fc4d4bbec7ab1000b8d7e8b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thoughtsideas/wp-infrastructure/zipball/4f71268b0cd6798b615120407c27c310b37689fb",
-                "reference": "4f71268b0cd6798b615120407c27c310b37689fb",
+                "url": "https://api.github.com/repos/thoughtsideas/wp-infrastructure/zipball/5339ca94ca21d249fc4d4bbec7ab1000b8d7e8b5",
+                "reference": "5339ca94ca21d249fc4d4bbec7ab1000b8d7e8b5",
                 "shasum": ""
             },
             "require": {
@@ -1744,13 +1744,13 @@
                 "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
             },
             "require-dev": {
-                "captainhook/captainhook": "^5.23",
-                "ergebnis/composer-normalize": "^2.42",
+                "captainhook/captainhook": "^5.27",
+                "ergebnis/composer-normalize": "^2.48",
                 "madewithlove/license-checker": "^1.5",
                 "phly/keep-a-changelog": "^2.12",
                 "roave/security-advisories": "dev-latest"
             },
-            "time": "2025-01-05T21:33:14+00:00",
+            "time": "2026-01-08T09:07:38+00:00",
             "type": "library",
             "extra": {
                 "composer-normalize": {
@@ -1789,7 +1789,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thoughtsideas/wp-infrastrucuture/issues/",
-                "source": "https://github.com/thoughtsideas/wp-infrastructure/tree/0.2.0"
+                "source": "https://github.com/thoughtsideas/wp-infrastructure/tree/0.2.1"
             },
             "install-path": "../thoughtsideas/wp-infrastructure"
         },
@@ -1800,19 +1800,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "067e0dfb8bce7d0f64796a590587d5147da35d37"
+                "reference": "79c9a6454828f4c038d0222288fd8ec3ea45bbe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/067e0dfb8bce7d0f64796a590587d5147da35d37",
-                "reference": "067e0dfb8bce7d0f64796a590587d5147da35d37",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/79c9a6454828f4c038d0222288fd8ec3ea45bbe2",
+                "reference": "79c9a6454828f4c038d0222288fd8ec3ea45bbe2",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.3.0",
                 "madewithlove/license-checker": "^2.1",
                 "php": "^8.3",
-                "thoughtsideas/wp-infrastructure": "^0.2.0"
+                "thoughtsideas/wp-infrastructure": "^0.2.1"
             },
             "require-dev": {
                 "captainhook/captainhook": "^5.27.4",
@@ -1821,7 +1821,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.8.0",
                 "wpackagist-plugin/query-monitor": "^3.20.2"
             },
-            "time": "2026-01-01T14:46:05+00:00",
+            "time": "2026-01-15T03:55:13+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {

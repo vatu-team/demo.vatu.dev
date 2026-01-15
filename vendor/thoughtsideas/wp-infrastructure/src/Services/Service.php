@@ -7,7 +7,7 @@
  * @author    Thoughts & Ideas <hello@thoughtsandideas.uk>
  * @link      https://www.thoughtsandideas.uk/
  * @license   MIT
- * @copyright 2022-2024 Thoughts & Ideas Limited.
+ * @copyright 2022-2026 Thoughts & Ideas Limited.
  */
 
 declare(strict_types=1);
@@ -18,6 +18,9 @@ abstract class Service
 {
     protected string $name;
 
+    /**
+     * @var non-empty-string
+     */
     protected string $hook;
 
     public function __construct(
@@ -31,6 +34,9 @@ abstract class Service
         return $this->name;
     }
 
+    /**
+     * @phpstan-return non-empty-string
+     */
     public function getHook(): string
     {
         return $this->hook;
