@@ -1395,23 +1395,23 @@
         },
         {
             "name": "symfony/process",
-            "version": "v7.4.4",
-            "version_normalized": "7.4.4.0",
+            "version": "v7.4.5",
+            "version_normalized": "7.4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "626f07a53f4b4e2f00e11824cc29f928d797783b"
+                "reference": "608476f4604102976d687c483ac63a79ba18cc97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/626f07a53f4b4e2f00e11824cc29f928d797783b",
-                "reference": "626f07a53f4b4e2f00e11824cc29f928d797783b",
+                "url": "https://api.github.com/repos/symfony/process/zipball/608476f4604102976d687c483ac63a79ba18cc97",
+                "reference": "608476f4604102976d687c483ac63a79ba18cc97",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2"
             },
-            "time": "2026-01-20T09:23:51+00:00",
+            "time": "2026-01-26T15:07:59+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1439,7 +1439,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v7.4.4"
+                "source": "https://github.com/symfony/process/tree/v7.4.5"
             },
             "funding": [
                 {
@@ -1800,12 +1800,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "aada33867ef826e7e57e502a722db9bf35c90dac"
+                "reference": "593d4981161161a09b0f436058f1ad7a519753db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/aada33867ef826e7e57e502a722db9bf35c90dac",
-                "reference": "aada33867ef826e7e57e502a722db9bf35c90dac",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/593d4981161161a09b0f436058f1ad7a519753db",
+                "reference": "593d4981161161a09b0f436058f1ad7a519753db",
                 "shasum": ""
             },
             "require": {
@@ -1821,7 +1821,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.8.0",
                 "wpackagist-plugin/query-monitor": "^3.20.2"
             },
-            "time": "2026-01-27T04:33:17+00:00",
+            "time": "2026-01-28T21:40:50+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
