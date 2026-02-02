@@ -7,9 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-    'CaptainHook\\HookInstaller\\ComposerPlugin' => $vendorDir . '/captainhook/hook-installer/src/ComposerPlugin.php',
-    'CaptainHook\\HookInstaller\\DotGit' => $vendorDir . '/captainhook/hook-installer/src/DotGit.php',
-    'CaptainHook\\HookInstaller\\Installer' => $vendorDir . '/captainhook/hook-installer/src/Installer.php',
     'Client\\BaseTheme\\Domain\\ArchiveTitle' => $baseDir . '/public/app/themes/base-theme/src/Domain/ArchiveTitle.php',
     'Client\\BaseTheme\\Domain\\BlockEditor' => $baseDir . '/public/app/themes/base-theme/src/Domain/BlockEditor.php',
     'Client\\BaseTheme\\Domain\\BlockPatterns' => $baseDir . '/public/app/themes/base-theme/src/Domain/BlockPatterns.php',

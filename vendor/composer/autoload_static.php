@@ -63,7 +63,6 @@ class ComposerStaticInit0fdacf820a5b933a509530092a4d9b63
         array (
             'Composer\\Installers\\' => 20,
             'Client\\BaseTheme\\' => 17,
-            'CaptainHook\\HookInstaller\\' => 26,
         ),
     );
 
@@ -149,10 +148,6 @@ class ComposerStaticInit0fdacf820a5b933a509530092a4d9b63
         array (
             0 => __DIR__ . '/../..' . '/public/app/themes/base-theme/src',
         ),
-        'CaptainHook\\HookInstaller\\' =>
-        array (
-            0 => __DIR__ . '/..' . '/captainhook/hook-installer/src',
-        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -167,9 +162,6 @@ class ComposerStaticInit0fdacf820a5b933a509530092a4d9b63
 
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
-        'CaptainHook\\HookInstaller\\ComposerPlugin' => __DIR__ . '/..' . '/captainhook/hook-installer/src/ComposerPlugin.php',
-        'CaptainHook\\HookInstaller\\DotGit' => __DIR__ . '/..' . '/captainhook/hook-installer/src/DotGit.php',
-        'CaptainHook\\HookInstaller\\Installer' => __DIR__ . '/..' . '/captainhook/hook-installer/src/Installer.php',
         'Client\\BaseTheme\\Domain\\ArchiveTitle' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/ArchiveTitle.php',
         'Client\\BaseTheme\\Domain\\BlockEditor' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/BlockEditor.php',
         'Client\\BaseTheme\\Domain\\BlockPatterns' => __DIR__ . '/../..' . '/public/app/themes/base-theme/src/Domain/BlockPatterns.php',

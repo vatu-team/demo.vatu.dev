@@ -26,5 +26,4 @@ return array(
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     'Client\\BaseTheme\\' => array($baseDir . '/public/app/themes/base-theme/src'),
-    'CaptainHook\\HookInstaller\\' => array($vendorDir . '/captainhook/hook-installer/src'),
 );
