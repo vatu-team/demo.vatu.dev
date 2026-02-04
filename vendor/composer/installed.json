@@ -345,25 +345,25 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "6.9.0",
-            "version_normalized": "6.9.0.0",
+            "version": "6.9.1",
+            "version_normalized": "6.9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "fbc8bf2209d0ab8d579d937b3df89003a3b86b8e"
+                "reference": "46b4f217817e43cf49f4dbb824f0b755fcff11ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/fbc8bf2209d0ab8d579d937b3df89003a3b86b8e",
-                "reference": "fbc8bf2209d0ab8d579d937b3df89003a3b86b8e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/46b4f217817e43cf49f4dbb824f0b755fcff11ee",
+                "reference": "46b4f217817e43cf49f4dbb824f0b755fcff11ee",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "6.9.0",
+                "johnpbloch/wordpress-core": "6.9.1",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=7.0.0"
             },
-            "time": "2025-12-02T19:11:04+00:00",
+            "time": "2026-02-03T18:03:53+00:00",
             "type": "package",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -394,17 +394,17 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "6.9.0",
-            "version_normalized": "6.9.0.0",
+            "version": "6.9.1",
+            "version_normalized": "6.9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "4626d4e896c36ab77a69ce58627bc76243b5dd07"
+                "reference": "840ffab74cb3d19cc0076363358f783041b5f3cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/4626d4e896c36ab77a69ce58627bc76243b5dd07",
-                "reference": "4626d4e896c36ab77a69ce58627bc76243b5dd07",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/840ffab74cb3d19cc0076363358f783041b5f3cf",
+                "reference": "840ffab74cb3d19cc0076363358f783041b5f3cf",
                 "shasum": ""
             },
             "require": {
@@ -412,9 +412,9 @@
                 "php": ">=7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.9.0"
+                "wordpress/core-implementation": "6.9.1"
             },
-            "time": "2025-12-02T19:10:58+00:00",
+            "time": "2026-02-03T18:03:48+00:00",
             "type": "wordpress-core",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -1750,19 +1750,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "91aaafd59083b5b166620c7b04638601dcba3d17"
+                "reference": "c7476bd14892c40c727f7b5cd0656fad74ce1fa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/91aaafd59083b5b166620c7b04638601dcba3d17",
-                "reference": "91aaafd59083b5b166620c7b04638601dcba3d17",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/c7476bd14892c40c727f7b5cd0656fad74ce1fa1",
+                "reference": "c7476bd14892c40c727f7b5cd0656fad74ce1fa1",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^2.3.0",
                 "madewithlove/license-checker": "^2.1",
                 "php": "^8.3",
-                "thoughtsideas/wp-infrastructure": "^0.2.1"
+                "thoughtsideas/wp-infrastructure": "^0.2.2"
             },
             "require-dev": {
                 "captainhook/captainhook": "^5.27.5",
@@ -1771,7 +1771,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.8.0",
                 "wpackagist-plugin/query-monitor": "^3.20.2"
             },
-            "time": "2026-01-30T03:54:46+00:00",
+            "time": "2026-02-02T04:40:22+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
@@ -1992,16 +1992,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "26.8",
-            "version_normalized": "26.8.0.0",
+            "version": "26.9",
+            "version_normalized": "26.9.0.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/26.8"
+                "reference": "tags/26.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.8.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.26.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
