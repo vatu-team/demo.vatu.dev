@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => '96b74a2d31884aa372a02607a998c3f924a209a2',
+        'reference' => '4d0ee3cb7bf2142d9352b466bb198ef2d0533a87',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -237,7 +237,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => '96b74a2d31884aa372a02607a998c3f924a209a2',
+            'reference' => '4d0ee3cb7bf2142d9352b466bb198ef2d0533a87',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
