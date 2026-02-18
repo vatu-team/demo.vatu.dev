@@ -3,7 +3,7 @@
         'name' => 'vatu/wordpress-demo',
         'pretty_version' => 'dev-trunk',
         'version' => 'dev-trunk',
-        'reference' => '206aa5e17811b9fbee07e40fd82c317cfef12fa2',
+        'reference' => '21eb2d0ab02f15ca5b26f340a6b9749381ef05f4',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -226,7 +226,7 @@
         'vatu/base-theme' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => '22c98459884562b9e20f038a431bb822700d3c1a',
+            'reference' => '065716cad39794e05298c0440e2d0db94d2b3f1d',
             'type' => 'wordpress-theme',
             'install_path' => __DIR__ . '/../../public/app/themes/base-theme',
             'aliases' => array(
@@ -237,7 +237,7 @@
         'vatu/wordpress-demo' => array(
             'pretty_version' => 'dev-trunk',
             'version' => 'dev-trunk',
-            'reference' => '206aa5e17811b9fbee07e40fd82c317cfef12fa2',
+            'reference' => '21eb2d0ab02f15ca5b26f340a6b9749381ef05f4',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -286,9 +286,9 @@
             'dev_requirement' => false,
         ),
         'wpackagist-plugin/two-factor' => array(
-            'pretty_version' => '0.14.2',
-            'version' => '0.14.2.0',
-            'reference' => 'tags/0.14.2',
+            'pretty_version' => '0.15.0',
+            'version' => '0.15.0.0',
+            'reference' => 'tags/0.15.0',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../public/app/plugins/two-factor',
             'aliases' => array(),
