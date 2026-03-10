@@ -740,17 +740,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.4.6",
-            "version_normalized": "7.4.6.0",
+            "version": "v7.4.7",
+            "version_normalized": "7.4.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6d643a93b47398599124022eb24d97c153c12f27"
+                "reference": "e1e6770440fb9c9b0cf725f81d1361ad1835329d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6d643a93b47398599124022eb24d97c153c12f27",
-                "reference": "6d643a93b47398599124022eb24d97c153c12f27",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e1e6770440fb9c9b0cf725f81d1361ad1835329d",
+                "reference": "e1e6770440fb9c9b0cf725f81d1361ad1835329d",
                 "shasum": ""
             },
             "require": {
@@ -783,7 +783,7 @@
                 "symfony/stopwatch": "^6.4|^7.0|^8.0",
                 "symfony/var-dumper": "^6.4|^7.0|^8.0"
             },
-            "time": "2026-02-25T17:02:47+00:00",
+            "time": "2026-03-06T14:06:20+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -817,7 +817,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.4.6"
+                "source": "https://github.com/symfony/console/tree/v7.4.7"
             },
             "funding": [
                 {
@@ -1750,12 +1750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "c5842522dd4eee3eeed7612a6469fad6b37d591d"
+                "reference": "d06996e996610a47ed319e0e2a4149554ad2b8a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/c5842522dd4eee3eeed7612a6469fad6b37d591d",
-                "reference": "c5842522dd4eee3eeed7612a6469fad6b37d591d",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/d06996e996610a47ed319e0e2a4149554ad2b8a5",
+                "reference": "d06996e996610a47ed319e0e2a4149554ad2b8a5",
                 "shasum": ""
             },
             "require": {
@@ -1771,7 +1771,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.8.0",
                 "wpackagist-plugin/query-monitor": "^3.20.2"
             },
-            "time": "2026-03-04T23:30:50+00:00",
+            "time": "2026-03-05T00:15:06+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
