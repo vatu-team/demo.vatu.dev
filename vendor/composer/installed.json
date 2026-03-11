@@ -345,25 +345,25 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "6.9.1",
-            "version_normalized": "6.9.1.0",
+            "version": "6.9.3",
+            "version_normalized": "6.9.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "46b4f217817e43cf49f4dbb824f0b755fcff11ee"
+                "reference": "cd168bd481886b00212d86815f2371200aebf30d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/46b4f217817e43cf49f4dbb824f0b755fcff11ee",
-                "reference": "46b4f217817e43cf49f4dbb824f0b755fcff11ee",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/cd168bd481886b00212d86815f2371200aebf30d",
+                "reference": "cd168bd481886b00212d86815f2371200aebf30d",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core": "6.9.1",
+                "johnpbloch/wordpress-core": "6.9.3",
                 "johnpbloch/wordpress-core-installer": "^1.0 || ^2.0",
                 "php": ">=7.0.0"
             },
-            "time": "2026-02-03T18:03:53+00:00",
+            "time": "2026-03-10T22:15:38+00:00",
             "type": "package",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -394,17 +394,17 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "6.9.1",
-            "version_normalized": "6.9.1.0",
+            "version": "6.9.3",
+            "version_normalized": "6.9.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "840ffab74cb3d19cc0076363358f783041b5f3cf"
+                "reference": "0bdd79bfb90038fbb6b2120c66a9cde59cbcb1a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/840ffab74cb3d19cc0076363358f783041b5f3cf",
-                "reference": "840ffab74cb3d19cc0076363358f783041b5f3cf",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/0bdd79bfb90038fbb6b2120c66a9cde59cbcb1a4",
+                "reference": "0bdd79bfb90038fbb6b2120c66a9cde59cbcb1a4",
                 "shasum": ""
             },
             "require": {
@@ -412,9 +412,9 @@
                 "php": ">=7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.9.1"
+                "wordpress/core-implementation": "6.9.3"
             },
-            "time": "2026-02-03T18:03:48+00:00",
+            "time": "2026-03-10T22:15:34+00:00",
             "type": "wordpress-core",
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
@@ -1750,12 +1750,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vatu-team/base-theme.git",
-                "reference": "d06996e996610a47ed319e0e2a4149554ad2b8a5"
+                "reference": "e5d1f5652d09d11f37a39fcc3009f97e5b217e75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/d06996e996610a47ed319e0e2a4149554ad2b8a5",
-                "reference": "d06996e996610a47ed319e0e2a4149554ad2b8a5",
+                "url": "https://api.github.com/repos/vatu-team/base-theme/zipball/e5d1f5652d09d11f37a39fcc3009f97e5b217e75",
+                "reference": "e5d1f5652d09d11f37a39fcc3009f97e5b217e75",
                 "shasum": ""
             },
             "require": {
@@ -1771,7 +1771,7 @@
                 "wpackagist-plugin/create-block-theme": "^2.8.0",
                 "wpackagist-plugin/query-monitor": "^3.20.2"
             },
-            "time": "2026-03-05T00:15:06+00:00",
+            "time": "2026-03-10T19:12:29+00:00",
             "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
