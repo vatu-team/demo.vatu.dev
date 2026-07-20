@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7968c1e3a1bba47d35036725afaf1647
+class ComposerStaticInitbaca85927b329368382300fee71e0c5e
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -535,11 +535,14 @@ class ComposerStaticInit7968c1e3a1bba47d35036725afaf1647
         'Symfony\\Component\\Yaml\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/yaml/Exception/RuntimeException.php',
         'Symfony\\Component\\Yaml\\Inline' => __DIR__ . '/..' . '/symfony/yaml/Inline.php',
         'Symfony\\Component\\Yaml\\Parser' => __DIR__ . '/..' . '/symfony/yaml/Parser.php',
+        'Symfony\\Component\\Yaml\\ParserState' => __DIR__ . '/..' . '/symfony/yaml/ParserState.php',
         'Symfony\\Component\\Yaml\\Tag\\TaggedValue' => __DIR__ . '/..' . '/symfony/yaml/Tag/TaggedValue.php',
         'Symfony\\Component\\Yaml\\Unescaper' => __DIR__ . '/..' . '/symfony/yaml/Unescaper.php',
         'Symfony\\Component\\Yaml\\Yaml' => __DIR__ . '/..' . '/symfony/yaml/Yaml.php',
         'Symfony\\Contracts\\Service\\Attribute\\Required' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/Required.php',
         'Symfony\\Contracts\\Service\\Attribute\\SubscribedService' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/SubscribedService.php',
+        'Symfony\\Contracts\\Service\\ContainerAwareInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ContainerAwareInterface.php',
+        'Symfony\\Contracts\\Service\\ContainerProviderInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ContainerProviderInterface.php',
         'Symfony\\Contracts\\Service\\ResetInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ResetInterface.php',
         'Symfony\\Contracts\\Service\\ServiceCollectionInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceCollectionInterface.php',
         'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceLocatorTrait.php',
@@ -613,10 +616,10 @@ class ComposerStaticInit7968c1e3a1bba47d35036725afaf1647
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7968c1e3a1bba47d35036725afaf1647::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7968c1e3a1bba47d35036725afaf1647::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7968c1e3a1bba47d35036725afaf1647::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7968c1e3a1bba47d35036725afaf1647::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbaca85927b329368382300fee71e0c5e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbaca85927b329368382300fee71e0c5e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbaca85927b329368382300fee71e0c5e::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitbaca85927b329368382300fee71e0c5e::$classMap;
 
         }, null, ClassLoader::class);
     }
