@@ -139,7 +139,7 @@
             "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
         ],
         "test:compatibility": [
-            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
+            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --runtime-set testVersion 8.3- --extensions=php --ignore=vendor/* --ignore=tools/* ./config ./public/app/mu-plugins/site-config.php"
         ],
         "tools": [
             "@composer install --working-dir=tools",
